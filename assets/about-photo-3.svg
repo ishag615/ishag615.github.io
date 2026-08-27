@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" role="img" aria-labelledby="title desc">
+  <title id="title">About photo placeholder three</title>
+  <desc id="desc">Placeholder for a creative or campus photo.</desc>
+  <rect width="520" height="420" fill="#fffdf4"/>
+  <circle cx="160" cy="172" r="82" fill="#f46d91"/>
+  <rect x="236" y="98" width="170" height="170" rx="28" fill="#c8e7ff"/>
+  <path d="M108 312c97-50 197-55 300-16" stroke="#a91f45" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <text x="260" y="382" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#24171d">creative shot</text>
+</svg>

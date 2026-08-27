@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 820" role="img" aria-labelledby="title desc">
+  <title id="title">Artwork placeholder</title>
+  <desc id="desc">Abstract brush shapes in pink, crimson, sap green, blue, and yellow.</desc>
+  <rect width="640" height="820" fill="#fff9fb"/>
+  <path d="M-20 173c132-120 253-125 365-16s202 94 321-44v244c-126 95-242 107-347 36S120 323-20 416z" fill="#ffd3df"/>
+  <path d="M90 569c99-150 231-191 397-122 72 30 127 32 171 6v240c-117 67-243 64-377-8-86-46-149-35-191 34z" fill="#4e8b55" opacity=".86"/>
+  <circle cx="463" cy="245" r="94" fill="#a91f45" opacity=".9"/>
+  <circle cx="181" cy="321" r="55" fill="#ffe88f"/>
+  <path d="M120 120l400 560" stroke="#24171d" stroke-width="10" stroke-linecap="round" opacity=".18"/>
+</svg>

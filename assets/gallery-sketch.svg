@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">Sketch placeholder</title>
+  <desc id="desc">A clean sketchbook-style placeholder with colorful study blocks.</desc>
+  <rect width="640" height="520" fill="#fffdf4"/>
+  <g fill="none" stroke="#24171d" stroke-linecap="round" stroke-width="8" opacity=".72">
+    <path d="M90 130c65-51 132-54 202-9"/>
+    <path d="M94 198h263"/>
+    <path d="M94 260h189"/>
+    <path d="M94 322h310"/>
+  </g>
+  <rect x="420" y="90" width="132" height="132" rx="18" fill="#ffd3df"/>
+  <rect x="376" y="250" width="176" height="92" rx="18" fill="#d9f0d5"/>
+  <circle cx="460" cy="398" r="50" fill="#f46d91"/>
+</svg>

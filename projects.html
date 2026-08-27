@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Computer science projects by Isha Gupta, organized by category.">
+    <title>Isha Gupta | Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="Isha Gupta home"><span class="brand-mark" aria-hidden="true"><span class="mark-i">i</span><span class="mark-g">g</span></span><span class="brand-name">Isha Gupta</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links" data-nav-links>
+          <a href="index.html">About</a>
+          <a class="active-page" href="projects.html">Projects</a>
+          <a href="art.html">Art</a>
+          <a href="leadership.html">Leadership</a>
+          <a href="life.html">Life</a>
+          <a href="awards.html">Awards</a>
+          <a href="#site-footer">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero section-band">
+        <p class="eyebrow">Computer science</p>
+        <h1>Projects by category</h1>
+        <p class="hero-text">A home for technical work: AI experiments, web apps, data dashboards, systems coursework, and research. Use the filters to browse, or expand each category with your real projects.</p>
+      </section>
+
+      <section class="section">
+        <div class="filter-bar" aria-label="Project filters">
+          <button class="chip active" type="button" data-filter="all">All</button>
+          <button class="chip" type="button" data-filter="ai">AI</button>
+          <button class="chip" type="button" data-filter="web">Web</button>
+          <button class="chip" type="button" data-filter="data">Data</button>
+          <button class="chip" type="button" data-filter="systems">Systems</button>
+        </div>
+        <div class="project-grid">
+          <article class="project-card" data-category="ai web">
+            <div class="card-topline"><span>Featured</span><span>AI + Web</span></div>
+            <h3>Study Buddy Scheduler</h3>
+            <p>A friendly planning tool that turns messy syllabi, deadlines, and goals into weekly study plans.</p>
+            <div class="tag-row"><span>Python</span><span>React</span><span>LLM APIs</span></div>
+            <div class="card-links"><a href="#">GitHub</a><a href="#">Demo</a></div>
+          </article>
+          <article class="project-card" data-category="data">
+            <div class="card-topline"><span>Analytics</span><span>Data</span></div>
+            <h3>Campus Climate Dashboard</h3>
+            <p>An interactive dashboard for surveying student needs, spotting trends, and turning feedback into action.</p>
+            <div class="tag-row"><span>Tableau</span><span>SQL</span><span>Research</span></div>
+            <div class="card-links"><a href="#">Case study</a><a href="#">Dataset</a></div>
+          </article>
+          <article class="project-card" data-category="web systems">
+            <div class="card-topline"><span>Product</span><span>Web</span></div>
+            <h3>Art Archive App</h3>
+            <p>A searchable personal archive for paintings, sketches, references, process notes, and exhibition drafts.</p>
+            <div class="tag-row"><span>JavaScript</span><span>Firebase</span><span>UX</span></div>
+            <div class="card-links"><a href="#">GitHub</a><a href="#">Prototype</a></div>
+          </article>
+          <article class="project-card" data-category="systems">
+            <div class="card-topline"><span>Coursework</span><span>Systems</span></div>
+            <h3>Memory Visualizer</h3>
+            <p>A browser-based tool that makes stack, heap, and pointer behavior easier to inspect while learning C.</p>
+            <div class="tag-row"><span>C</span><span>Canvas</span><span>Teaching</span></div>
+            <div class="card-links"><a href="#">GitHub</a><a href="#">Walkthrough</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section category-section">
+        <div class="section-heading">
+          <p class="eyebrow">Future categories</p>
+          <h2>Room to grow</h2>
+        </div>
+        <div class="category-grid">
+          <article><h3>AI and machine learning</h3><p>Model experiments, responsible AI notes, prompt tools, and evaluation writeups.</p></article>
+          <article><h3>Web and product</h3><p>Frontend apps, full-stack prototypes, UX case studies, and interactive demos.</p></article>
+          <article><h3>Data and research</h3><p>Dashboards, survey analysis, visualizations, notebooks, and research posters.</p></article>
+          <article><h3>Systems and coursework</h3><p>Operating systems, C/C++, compilers, networks, and teaching visualizers.</p></article>
+        </div>
+      </section>
+
+      <section class="section professional-assets">
+        <div class="section-heading">
+          <p class="eyebrow">Professional assets</p>
+          <h2>Resume and project context</h2>
+          <p>Keep polished, career-facing materials near your technical work so recruiters and collaborators can move from projects to credentials naturally.</p>
+        </div>
+        <div class="asset-panel">
+          <div>
+            <h3>Isha Gupta Resume</h3>
+            <p>Replace the placeholder file with your current resume PDF. This button gives visitors a clean way to access it from the Projects page without cluttering the footer.</p>
+          </div>
+          <a class="button primary" href="assets/Isha-Gupta-Resume.pdf">Open resume</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer contact-footer" id="site-footer">
+      <div class="footer-copy"><p class="eyebrow">Contact</p><h2>Let’s connect.</h2><p>Update these links before publishing.</p></div>
+      <div class="footer-links">
+        <a href="mailto:youremail@example.com" data-tip="Email Isha here"><span class="link-icon email-icon" aria-hidden="true"></span><span>Email</span></a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" data-tip="Access Isha's LinkedIn here"><span class="link-icon linkedin-icon" aria-hidden="true"></span><span>LinkedIn</span></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" data-tip="See Isha's Instagram here"><span class="link-icon instagram-icon" aria-hidden="true"></span><span>Instagram</span></a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer" data-tip="Explore Isha's GitHub here"><span class="link-icon github-icon" aria-hidden="true"></span><span>GitHub</span></a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

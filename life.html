@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Recipes, workouts, hiking, photography, and other fun things by Isha Gupta.">
+    <title>Isha Gupta | Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="Isha Gupta home"><span class="brand-mark" aria-hidden="true"><span class="mark-i">i</span><span class="mark-g">g</span></span><span class="brand-name">Isha Gupta</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links" data-nav-links>
+          <a href="index.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="art.html">Art</a>
+          <a href="leadership.html">Leadership</a>
+          <a class="active-page" href="life.html">Life</a>
+          <a href="awards.html">Awards</a>
+          <a href="#site-footer">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero section-band">
+        <p class="eyebrow">Other fun things</p>
+        <h1>Life outside the laptop</h1>
+        <p class="hero-text">Recipes, workouts, hikes, photos, and the small hobbies that make the technical work feel more alive.</p>
+      </section>
+
+      <section class="section life-section">
+        <div class="life-grid">
+          <article class="life-panel recipe-panel">
+            <div><p class="panel-kicker">Recipes</p><h3>Current comfort rotation</h3><p>Chili crisp noodles, mango chia pudding, roasted veggie bowls, and weekend pancakes.</p></div>
+            <button class="tiny-action" type="button" data-random-recipe>Pick dinner</button>
+          </article>
+          <article class="life-panel workout-panel">
+            <div><p class="panel-kicker">Workouts</p><h3>Strong, steady, outdoorsy</h3><p>Strength training, long walks, mobility, and low-pressure consistency.</p></div>
+            <div class="meter" aria-label="Workout balance"><span style="--value: 72%"></span></div>
+          </article>
+          <article class="life-panel hiking-panel">
+            <div><p class="panel-kicker">Hiking</p><h3>Trail notes</h3><p>Wishlist: misty overlooks, sap green woods, picnic rocks, and post-hike chai.</p></div>
+            <div class="trail-map" aria-hidden="true"><span></span><span></span><span></span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section category-section">
+        <div class="category-grid">
+          <article><h3>Recipes</h3><p>Weeknight meals, family recipes, snacks, desserts, and cooking notes.</p></article>
+          <article><h3>Workouts</h3><p>Strength routines, running or walking goals, mobility plans, and reflections.</p></article>
+          <article><h3>Hiking</h3><p>Trail logs, favorite parks, packing lists, and route photos.</p></article>
+          <article><h3>Photography</h3><p>Photo walks, nature shots, travel collections, and visual essays.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer contact-footer" id="site-footer">
+      <div class="footer-copy"><p class="eyebrow">Contact</p><h2>Send a note.</h2><p>Update these links before publishing.</p></div>
+      <div class="footer-links">
+        <a href="mailto:youremail@example.com" data-tip="Email Isha here"><span class="link-icon email-icon" aria-hidden="true"></span><span>Email</span></a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" data-tip="Access Isha's LinkedIn here"><span class="link-icon linkedin-icon" aria-hidden="true"></span><span>LinkedIn</span></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" data-tip="See Isha's Instagram here"><span class="link-icon instagram-icon" aria-hidden="true"></span><span>Instagram</span></a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer" data-tip="Explore Isha's GitHub here"><span class="link-icon github-icon" aria-hidden="true"></span><span>GitHub</span></a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

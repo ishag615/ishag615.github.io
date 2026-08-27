@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder two</title>
+  <desc id="desc">A second colorful placeholder portrait frame for replacing with a personal photo.</desc>
+  <rect width="420" height="520" rx="34" fill="#c8e7ff"/>
+  <path d="M0 369c92-66 178-77 258-34 65 35 112 34 162-8v193H0z" fill="#d9f0d5"/>
+  <circle cx="210" cy="202" r="86" fill="#fff9fb"/>
+  <circle cx="210" cy="180" r="58" fill="#f46d91" opacity=".85"/>
+  <path d="M119 414c26-71 68-106 91-106s65 35 91 106" fill="#a91f45"/>
+  <text x="210" y="475" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#24171d">photo slot</text>
+</svg>

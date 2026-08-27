@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">Photography placeholder</title>
+  <desc id="desc">A stylized landscape placeholder for photography.</desc>
+  <rect width="640" height="520" fill="#c8e7ff"/>
+  <circle cx="500" cy="118" r="62" fill="#ffe88f"/>
+  <path d="M0 402 151 234l117 122 91-94 281 178v80H0z" fill="#4e8b55"/>
+  <path d="M0 454c106-44 213-49 320-16s213 30 320-9v91H0z" fill="#fff9fb" opacity=".85"/>
+</svg>
