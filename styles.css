@@ -250,6 +250,18 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.hero-tagline {
+  font-family: Arial, Inter, system-ui, sans-serif;
+  font-size: clamp(2.6rem, 5.3vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.06;
+  max-width: 13ch;
+}
+
+.hero-tagline span {
+  color: var(--crimson);
+}
+
 h3 {
   font-size: 1.25rem;
   line-height: 1.2;
@@ -264,6 +276,10 @@ h3 {
   color: var(--muted);
   font-size: 1.05rem;
   max-width: 66ch;
+}
+
+.hero-text {
+  color: var(--ink);
 }
 
 .inline-note a {
