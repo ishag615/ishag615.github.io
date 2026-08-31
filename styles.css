@@ -737,6 +737,18 @@ h3 {
 
 .mission-section {
   padding-top: 3rem;
+  text-align: center;
+}
+
+.mission-section .section-heading {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 52rem;
+}
+
+.mission-section .section-heading p {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mission-grid {
@@ -748,8 +760,41 @@ h3 {
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.86);
   border-radius: 8px;
-  box-shadow: 0 16px 42px rgba(70, 36, 49, 0.1);
+  box-shadow: 0 18px 38px rgba(70, 36, 49, 0.1), 0 4px 12px rgba(70, 36, 49, 0.06);
   min-height: 18rem;
+}
+
+.mission-card {
+  position: relative;
+  text-align: center;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.mission-card::after {
+  background: linear-gradient(90deg, transparent, rgba(250, 198, 82, 0.65), transparent);
+  content: "";
+  height: 3px;
+  left: 1.2rem;
+  opacity: 0;
+  position: absolute;
+  right: 1.2rem;
+  top: 0;
+  transform: scaleX(0.4);
+  transform-origin: center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.mission-card:hover,
+.mission-card:focus-within {
+  border-color: rgba(143, 42, 63, 0.24);
+  box-shadow: 0 24px 48px rgba(70, 36, 49, 0.16), 0 8px 18px rgba(70, 36, 49, 0.08);
+  transform: translateY(-0.35rem);
+}
+
+.mission-card:hover::after,
+.mission-card:focus-within::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .mission-icon {
@@ -761,19 +806,54 @@ h3 {
   height: 2.8rem;
   justify-content: center;
   margin-bottom: 1.3rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 180ms ease;
   width: 2.8rem;
+}
+
+.mission-card:hover .mission-icon,
+.mission-card:focus-within .mission-icon {
+  transform: translateY(-0.12rem) scale(1.06);
+}
+
+.mission-icon::before {
+  background: currentColor;
+  content: "";
+  display: block;
+  height: 1.35rem;
+  width: 1.35rem;
 }
 
 .security-card .mission-icon {
   background: var(--sap);
 }
 
+.mission-lock-icon::before {
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2ZM10 7a2 2 0 0 1 4 0v2h-4V7Zm3 9.73V18h-2v-1.27a2 2 0 1 1 2 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2ZM10 7a2 2 0 0 1 4 0v2h-4V7Zm3 9.73V18h-2v-1.27a2 2 0 1 1 2 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 .creativity-card .mission-icon {
   background: var(--hot-pink);
 }
 
+.mission-palette-icon::before {
+  height: 1.45rem;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M12 3C7.03 3 3 6.58 3 11c0 3.86 3.13 7 7 7h1.3c.92 0 1.44.93 1.02 1.74-.43.83.17 1.82 1.1 1.82H14c3.87 0 7-3.13 7-7C21 8.19 16.97 3 12 3Zm-4.5 8.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm3-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm2.5 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  width: 1.45rem;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M12 3C7.03 3 3 6.58 3 11c0 3.86 3.13 7 7 7h1.3c.92 0 1.44.93 1.02 1.74-.43.83.17 1.82 1.1 1.82H14c3.87 0 7-3.13 7-7C21 8.19 16.97 3 12 3Zm-4.5 8.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm3-3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm2.5 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 .wellness-card .mission-icon {
   background: var(--crimson);
+}
+
+.mission-brain-icon::before {
+  height: 1.35rem;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M12 21s-7.5-4.65-9.6-9.15C.95 8.75 2.75 5 6.25 5c2.05 0 3.42 1.15 4.25 2.2C11.33 6.15 12.7 5 14.75 5c3.5 0 5.3 3.75 3.85 6.85C16.5 16.35 12 21 12 21Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  width: 1.35rem;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='black' d='M12 21s-7.5-4.65-9.6-9.15C.95 8.75 2.75 5 6.25 5c2.05 0 3.42 1.15 4.25 2.2C11.33 6.15 12.7 5 14.75 5c3.5 0 5.3 3.75 3.85 6.85C16.5 16.35 12 21 12 21Z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .professional-assets {
