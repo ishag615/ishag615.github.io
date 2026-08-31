@@ -7,6 +7,17 @@ const dialog = document.querySelector("[data-dialog]");
 const dialogTitle = document.querySelector("[data-dialog-title]");
 const closeDialog = document.querySelector("[data-close-dialog]");
 const typewriter = document.querySelector("[data-typewriter]");
+const artTrack = document.querySelector("[data-art-track]");
+const artworkDialog = document.querySelector("[data-artwork-dialog]");
+const artworkImage = document.querySelector("[data-artwork-image]");
+const artworkTitle = document.querySelector("[data-artwork-title]");
+const artworkDimensions = document.querySelector("[data-artwork-dimensions]");
+const artworkMedium = document.querySelector("[data-artwork-medium]");
+const artworkDate = document.querySelector("[data-artwork-date]");
+const artworkStory = document.querySelector("[data-artwork-story]");
+const artworkClose = document.querySelector("[data-artwork-close]");
+const artFilterButtons = document.querySelectorAll("[data-art-filter]");
+const galleryWorks = document.querySelectorAll("[data-gallery-work]");
 
 const recipes = [
   "Chili crisp noodles with cucumber ribbons",
@@ -42,6 +53,19 @@ filterButtons.forEach((button) => {
   });
 });
 
+artFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.artFilter || "all";
+    artFilterButtons.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+
+    galleryWorks.forEach((work) => {
+      const medium = work.dataset.mediumFilter || "";
+      work.classList.toggle("hidden", filter !== "all" && medium !== filter);
+    });
+  });
+});
+
 recipeButton?.addEventListener("click", () => {
   const nextRecipe = recipes[Math.floor(Math.random() * recipes.length)];
   recipeButton.textContent = nextRecipe;
@@ -57,6 +81,46 @@ document.querySelectorAll("[data-gallery]").forEach((item) => {
 
 closeDialog?.addEventListener("click", () => {
   dialog?.close();
+});
+
+document.querySelectorAll("[data-scroll-art]").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!artTrack) return;
+    const direction = button.dataset.scrollArt === "prev" ? -1 : 1;
+    artTrack.scrollBy({ left: direction * artTrack.clientWidth * 0.78, behavior: "smooth" });
+  });
+});
+
+document.querySelectorAll("[data-artwork-card]").forEach((card) => {
+  card.addEventListener("click", () => {
+    if (!(artworkDialog instanceof HTMLDialogElement)) return;
+    const details = card.dataset;
+
+    if (artworkImage instanceof HTMLImageElement) {
+      artworkImage.src = details.image || "";
+      artworkImage.alt = details.title || "Featured artwork";
+    }
+
+    if (artworkTitle) artworkTitle.textContent = details.title || "Featured artwork";
+    if (artworkDimensions) artworkDimensions.textContent = details.dimensions || "Dimensions to add";
+    if (artworkMedium) artworkMedium.textContent = details.medium || "Medium to add";
+    if (artworkDate) artworkDate.textContent = details.date || "Completion date to add";
+    if (artworkStory) artworkStory.textContent = details.story || "Inspiration and story to add.";
+
+    artworkDialog.showModal();
+  });
+});
+
+artworkClose?.addEventListener("click", () => {
+  if (artworkDialog instanceof HTMLDialogElement) {
+    artworkDialog.close();
+  }
+});
+
+artworkDialog?.addEventListener("click", (event) => {
+  if (event.target === artworkDialog && artworkDialog instanceof HTMLDialogElement) {
+    artworkDialog.close();
+  }
 });
 
 if (typewriter instanceof HTMLElement) {

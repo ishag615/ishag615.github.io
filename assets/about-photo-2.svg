@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" role="img" aria-labelledby="title desc">
-  <title id="title">About photo placeholder two</title>
-  <desc id="desc">Wide placeholder for an outdoor or candid photo.</desc>
-  <rect width="520" height="420" fill="#d9f0d5"/>
-  <path d="M0 312 128 175l86 76 74-110 232 197v82H0z" fill="#4e8b55"/>
-  <circle cx="420" cy="96" r="52" fill="#ffe88f"/>
-  <text x="260" y="384" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#24171d">trail / candid</text>
-</svg>

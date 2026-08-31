@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 720" role="img" aria-labelledby="title desc">
-  <title id="title">About photo placeholder one</title>
-  <desc id="desc">Tall placeholder for a personal about photo.</desc>
-  <rect width="520" height="720" fill="#ffd3df"/>
-  <circle cx="260" cy="260" r="118" fill="#fff9fb"/>
-  <path d="M97 636c36-159 120-238 163-238s127 79 163 238" fill="#a91f45"/>
-  <path d="M77 104c119-50 241-50 366 0" stroke="#4e8b55" stroke-width="18" stroke-linecap="round" fill="none"/>
-  <text x="260" y="682" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#24171d">your portrait</text>
-</svg>

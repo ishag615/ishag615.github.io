@@ -34,33 +34,129 @@
     </header>
 
     <main id="main">
-      <section class="page-hero section-band">
-        <p class="eyebrow">Creative work</p>
-        <h1>Artwork by medium</h1>
-        <p class="hero-text">A categorized gallery for finished pieces, process images, sketchbook studies, and photography. Replace the placeholders with real scans or photos as your archive grows.</p>
-      </section>
-
-      <section class="section category-section">
-        <div class="category-grid art-category-grid">
-          <article><img src="assets/gallery-art.svg" alt="Watercolor artwork placeholder"><h3>Watercolors</h3><p>Transparent washes, botanical studies, landscapes, and color experiments.</p></article>
-          <article><img src="assets/gallery-art.svg" alt="Acrylic artwork placeholder"><h3>Acrylic</h3><p>Bold paintings, texture studies, canvases, and mixed-media pieces.</p></article>
-          <article><img src="assets/gallery-sketch.svg" alt="Charcoal artwork placeholder"><h3>Charcoal</h3><p>Figure studies, tonal drawings, expressive marks, and value practice.</p></article>
-          <article><img src="assets/gallery-sketch.svg" alt="Pencil artwork placeholder"><h3>Pencil</h3><p>Sketchbook pages, observational drawing, planning thumbnails, and studies.</p></article>
-          <article><img src="assets/gallery-photo.svg" alt="Photography placeholder"><h3>Photography</h3><p>Hiking photos, campus light, travel moments, and everyday compositions.</p></article>
-          <article><img src="assets/gallery-art.svg" alt="Experimental artwork placeholder"><h3>Experiments</h3><p>Digital studies, collage, process notes, and pieces that cross categories.</p></article>
+      <section class="page-hero section-band art-hero">
+        <img class="art-hero-watermark" src="assets/ladyWithBook.JPG" alt="" aria-hidden="true">
+        <div class="art-hero-copy">
+          <p class="eyebrow">Artwork by Isha!</p>
+          <h1>Stories told through paint & graphite...</h1>
+          <p class="hero-text">Art has been a part of my life for as long as I can remember. I grew up painting, experimenting with different mediums, and somewhere along the way, I began to understand just how powerful creativity can be. To me, art has always been a way of telling stories—a reminder that a picture really can say a thousand words.
+          </p>
+          <p class ="hero-text">
+            This gallery brings together some of my most treasured works. Many are originals inspired by my travels, experiences, and the people I’ve met along the way, while others are studies of works by artists I admire, created as a way to practice, learn, and grow.</p>
         </div>
       </section>
+
+      <section class="section featured-works-section">
+        <div class="featured-works-heading">
+          <div>
+            <p class="eyebrow">Featured works</p>
+            <h2>A closer look</h2>
+          </div>
+          <div class="featured-scroll-controls" aria-label="Scroll featured works">
+            <button type="button" data-scroll-art="prev" aria-label="Scroll featured works left">&larr;</button>
+            <button type="button" data-scroll-art="next" aria-label="Scroll featured works right">&rarr;</button>
+          </div>
+        </div>
+        <div class="featured-works-track" data-art-track>
+          <button class="featured-work-card" type="button" data-artwork-card data-title="Layered Canvas Study" data-image="assets/48X36'' Canvas.JPG" data-dimensions="48 x 36 in" data-medium="Acrylic on canvas" data-date="Completion date to add" data-story="A large-format study focused on movement, color relationships, and building depth through layered paint.">
+            <img src="assets/48X36'' Canvas.JPG" alt="Layered Canvas Study">
+            <span><strong>Layered Canvas Study</strong><small>Acrylic on canvas</small></span>
+          </button>
+          <button class="featured-work-card" type="button" data-artwork-card data-title="Bold Form Study" data-image="assets/36X36''Canvas.JPG" data-dimensions="36 x 36 in" data-medium="Acrylic on canvas" data-date="Completion date to add" data-story="An exploration of composition, scale, and contrast through a square canvas format.">
+            <img src="assets/36X36''Canvas.JPG" alt="Bold Form Study">
+            <span><strong>Bold Form Study</strong><small>Acrylic on canvas</small></span>
+          </button>
+          <button class="featured-work-card" type="button" data-artwork-card data-title="Expressive Color Field" data-image="assets/36X24''Canvas.JPG" data-dimensions="36 x 24 in" data-medium="Acrylic on canvas" data-date="Completion date to add" data-story="A piece shaped by color, gesture, and the feeling of balancing structure with spontaneity.">
+            <img src="assets/36X24''Canvas.JPG" alt="Expressive Color Field">
+            <span><strong>Expressive Color Field</strong><small>Acrylic on canvas</small></span>
+          </button>
+          <button class="featured-work-card" type="button" data-artwork-card data-title="Portrait Moment" data-image="assets/30X24'' Canvas.JPG" data-dimensions="30 x 24 in" data-medium="Acrylic on canvas" data-date="Completion date to add" data-story="A study in mood and presence, using color and form to hold a quieter story inside the frame.">
+            <img src="assets/30X24'' Canvas.JPG" alt="Portrait Moment">
+            <span><strong>Portrait Moment</strong><small>Acrylic on canvas</small></span>
+          </button>
+          <button class="featured-work-card" type="button" data-artwork-card data-title="Compact Canvas Study" data-image="assets/16X20''Canvas.JPG" data-dimensions="16 x 20 in" data-medium="Acrylic on canvas" data-date="Completion date to add" data-story="A smaller-format work for practicing detail, pacing, and intentional brushwork.">
+            <img src="assets/16X20''Canvas.JPG" alt="Compact Canvas Study">
+            <span><strong>Compact Canvas Study</strong><small>Acrylic on canvas</small></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section explore-gallery-section">
+        <div class="explore-gallery-heading">
+          <p class="eyebrow">Explore the gallery</p>
+          <h2>Browse by medium</h2>
+        </div>
+        <div class="art-filter-tabs" aria-label="Filter artwork by medium">
+          <button class="active" type="button" data-art-filter="all">All works</button>
+          <button type="button" data-art-filter="watercolor">Watercolors</button>
+          <button type="button" data-art-filter="graphite">Graphite</button>
+          <button type="button" data-art-filter="charcoal">Charcoal</button>
+          <button type="button" data-art-filter="acrylic">Acrylic</button>
+          <button type="button" data-art-filter="mixed-media">Mixed media</button>
+        </div>
+        <div class="explore-gallery-grid">
+          <button class="gallery-work-card" type="button" data-gallery-work data-artwork-card data-medium-filter="acrylic" data-title="Layered Canvas Study" data-image="assets/48X36'' Canvas.JPG" data-dimensions="48 x 36 in" data-medium="Acrylic on canvas" data-date="Completion date to add" data-story="A large-format study focused on movement, color relationships, and building depth through layered paint.">
+            <img src="assets/48X36'' Canvas.JPG" alt="Layered Canvas Study">
+            <span><strong>Layered Canvas Study</strong><small>Acrylic</small></span>
+          </button>
+          <button class="gallery-work-card" type="button" data-gallery-work data-artwork-card data-medium-filter="acrylic" data-title="Bold Form Study" data-image="assets/36X36''Canvas.JPG" data-dimensions="36 x 36 in" data-medium="Acrylic on canvas" data-date="Completion date to add" data-story="An exploration of composition, scale, and contrast through a square canvas format.">
+            <img src="assets/36X36''Canvas.JPG" alt="Bold Form Study">
+            <span><strong>Bold Form Study</strong><small>Acrylic</small></span>
+          </button>
+          <button class="gallery-work-card" type="button" data-gallery-work data-artwork-card data-medium-filter="watercolor" data-title="Travel Wash Study" data-image="assets/20200422_164625.jpg" data-dimensions="Dimensions to add" data-medium="Watercolor on paper" data-date="Completion date to add" data-story="A watercolor study inspired by observation, softness, and the way color can hold memory.">
+            <img src="assets/20200422_164625.jpg" alt="Travel Wash Study">
+            <span><strong>Travel Wash Study</strong><small>Watercolor</small></span>
+          </button>
+          <button class="gallery-work-card" type="button" data-gallery-work data-artwork-card data-medium-filter="graphite" data-title="Graphite Study" data-image="assets/20190930_222406.jpg" data-dimensions="Dimensions to add" data-medium="Graphite on paper" data-date="Completion date to add" data-story="A graphite piece focused on line, shadow, and careful observation.">
+            <img src="assets/20190930_222406.jpg" alt="Graphite Study">
+            <span><strong>Graphite Study</strong><small>Graphite</small></span>
+          </button>
+          <button class="gallery-work-card" type="button" data-gallery-work data-artwork-card data-medium-filter="charcoal" data-title="Charcoal Contrast Study" data-image="assets/20200328_182039.jpg" data-dimensions="Dimensions to add" data-medium="Charcoal on paper" data-date="Completion date to add" data-story="A charcoal study built around contrast, gesture, and expressive marks.">
+            <img src="assets/20200328_182039.jpg" alt="Charcoal Contrast Study">
+            <span><strong>Charcoal Contrast Study</strong><small>Charcoal</small></span>
+          </button>
+          <button class="gallery-work-card" type="button" data-gallery-work data-artwork-card data-medium-filter="mixed-media" data-title="Mixed Media Experiment" data-image="assets/20200717_211010.jpg" data-dimensions="Dimensions to add" data-medium="Mixed media" data-date="Completion date to add" data-story="An experimental work combining process, texture, and layered visual ideas.">
+            <img src="assets/20200717_211010.jpg" alt="Mixed Media Experiment">
+            <span><strong>Mixed Media Experiment</strong><small>Mixed media</small></span>
+          </button>
+          <button class="gallery-work-card" type="button" data-gallery-work data-artwork-card data-medium-filter="acrylic" data-title="Compact Canvas Study" data-image="assets/16X20''Canvas.JPG" data-dimensions="16 x 20 in" data-medium="Acrylic on canvas" data-date="Completion date to add" data-story="A smaller-format work for practicing detail, pacing, and intentional brushwork.">
+            <img src="assets/16X20''Canvas.JPG" alt="Compact Canvas Study">
+            <span><strong>Compact Canvas Study</strong><small>Acrylic</small></span>
+          </button>
+          <button class="gallery-work-card" type="button" data-gallery-work data-artwork-card data-medium-filter="mixed-media" data-title="Process Study" data-image="assets/20191007_070634.jpg" data-dimensions="Dimensions to add" data-medium="Mixed media" data-date="Completion date to add" data-story="A process-driven piece shaped by experimentation and visual exploration.">
+            <img src="assets/20191007_070634.jpg" alt="Process Study">
+            <span><strong>Process Study</strong><small>Mixed media</small></span>
+          </button>
+        </div>
+      </section>
+
+      <dialog class="artwork-dialog" data-artwork-dialog aria-label="Artwork details">
+        <button class="dialog-close" type="button" data-artwork-close aria-label="Close artwork details">x</button>
+        <div class="artwork-dialog-content">
+          <img data-artwork-image src="assets/48X36'' Canvas.JPG" alt="">
+          <div class="artwork-dialog-copy">
+            <p class="eyebrow">Featured work</p>
+            <h2 data-artwork-title>Layered Canvas Study</h2>
+            <dl class="artwork-meta">
+              <div><dt>Dimensions</dt><dd data-artwork-dimensions>48 x 36 in</dd></div>
+              <div><dt>Medium</dt><dd data-artwork-medium>Acrylic on canvas</dd></div>
+              <div><dt>Completed</dt><dd data-artwork-date>Completion date to add</dd></div>
+            </dl>
+            <h3>Inspiration / story</h3>
+            <p data-artwork-story>A large-format study focused on movement, color relationships, and building depth through layered paint.</p>
+          </div>
+        </div>
+      </dialog>
     </main>
 
     <footer class="footer contact-footer" id="site-footer">
-      <div class="footer-copy"><p class="eyebrow">Contact</p><h2>Want to talk art or projects?</h2><p>Update these links before publishing.</p></div>
+      <div class="footer-copy"><p class="eyebrow">Contact</p><h2>Want to talk more about my art?</h2></div>
       <div class="footer-links">
-        <a href="mailto:youremail@example.com" data-tip="Email Isha here"><span class="link-icon email-icon" aria-hidden="true"></span><span>Email</span></a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" data-tip="Access Isha's LinkedIn here"><span class="link-icon linkedin-icon" aria-hidden="true"></span><span>LinkedIn</span></a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" data-tip="See Isha's Instagram here"><span class="link-icon instagram-icon" aria-hidden="true"></span><span>Instagram</span></a>
-        <a href="https://github.com/" target="_blank" rel="noreferrer" data-tip="Explore Isha's GitHub here"><span class="link-icon github-icon" aria-hidden="true"></span><span>GitHub</span></a>
+        <a href="mailto:isha060105@gmail.com" data-tip="Email Isha here"><span class="link-icon email-icon" aria-hidden="true"></span><span>Email</span></a>
+        <a href="https://www.linkedin.com/in/ishagupta7/" target="_blank" rel="noreferrer" data-tip="Access Isha's LinkedIn here"><span class="link-icon linkedin-icon" aria-hidden="true"></span><span>LinkedIn</span></a>
+        <a href="https://www.instagram.com/isha_0106/" target="_blank" rel="noreferrer" data-tip="See Isha's Instagram here"><span class="link-icon instagram-icon" aria-hidden="true"></span><span>Instagram</span></a>
+        <a href="https://github.com/ishag615" target="_blank" rel="noreferrer" data-tip="Explore Isha's GitHub here"><span class="link-icon github-icon" aria-hidden="true"></span><span>GitHub</span></a>
       </div>
-    </footer>
     <script src="script.js"></script>
   </body>
 </html>
