@@ -6,6 +6,7 @@ const recipeButton = document.querySelector("[data-random-recipe]");
 const dialog = document.querySelector("[data-dialog]");
 const dialogTitle = document.querySelector("[data-dialog-title]");
 const closeDialog = document.querySelector("[data-close-dialog]");
+const typewriter = document.querySelector("[data-typewriter]");
 
 const recipes = [
   "Chili crisp noodles with cucumber ribbons",
@@ -57,6 +58,49 @@ document.querySelectorAll("[data-gallery]").forEach((item) => {
 closeDialog?.addEventListener("click", () => {
   dialog?.close();
 });
+
+if (typewriter instanceof HTMLElement) {
+  const text = typewriter.dataset.typewriter || "";
+  const highlightWords = new Set((typewriter.dataset.highlightWords || "").split(",").map((word) => word.trim()).filter(Boolean));
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!reducedMotion && text) {
+    const tokens = text.match(/\w+|\s+|[^\w\s]+/g) || [];
+    const typedNodes = [];
+    typewriter.textContent = "";
+    typewriter.classList.add("is-typing");
+
+    tokens.forEach((token) => {
+      const node = highlightWords.has(token) ? document.createElement("span") : document.createTextNode("");
+      if (node instanceof HTMLElement) {
+        node.className = "watermark-word";
+      }
+      typedNodes.push({ node, token, index: 0 });
+      typewriter.append(node);
+    });
+
+    let tokenIndex = 0;
+
+    const typeNextCharacter = () => {
+      const current = typedNodes[tokenIndex];
+      if (!current) {
+        typewriter.classList.remove("is-typing");
+        return;
+      }
+
+      current.node.textContent += current.token[current.index];
+      current.index += 1;
+
+      if (current.index >= current.token.length) {
+        tokenIndex += 1;
+      }
+
+      window.setTimeout(typeNextCharacter, current.token.trim() ? 68 : 22);
+    };
+
+    window.setTimeout(typeNextCharacter, 280);
+  }
+}
 
 document.addEventListener("pointerdown", (event) => {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
