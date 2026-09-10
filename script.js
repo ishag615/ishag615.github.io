@@ -9,15 +9,31 @@ const closeDialog = document.querySelector("[data-close-dialog]");
 const typewriter = document.querySelector("[data-typewriter]");
 const artTrack = document.querySelector("[data-art-track]");
 const artworkDialog = document.querySelector("[data-artwork-dialog]");
+const artworkCarousel = document.querySelector("[data-artwork-carousel]");
 const artworkImage = document.querySelector("[data-artwork-image]");
+const artworkPrevImage = document.querySelector("[data-artwork-prev-image]");
+const artworkNextImage = document.querySelector("[data-artwork-next-image]");
+const artworkLabel = document.querySelector("[data-artwork-label]");
 const artworkTitle = document.querySelector("[data-artwork-title]");
 const artworkDimensions = document.querySelector("[data-artwork-dimensions]");
 const artworkMedium = document.querySelector("[data-artwork-medium]");
 const artworkDate = document.querySelector("[data-artwork-date]");
 const artworkStory = document.querySelector("[data-artwork-story]");
 const artworkClose = document.querySelector("[data-artwork-close]");
+const artworkPrev = document.querySelector("[data-artwork-prev]");
+const artworkNext = document.querySelector("[data-artwork-next]");
+const artworkPreviewPrev = document.querySelector("[data-artwork-preview-prev]");
+const artworkPreviewNext = document.querySelector("[data-artwork-preview-next]");
 const artFilterButtons = document.querySelectorAll("[data-art-filter]");
 const galleryWorks = document.querySelectorAll("[data-gallery-work]");
+const artworkCards = document.querySelectorAll("[data-artwork-card]");
+
+let activeArtworkSet = [];
+let activeArtworkIndex = 0;
+let artworkTransitionTimer;
+let artworkWheelAccumulator = 0;
+let artworkWheelResetTimer;
+const artworkWheelThreshold = 46;
 
 const recipes = [
   "Chili crisp noodles with cucumber ribbons",
@@ -26,6 +42,13 @@ const recipes = [
   "Tomato soup and grilled cheese night",
   "Weekend pancakes with berries"
 ];
+
+artworkCards.forEach((card) => {
+  const title = card.dataset.title || card.querySelector("strong")?.textContent || "";
+  const baseWidth = card.classList.contains("featured-work-card") ? 17 : 13.5;
+  const width = Math.min(28, Math.max(baseWidth, 10 + title.length * 0.32));
+  card.style.setProperty("--art-card-width", `${width}rem`);
+});
 
 menuToggle?.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("open");
@@ -91,25 +114,96 @@ document.querySelectorAll("[data-scroll-art]").forEach((button) => {
   });
 });
 
-document.querySelectorAll("[data-artwork-card]").forEach((card) => {
+const getArtworkDetails = (card) => ({
+  title: card.dataset.title || "Featured artwork",
+  image: card.dataset.image || "",
+  dimensions: card.dataset.dimensions || "Dimensions to add",
+  medium: card.dataset.medium || "Medium to add",
+  date: card.dataset.date || "Completion date to add",
+  story: card.dataset.story || "Inspiration and story to add."
+});
+
+const getVisibleGalleryWorks = () => Array.from(galleryWorks).filter((work) => !work.classList.contains("hidden"));
+
+const setArtworkPreview = (image, card, fallbackAlt) => {
+  if (!(image instanceof HTMLImageElement) || !card) return;
+  const details = getArtworkDetails(card);
+  image.src = details.image;
+  image.alt = details.title || fallbackAlt;
+};
+
+const updateArtworkContent = () => {
+  const card = activeArtworkSet[activeArtworkIndex];
+  const details = getArtworkDetails(card);
+  const prevCard = activeArtworkSet[(activeArtworkIndex - 1 + activeArtworkSet.length) % activeArtworkSet.length];
+  const nextCard = activeArtworkSet[(activeArtworkIndex + 1) % activeArtworkSet.length];
+
+  if (artworkImage instanceof HTMLImageElement) {
+    artworkImage.src = details.image;
+    artworkImage.alt = details.title;
+  }
+
+  setArtworkPreview(artworkPrevImage, prevCard, "Previous artwork");
+  setArtworkPreview(artworkNextImage, nextCard, "Next artwork");
+
+  if (artworkTitle) artworkTitle.textContent = details.title;
+  if (artworkLabel) artworkLabel.textContent = card.matches("[data-gallery-work]") ? "Gallery" : "Featured work";
+  if (artworkDimensions) artworkDimensions.textContent = details.dimensions;
+  if (artworkMedium) artworkMedium.textContent = details.medium;
+  if (artworkDate) artworkDate.textContent = details.date;
+  if (artworkStory) artworkStory.textContent = details.story;
+};
+
+const showArtwork = (index, direction = 0) => {
+  if (!activeArtworkSet.length) return;
+  const nextIndex = (index + activeArtworkSet.length) % activeArtworkSet.length;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  window.clearTimeout(artworkTransitionTimer);
+
+  if (!direction || !artworkCarousel || prefersReducedMotion) {
+    activeArtworkIndex = nextIndex;
+    updateArtworkContent();
+    return;
+  }
+
+  artworkCarousel.dataset.artworkDirection = direction > 0 ? "next" : "prev";
+  artworkCarousel.classList.add("is-switching");
+
+  artworkTransitionTimer = window.setTimeout(() => {
+    activeArtworkIndex = nextIndex;
+    updateArtworkContent();
+    window.requestAnimationFrame(() => {
+      artworkCarousel.classList.remove("is-switching");
+    });
+  }, 140);
+};
+
+const moveArtwork = (direction) => {
+  showArtwork(activeArtworkIndex + direction, direction);
+};
+
+artworkCards.forEach((card) => {
   card.addEventListener("click", () => {
     if (!(artworkDialog instanceof HTMLDialogElement)) return;
-    const details = card.dataset;
+    activeArtworkSet = card.matches("[data-gallery-work]") ? getVisibleGalleryWorks() : Array.from(document.querySelectorAll("[data-art-track] [data-artwork-card]"));
+    activeArtworkIndex = activeArtworkSet.indexOf(card);
 
-    if (artworkImage instanceof HTMLImageElement) {
-      artworkImage.src = details.image || "";
-      artworkImage.alt = details.title || "Featured artwork";
+    if (activeArtworkIndex < 0) {
+      activeArtworkSet = Array.from(artworkCards);
+      activeArtworkIndex = activeArtworkSet.indexOf(card);
     }
 
-    if (artworkTitle) artworkTitle.textContent = details.title || "Featured artwork";
-    if (artworkDimensions) artworkDimensions.textContent = details.dimensions || "Dimensions to add";
-    if (artworkMedium) artworkMedium.textContent = details.medium || "Medium to add";
-    if (artworkDate) artworkDate.textContent = details.date || "Completion date to add";
-    if (artworkStory) artworkStory.textContent = details.story || "Inspiration and story to add.";
-
+    showArtwork(activeArtworkIndex);
     artworkDialog.showModal();
+    artworkCarousel?.focus({ preventScroll: true });
   });
 });
+
+artworkPrev?.addEventListener("click", () => moveArtwork(-1));
+artworkNext?.addEventListener("click", () => moveArtwork(1));
+artworkPreviewPrev?.addEventListener("click", () => moveArtwork(-1));
+artworkPreviewNext?.addEventListener("click", () => moveArtwork(1));
 
 artworkClose?.addEventListener("click", () => {
   if (artworkDialog instanceof HTMLDialogElement) {
@@ -122,6 +216,37 @@ artworkDialog?.addEventListener("click", (event) => {
     artworkDialog.close();
   }
 });
+
+artworkDialog?.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    moveArtwork(-1);
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    moveArtwork(1);
+  }
+});
+
+artworkDialog?.addEventListener("wheel", (event) => {
+  if (!artworkDialog?.open || Math.abs(event.deltaX) + Math.abs(event.deltaY) < 18) return;
+  event.preventDefault();
+
+  const delta = Math.abs(event.deltaX) >= Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+  const normalizedDelta = event.deltaMode === WheelEvent.DOM_DELTA_LINE ? delta * 16 : delta;
+  artworkWheelAccumulator += normalizedDelta;
+
+  window.clearTimeout(artworkWheelResetTimer);
+  artworkWheelResetTimer = window.setTimeout(() => {
+    artworkWheelAccumulator = 0;
+  }, 220);
+
+  if (!artworkCarousel || Math.abs(artworkWheelAccumulator) < artworkWheelThreshold || artworkCarousel.classList.contains("is-switching")) return;
+
+  moveArtwork(artworkWheelAccumulator > 0 ? 1 : -1);
+  artworkWheelAccumulator = 0;
+}, { passive: false });
 
 if (typewriter instanceof HTMLElement) {
   const text = typewriter.dataset.typewriter || "";
