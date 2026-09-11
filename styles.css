@@ -1259,9 +1259,9 @@ h3 {
 
 .explore-gallery-grid {
   align-items: stretch;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .gallery-work-card {
@@ -1272,10 +1272,7 @@ h3 {
   color: inherit;
   cursor: pointer;
   display: grid;
-  flex: 1 1 var(--art-card-width, 14.5rem);
   grid-template-rows: auto 1fr;
-  max-width: 25rem;
-  min-width: min(100%, 13.5rem);
   overflow: hidden;
   padding: 0;
   text-align: left;
