@@ -25,6 +25,7 @@ const artworkNext = document.querySelector("[data-artwork-next]");
 const artworkPreviewPrev = document.querySelector("[data-artwork-preview-prev]");
 const artworkPreviewNext = document.querySelector("[data-artwork-preview-next]");
 const artFilterButtons = document.querySelectorAll("[data-art-filter]");
+const exploreGalleryGrid = document.querySelector(".explore-gallery-grid");
 const galleryWorks = document.querySelectorAll("[data-gallery-work]");
 const artworkCards = document.querySelectorAll("[data-artwork-card]");
 
@@ -49,6 +50,12 @@ artworkCards.forEach((card) => {
   const width = Math.min(28, Math.max(baseWidth, 10 + title.length * 0.32));
   card.style.setProperty("--art-card-width", `${width}rem`);
 });
+
+if (exploreGalleryGrid) {
+  Array.from(exploreGalleryGrid.querySelectorAll("[data-gallery-work]"))
+    .sort((first, second) => (first.dataset.title || "").localeCompare(second.dataset.title || "", undefined, { sensitivity: "base" }))
+    .forEach((card) => exploreGalleryGrid.append(card));
+}
 
 menuToggle?.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("open");
@@ -123,7 +130,7 @@ const getArtworkDetails = (card) => ({
   story: card.dataset.story || "Inspiration and story to add."
 });
 
-const getVisibleGalleryWorks = () => Array.from(galleryWorks).filter((work) => !work.classList.contains("hidden"));
+const getVisibleGalleryWorks = () => Array.from(document.querySelectorAll(".explore-gallery-grid [data-gallery-work]")).filter((work) => !work.classList.contains("hidden"));
 
 const setArtworkPreview = (image, card, fallbackAlt) => {
   if (!(image instanceof HTMLImageElement) || !card) return;
