@@ -57,14 +57,71 @@
             </summary>
             <div class="project-panel-body">
               <div class="project-read-more">
-                <h3>Read more</h3>
+                <h3>Background and development</h3>
                 <p>I built Text Redactor to make removing sensitive information from documents simple and practical. Users can upload TXT, PDF, DOCX, or PPTX files, and the application scans the extracted text for common forms of personally identifiable information (PII), including Social Security numbers, financial information, email addresses, phone numbers, addresses, credentials, and IP addresses</p>
                 <p>Rather than automatically removing everything it detects, the application allows users to review the findings and choose what they want to redact before generating a protected copy. I also designed the redaction process around preserving the original document structure—for example, PDFs receive visual black redaction boxes while DOCX and PPTX content is masked in place. Uploaded and generated files are scoped to the user's browser session.</p>
+                <p>The application uses regular expressions (regex) to scan extracted document text for patterns associated with sensitive information, such as Social Security numbers, financial information, email addresses, phone numbers, IP addresses, and credentials. Flask handles the web application and file-processing workflow, while format-specific Python libraries process PDF, DOCX, and PPTX files and apply the selected redactions while preserving the document’s structure.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/Text-Redactor" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
               <div class="project-screenshots" aria-label="Text Redactor screenshots">
-                <figure class="project-shot terminal-shot"><span>scan.py</span><code>detect -> transform -> protect</code></figure>
-                <figure class="project-shot browser-shot"><span>Preview</span><code>protected image workflow</code></figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/text redact1.png" alt="Text Redactor upload screen">
+                  </button>
+                  <figcaption>Upload a document and choose the file type before scanning for sensitive information.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/text redact2.png" alt="Text Redactor detection review screen">
+                  </button>
+                  <figcaption>Review detected PII categories and decide which findings should be redacted.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/text redact3.png" alt="Text Redactor redacted output screen">
+                  </button>
+                  <figcaption>Generate a protected copy while preserving the structure of the original document.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-panel" data-project-panel open>
+            <summary>
+              <span class="project-summary-main">
+                <span class="project-area">Governance, Risk, Compliance</span>
+                <strong>Automated GRC Dashboard for MediSync Solutions</strong>
+                <span>A simulated healthcare GRC environment combining security assessments, risk management, and Python automation to support compliance monitoring and audit readiness.</span>
+              </span>
+              <span class="project-summary-meta"><span>HIPPA</span><span>NIST CSF 2.0</span><span>ISO 27001:2022</span><span>SOC 2</span><span>Python</span></span>
+            </summary>
+            <div class="project-panel-body">
+              <div class="project-read-more">
+                <h3>Background and development</h3>
+                <p>I built this project around MediSync Solutions, a fictional healthcare SaaS company, to simulate the work involved in managing GRC in a highly regulated environment. I conducted NIST CSF 2.0 and ISO 27001:2022 assessments, developed a risk register using likelihood × impact scoring, mapped controls across multiple frameworks, and created security policies to support HIPAA compliance and audit readiness.</p>
+                <p>To take the project beyond manual compliance work, I built a Python-based automation layer that reads assessment and risk data from Excel workbooks, calculates compliance scores, identifies control gaps and risks above the organization's risk appetite, and prioritizes areas requiring attention. The system can also generate a risk heat map and a formatted PDF compliance report for executive or audit review.</p>
+                <p>I brought these components together in a Streamlit dashboard, transforming the assessment data into KPI cards, compliance progress indicators, risk filtering, and downloadable reports. The workflow is designed to simulate, at a smaller scale, the compliance monitoring processes used by enterprise GRC platforms—connecting traditional GRC analysis with automation and data-driven reporting.</p>
+                <div class="card-links"><a href="https://github.com/ishag615/GRC-Portfolio" target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="Text Redactor screenshots">
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/text redact1.png" alt="Text Redactor upload screen">
+                  </button>
+                  <figcaption>Upload a document and choose the file type before scanning for sensitive information.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/text redact2.png" alt="Text Redactor detection review screen">
+                  </button>
+                  <figcaption>Review detected PII categories and decide which findings should be redacted.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/text redact3.png" alt="Text Redactor redacted output screen">
+                  </button>
+                  <figcaption>Generate a protected copy while preserving the structure of the original document.</figcaption>
+                </figure>
               </div>
             </div>
           </details>
@@ -72,7 +129,7 @@
           <details class="project-panel" data-project-panel>
             <summary>
               <span class="project-summary-main">
-                <span class="project-area">Secure programming</span>
+                <span class="project-area">Automated GRC Dashboard for MediSync Solutions</span>
                 <strong>Build It, Break It, Fix It</strong>
                 <span>C++ secure programming work focused on building, attacking, and hardening software.</span>
               </span>
@@ -236,6 +293,18 @@
           <a class="button primary" href="assets/Isha-Gupta-Resume.pdf">Open resume</a>
         </div>
       </section>
+
+      <dialog class="project-image-dialog" data-project-image-dialog aria-label="Project screenshot preview">
+        <button class="dialog-close" type="button" data-project-image-close aria-label="Close screenshot preview">x</button>
+        <div class="project-image-lightbox">
+          <button class="project-image-nav project-image-nav-prev" type="button" data-project-image-prev aria-label="Previous screenshot">&larr;</button>
+          <figure class="project-image-frame">
+            <img data-project-image-viewer src="assets/text redact1.png" alt="">
+            <figcaption data-project-image-caption></figcaption>
+          </figure>
+          <button class="project-image-nav project-image-nav-next" type="button" data-project-image-next aria-label="Next screenshot">&rarr;</button>
+        </div>
+      </dialog>
     </main>
 
     <footer class="footer contact-footer" id="site-footer">

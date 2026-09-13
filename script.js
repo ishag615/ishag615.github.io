@@ -3,6 +3,13 @@ const navLinks = document.querySelector("[data-nav-links]");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const projectCards = document.querySelectorAll(".project-card");
 const projectPanels = document.querySelectorAll("[data-project-panel]");
+const projectScreenshotButtons = document.querySelectorAll("[data-project-screenshot]");
+const projectImageDialog = document.querySelector("[data-project-image-dialog]");
+const projectImageViewer = document.querySelector("[data-project-image-viewer]");
+const projectImageCaption = document.querySelector("[data-project-image-caption]");
+const projectImageClose = document.querySelector("[data-project-image-close]");
+const projectImagePrev = document.querySelector("[data-project-image-prev]");
+const projectImageNext = document.querySelector("[data-project-image-next]");
 const ideaForm = document.querySelector("[data-idea-form]");
 const ideaInput = document.querySelector("[data-idea-input]");
 const ideaTrap = document.querySelector("[data-idea-trap]");
@@ -44,6 +51,8 @@ let artworkTransitionTimer;
 let artworkWheelAccumulator = 0;
 let artworkWheelResetTimer;
 const artworkWheelThreshold = 46;
+let activeProjectScreenshots = [];
+let activeProjectScreenshotIndex = 0;
 
 const recipes = [
   "Chili crisp noodles with cucumber ribbons",
@@ -102,6 +111,77 @@ projectPanels.forEach((panel) => {
       }
     });
   });
+});
+
+const getProjectScreenshotDetails = (button) => {
+  const image = button.querySelector("img");
+  const caption = button.closest("figure")?.querySelector("figcaption")?.textContent?.trim() || "";
+
+  return {
+    src: image?.getAttribute("src") || "",
+    alt: image?.getAttribute("alt") || "Project screenshot",
+    caption
+  };
+};
+
+const showProjectScreenshot = (index) => {
+  if (!activeProjectScreenshots.length) return;
+  activeProjectScreenshotIndex = (index + activeProjectScreenshots.length) % activeProjectScreenshots.length;
+  const screenshot = activeProjectScreenshots[activeProjectScreenshotIndex];
+
+  if (projectImageViewer instanceof HTMLImageElement) {
+    projectImageViewer.src = screenshot.src;
+    projectImageViewer.alt = screenshot.alt;
+  }
+
+  if (projectImageCaption) {
+    projectImageCaption.textContent = screenshot.caption;
+  }
+};
+
+const moveProjectScreenshot = (direction) => {
+  showProjectScreenshot(activeProjectScreenshotIndex + direction);
+};
+
+projectScreenshotButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!(projectImageDialog instanceof HTMLDialogElement)) return;
+
+    const projectPanel = button.closest("[data-project-panel]");
+    const buttons = Array.from(projectPanel?.querySelectorAll("[data-project-screenshot]") || []);
+    activeProjectScreenshots = buttons.map(getProjectScreenshotDetails);
+    activeProjectScreenshotIndex = buttons.indexOf(button);
+
+    showProjectScreenshot(activeProjectScreenshotIndex);
+    projectImageDialog.showModal();
+  });
+});
+
+projectImagePrev?.addEventListener("click", () => moveProjectScreenshot(-1));
+projectImageNext?.addEventListener("click", () => moveProjectScreenshot(1));
+
+projectImageClose?.addEventListener("click", () => {
+  if (projectImageDialog instanceof HTMLDialogElement) {
+    projectImageDialog.close();
+  }
+});
+
+projectImageDialog?.addEventListener("click", (event) => {
+  if (event.target === projectImageDialog && projectImageDialog instanceof HTMLDialogElement) {
+    projectImageDialog.close();
+  }
+});
+
+projectImageDialog?.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    moveProjectScreenshot(-1);
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    moveProjectScreenshot(1);
+  }
 });
 
 const validateProjectIdea = (value) => {
