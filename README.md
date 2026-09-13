@@ -24,6 +24,19 @@ python3 -m http.server 8000
 
 Then visit `http://localhost:8000`.
 
+To run the suggestion backend and admin view:
+
+```bash
+SUGGESTIONS_ADMIN_TOKEN="choose-a-long-random-token" npm start
+```
+
+Then visit:
+
+- Site: `http://127.0.0.1:3000/projects.html`
+- Admin suggestions: `http://127.0.0.1:3000/suggestions-admin.html`
+
+Suggestions are saved locally to `data/suggestions.jsonl`, which is intentionally ignored by git. The admin page requires the same `SUGGESTIONS_ADMIN_TOKEN` value.
+
 ## Publish on GitHub Pages
 
 1. Push this repository to GitHub.

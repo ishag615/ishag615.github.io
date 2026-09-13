@@ -35,76 +35,190 @@
 
     <main id="main">
       <section class="page-hero section-band">
-        <p class="eyebrow">Tech Projects Here</p>
-        <h1>Featured GitHub projects</h1>
-        <p class="hero-text">A home for technical work across Cybersecurity, compliance, automation,and software engineering.</p>
+        <p class="eyebrow">IDEAS IN ACTION</p>
+        <h1>Building for the real world</h1>
+        <p class="hero-text">I enjoy taking what I learn beyond the classroom and putting it into practice. Here are some of the projects through which I've explored new technologies, solved problems, and strengthened my skills.</p>
       </section>
 
-      <section class="section">
-        
-        <div class="project-grid">
-          <article class="project-card" data-category="ai security web">
-            <div class="card-topline"><span>Featured</span><span>AI + Security</span></div>
-            <h3>Image Protection</h3>
-            <p>A Python-based project exploring ways to protect images in AI-adjacent workflows, with a small web layer included in the repository.</p>
-            <div class="tag-row"><span>Python</span><span>HTML</span><span>MIT</span></div>
-            <div class="card-links"><a href="https://github.com/ishag615/Image_protection" target="_blank" rel="noreferrer">GitHub</a></div>
-          </article>
-          <article class="project-card" data-category="security systems coursework">
-            <div class="card-topline"><span>Secure Programming</span><span>C++</span></div>
-            <h3>Build It, Break It, Fix It</h3>
-            <p>Final project for Secure Programming, focused on building software, testing how it fails, and hardening it through fixes.</p>
-            <div class="tag-row"><span>C++</span><span>Makefile</span><span>MIT</span></div>
-            <div class="card-links"><a href="https://github.com/ishag615/Build_It-Break_It-Fix_It" target="_blank" rel="noreferrer">GitHub</a></div>
-          </article>
-          <article class="project-card" data-category="systems coursework">
-            <div class="card-topline"><span>Coursework</span><span>C++</span></div>
-            <h3>CS-23001</h3>
-            <p>C++ coursework repository demonstrating data structures, programming fundamentals, and Makefile-based project organization.</p>
-            <div class="tag-row"><span>C++</span><span>Makefile</span><span>Coursework</span></div>
-            <div class="card-links"><a href="https://github.com/ishag615/CS-23001" target="_blank" rel="noreferrer">GitHub</a></div>
-          </article>
-          <article class="project-card" data-category="systems coursework">
-            <div class="card-topline"><span>Coursework</span><span>C++</span></div>
-            <h3>CS-44001</h3>
-            <p>C++ coursework repository for advanced computer science practice, organized around compiled projects and systems-level problem solving.</p>
-            <div class="tag-row"><span>C++</span><span>Makefile</span><span>Coursework</span></div>
-            <div class="card-links"><a href="https://github.com/ishag615/CS-44001" target="_blank" rel="noreferrer">GitHub</a></div>
-          </article>
-          <article class="project-card" data-category="systems coursework">
-            <div class="card-topline"><span>Systems</span><span>C</span></div>
-            <h3>Operating Systems</h3>
-            <p>Operating systems project work in C with shell and Makefile components, focused on lower-level programming concepts.</p>
-            <div class="tag-row"><span>C</span><span>Shell</span><span>Makefile</span></div>
-            <div class="card-links"><a href="https://github.com/ishag615/Operating_Systems" target="_blank" rel="noreferrer">GitHub</a></div>
-          </article>
-          <article class="project-card" data-category="web coursework">
-            <div class="card-topline"><span>Team Project</span><span>Web</span></div>
-            <h3>SoftwareEngGroupA</h3>
-            <p>Collaborative software engineering project built with JavaScript, HTML, and CSS, with a deployed GitHub Pages site.</p>
-            <div class="tag-row"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
-            <div class="card-links"><a href="https://github.com/Jonathan-Lanham/SoftwareEngGroupA" target="_blank" rel="noreferrer">GitHub</a></div>
-          </article>
-          <article class="project-card" data-category="web">
-            <div class="card-topline"><span>Capstone</span><span>Web App</span></div>
-            <h3>Capstone</h3>
-            <p>Collaborative JavaScript capstone project for the Tori website, with a live Vercel deployment available.</p>
-            <div class="tag-row"><span>JavaScript</span><span>Vercel</span><span>Team</span></div>
-            <div class="card-links"><a href="https://github.com/n-widmer/Capstone" target="_blank" rel="noreferrer">GitHub</a><a href="https://capstone-five-self.vercel.app" target="_blank" rel="noreferrer">Live site</a></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section category-section">
+      <section class="section projects-accordion-section">
         <div class="section-heading">
-          <p class="eyebrow">Project areas</p>
-          <h2>How I group the work</h2>
+          <p class="eyebrow">Selected work</p>
+          <h2>Project case notes</h2>
         </div>
-        <div class="category-grid">
-          <article><h3>AI and security</h3><p>Projects that explore how emerging tools can be protected, tested, and used responsibly.</p></article>
-          <article><h3>Secure programming</h3><p>Work focused on finding weaknesses, understanding failures, and improving software resilience.</p></article>
-          <article><h3>Systems and C/C++</h3><p>Coursework and projects that build comfort with lower-level programming and compiled workflows.</p></article>
-          <article><h3>Web and team projects</h3><p>Collaborative applications, deployed sites, and software engineering work with real users in mind.</p></article>
+        <div class="project-accordion" data-project-accordion>
+          <details class="project-panel" data-project-panel open>
+            <summary>
+              <span class="project-summary-main">
+                <span class="project-area">Cybersecurity</span>
+                <strong>Text Redactor</strong>
+                <span>A privacy-focused web application that detects and redacts sensitive personal information from documents while preserving their original format.</span>
+              </span>
+              <span class="project-summary-meta"><span>Python</span><span>HTML</span><span>CSS</span></span>
+            </summary>
+            <div class="project-panel-body">
+              <div class="project-read-more">
+                <h3>Read more</h3>
+                <p>I built Text Redactor to make removing sensitive information from documents simple and practical. Users can upload TXT, PDF, DOCX, or PPTX files, and the application scans the extracted text for common forms of personally identifiable information (PII), including Social Security numbers, financial information, email addresses, phone numbers, addresses, credentials, and IP addresses</p>
+                <p>Rather than automatically removing everything it detects, the application allows users to review the findings and choose what they want to redact before generating a protected copy. I also designed the redaction process around preserving the original document structure—for example, PDFs receive visual black redaction boxes while DOCX and PPTX content is masked in place. Uploaded and generated files are scoped to the user's browser session.</p>
+                <div class="card-links"><a href="https://github.com/ishag615/Text-Redactor" target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="Text Redactor screenshots">
+                <figure class="project-shot terminal-shot"><span>scan.py</span><code>detect -> transform -> protect</code></figure>
+                <figure class="project-shot browser-shot"><span>Preview</span><code>protected image workflow</code></figure>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-panel" data-project-panel>
+            <summary>
+              <span class="project-summary-main">
+                <span class="project-area">Secure programming</span>
+                <strong>Build It, Break It, Fix It</strong>
+                <span>C++ secure programming work focused on building, attacking, and hardening software.</span>
+              </span>
+              <span class="project-summary-meta"><span>C++</span><span>Makefile</span><span>Testing</span></span>
+            </summary>
+            <div class="project-panel-body">
+              <div class="project-read-more">
+                <h3>Read more</h3>
+                <p>This project follows the full secure development loop: implementation, adversarial testing, and remediation. It highlights how software behavior changes under stress and how fixes can be reasoned about from both correctness and security perspectives.</p>
+                <div class="card-links"><a href="https://github.com/ishag615/Build_It-Break_It-Fix_It" target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="Build It, Break It, Fix It screenshots">
+                <figure class="project-shot terminal-shot"><span>make test</span><code>build -> break -> fix</code></figure>
+                <figure class="project-shot audit-shot"><span>Security notes</span><code>failure cases mapped to fixes</code></figure>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-panel" data-project-panel>
+            <summary>
+              <span class="project-summary-main">
+                <span class="project-area">Systems coursework</span>
+                <strong>CS-23001</strong>
+                <span>C++ coursework covering programming fundamentals, data structures, and compiled workflows.</span>
+              </span>
+              <span class="project-summary-meta"><span>C++</span><span>Makefile</span><span>Data structures</span></span>
+            </summary>
+            <div class="project-panel-body">
+              <div class="project-read-more">
+                <h3>Read more</h3>
+                <p>A coursework repository showing steady practice with core computer science concepts, including structured C++ programs, Makefile-based builds, and data-oriented problem solving.</p>
+                <div class="card-links"><a href="https://github.com/ishag615/CS-23001" target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="CS-23001 screenshots">
+                <figure class="project-shot terminal-shot"><span>Coursework</span><code>compile -> run -> validate</code></figure>
+                <figure class="project-shot code-shot"><span>C++</span><code>classes, pointers, structures</code></figure>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-panel" data-project-panel>
+            <summary>
+              <span class="project-summary-main">
+                <span class="project-area">Advanced systems</span>
+                <strong>CS-44001</strong>
+                <span>Advanced C++ coursework organized around systems-level problem solving.</span>
+              </span>
+              <span class="project-summary-meta"><span>C++</span><span>Makefile</span><span>Systems</span></span>
+            </summary>
+            <div class="project-panel-body">
+              <div class="project-read-more">
+                <h3>Read more</h3>
+                <p>This repository captures more advanced compiled programming practice, with emphasis on clean project organization, implementation discipline, and deeper systems concepts.</p>
+                <div class="card-links"><a href="https://github.com/ishag615/CS-44001" target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="CS-44001 screenshots">
+                <figure class="project-shot code-shot"><span>Architecture</span><code>modules, tests, Makefile</code></figure>
+                <figure class="project-shot terminal-shot"><span>Build</span><code>g++ pipeline</code></figure>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-panel" data-project-panel>
+            <summary>
+              <span class="project-summary-main">
+                <span class="project-area">Operating systems</span>
+                <strong>Operating Systems</strong>
+                <span>C and shell project work focused on lower-level programming concepts.</span>
+              </span>
+              <span class="project-summary-meta"><span>C</span><span>Shell</span><span>Makefile</span></span>
+            </summary>
+            <div class="project-panel-body">
+              <div class="project-read-more">
+                <h3>Read more</h3>
+                <p>Operating systems work that develops comfort with lower-level programming, process-oriented thinking, shell tooling, and compiled C workflows.</p>
+                <div class="card-links"><a href="https://github.com/ishag615/Operating_Systems" target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="Operating Systems screenshots">
+                <figure class="project-shot terminal-shot"><span>Shell</span><code>processes, files, signals</code></figure>
+                <figure class="project-shot audit-shot"><span>Systems view</span><code>C + Makefile workflow</code></figure>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-panel" data-project-panel>
+            <summary>
+              <span class="project-summary-main">
+                <span class="project-area">Software engineering</span>
+                <strong>SoftwareEngGroupA</strong>
+                <span>Collaborative JavaScript, HTML, and CSS project with a deployed GitHub Pages site.</span>
+              </span>
+              <span class="project-summary-meta"><span>JavaScript</span><span>HTML</span><span>CSS</span></span>
+            </summary>
+            <div class="project-panel-body">
+              <div class="project-read-more">
+                <h3>Read more</h3>
+                <p>A team software engineering project that emphasizes collaboration, browser-based implementation, and the practical work of taking a web project from repository to deployed site.</p>
+                <div class="card-links"><a href="https://github.com/Jonathan-Lanham/SoftwareEngGroupA" target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="SoftwareEngGroupA screenshots">
+                <figure class="project-shot browser-shot"><span>Web UI</span><code>HTML + CSS + JavaScript</code></figure>
+                <figure class="project-shot code-shot"><span>Team repo</span><code>collaborative commits</code></figure>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-panel" data-project-panel>
+            <summary>
+              <span class="project-summary-main">
+                <span class="project-area">Web app</span>
+                <strong>Capstone</strong>
+                <span>Collaborative JavaScript capstone project with a live Vercel deployment.</span>
+              </span>
+              <span class="project-summary-meta"><span>JavaScript</span><span>Vercel</span><span>Team</span></span>
+            </summary>
+            <div class="project-panel-body">
+              <div class="project-read-more">
+                <h3>Read more</h3>
+                <p>A collaborative capstone web application for the Tori website, combining product thinking, JavaScript implementation, deployment, and team coordination.</p>
+                <div class="card-links"><a href="https://github.com/n-widmer/Capstone" target="_blank" rel="noreferrer">GitHub</a><a href="https://capstone-five-self.vercel.app" target="_blank" rel="noreferrer">Live site</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="Capstone screenshots">
+                <figure class="project-shot browser-shot"><span>Live site</span><code>Vercel deployment</code></figure>
+                <figure class="project-shot audit-shot"><span>Product flow</span><code>team-built web experience</code></figure>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="section project-ideas-section">
+        <div class="idea-box">
+          <div class="idea-copy">
+            <p class="eyebrow">Suggest a build</p>
+            <h2>What should I make next?</h2>
+            <p>Share a project idea, security problem, automation workflow, or tool you wish existed. No name is required in the note.</p>
+          </div>
+          <form class="idea-form" data-idea-form novalidate>
+            <label class="form-trap" for="project-website">Website</label>
+            <input class="form-trap" id="project-website" name="website" data-idea-trap type="text" tabindex="-1" autocomplete="off">
+            <label for="project-idea">Project idea</label>
+            <textarea id="project-idea" name="project-idea" data-idea-input minlength="20" maxlength="700" rows="7" placeholder="Describe the problem, audience, and what a useful solution might do."></textarea>
+            <p class="form-note">20-700 characters. HTML and script-like input are blocked before submission.</p>
+            <button class="button primary" type="submit">Send idea</button>
+            <p class="form-status" data-idea-status role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
 
@@ -125,12 +239,12 @@
     </main>
 
     <footer class="footer contact-footer" id="site-footer">
-      <div class="footer-copy"><p class="eyebrow">Contact</p><h2>Let’s connect.</h2><p>Update these links before publishing.</p></div>
+      <div class="footer-copy"><p class="eyebrow">Contact</p><h2>Let's connect.</h2></div>
       <div class="footer-links">
-        <a href="mailto:youremail@example.com" data-tip="Email Isha here"><span class="link-icon email-icon" aria-hidden="true"></span><span>Email</span></a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" data-tip="Access Isha's LinkedIn here"><span class="link-icon linkedin-icon" aria-hidden="true"></span><span>LinkedIn</span></a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" data-tip="See Isha's Instagram here"><span class="link-icon instagram-icon" aria-hidden="true"></span><span>Instagram</span></a>
-        <a href="https://github.com/" target="_blank" rel="noreferrer" data-tip="Explore Isha's GitHub here"><span class="link-icon github-icon" aria-hidden="true"></span><span>GitHub</span></a>
+        <a href="mailto:isha060105@gmail.com" data-tip="Email Isha here"><span class="link-icon email-icon" aria-hidden="true"></span><span>Email</span></a>
+        <a href="https://www.linkedin.com/in/ishagupta7/" target="_blank" rel="noreferrer" data-tip="Access Isha's LinkedIn here"><span class="link-icon linkedin-icon" aria-hidden="true"></span><span>LinkedIn</span></a>
+        <a href="https://www.instagram.com/isha_0106/" target="_blank" rel="noreferrer" data-tip="See Isha's Instagram here"><span class="link-icon instagram-icon" aria-hidden="true"></span><span>Instagram</span></a>
+        <a href="https://github.com/ishag615" target="_blank" rel="noreferrer" data-tip="Explore Isha's GitHub here"><span class="link-icon github-icon" aria-hidden="true"></span><span>GitHub</span></a>
       </div>
     </footer>
     <script src="script.js"></script>

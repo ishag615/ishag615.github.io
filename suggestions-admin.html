@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Admin view for project suggestions.">
+    <title>Isha Gupta | Project Suggestions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main id="main">
+      <section class="page-hero section-band">
+        <p class="eyebrow">Admin</p>
+        <h1>Project suggestions</h1>
+        <p class="hero-text">Review project ideas submitted from the Projects page.</p>
+      </section>
+
+      <section class="section suggestions-admin-section">
+        <form class="admin-token-form" data-admin-token-form>
+          <label for="admin-token">Admin token</label>
+          <input id="admin-token" name="admin-token" data-admin-token type="password" autocomplete="current-password" required>
+          <button class="button primary" type="submit">Load suggestions</button>
+        </form>
+        <p class="form-status" data-admin-status role="status" aria-live="polite"></p>
+        <div class="suggestions-list" data-suggestions-list></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

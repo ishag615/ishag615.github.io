@@ -2,6 +2,15 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector("[data-nav-links]");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const projectCards = document.querySelectorAll(".project-card");
+const projectPanels = document.querySelectorAll("[data-project-panel]");
+const ideaForm = document.querySelector("[data-idea-form]");
+const ideaInput = document.querySelector("[data-idea-input]");
+const ideaTrap = document.querySelector("[data-idea-trap]");
+const ideaStatus = document.querySelector("[data-idea-status]");
+const adminTokenForm = document.querySelector("[data-admin-token-form]");
+const adminTokenInput = document.querySelector("[data-admin-token]");
+const adminStatus = document.querySelector("[data-admin-status]");
+const suggestionsList = document.querySelector("[data-suggestions-list]");
 const recipeButton = document.querySelector("[data-random-recipe]");
 const dialog = document.querySelector("[data-dialog]");
 const dialogTitle = document.querySelector("[data-dialog-title]");
@@ -81,6 +90,146 @@ filterButtons.forEach((button) => {
       card.classList.toggle("hidden", !shouldShow);
     });
   });
+});
+
+projectPanels.forEach((panel) => {
+  panel.addEventListener("toggle", () => {
+    if (!panel.open) return;
+
+    projectPanels.forEach((otherPanel) => {
+      if (otherPanel !== panel) {
+        otherPanel.open = false;
+      }
+    });
+  });
+});
+
+const validateProjectIdea = (value) => {
+  const normalized = value.replace(/\s+/g, " ").trim();
+  const blockedPattern = /<|>|&lt;|&gt;|javascript\s*:|data\s*:|on\w+\s*=/i;
+
+  if (normalized.length < 20) {
+    return { error: "Please add a little more detail before sending.", value: normalized };
+  }
+
+  if (normalized.length > 700) {
+    return { error: "Please keep the idea under 700 characters.", value: normalized };
+  }
+
+  if (blockedPattern.test(normalized)) {
+    return { error: "Please remove HTML, scripts, or event-handler syntax.", value: normalized };
+  }
+
+  return { error: "", value: normalized };
+};
+
+ideaForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!(ideaInput instanceof HTMLTextAreaElement) || !ideaStatus) return;
+
+  if (ideaTrap instanceof HTMLInputElement && ideaTrap.value) {
+    ideaStatus.textContent = "Submission blocked.";
+    return;
+  }
+
+  const result = validateProjectIdea(ideaInput.value);
+
+  if (result.error) {
+    ideaStatus.textContent = result.error;
+    ideaInput.setAttribute("aria-invalid", "true");
+    return;
+  }
+
+  ideaInput.setAttribute("aria-invalid", "false");
+  ideaStatus.textContent = "Sending your idea...";
+
+  fetch("/api/suggestions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      idea: result.value,
+      website: ideaTrap instanceof HTMLInputElement ? ideaTrap.value : ""
+    })
+  })
+    .then(async (response) => {
+      const payload = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(payload.error || "Unable to save suggestion.");
+      }
+
+      ideaInput.value = "";
+      ideaStatus.textContent = "Thank you. Your idea was saved.";
+    })
+    .catch(() => {
+      ideaStatus.textContent = "Backend is unavailable, so opening your email app instead.";
+      const subject = encodeURIComponent("Project idea");
+      const body = encodeURIComponent(`Project idea:\n\n${result.value}`);
+      window.location.href = `mailto:isha060105@gmail.com?subject=${subject}&body=${body}`;
+    });
+});
+
+const renderSuggestions = (suggestions) => {
+  if (!suggestionsList) return;
+  suggestionsList.textContent = "";
+
+  if (!suggestions.length) {
+    const emptyState = document.createElement("p");
+    emptyState.className = "form-status";
+    emptyState.textContent = "No project suggestions yet.";
+    suggestionsList.append(emptyState);
+    return;
+  }
+
+  suggestions.forEach((suggestion) => {
+    const item = document.createElement("article");
+    item.className = "suggestion-item";
+
+    const date = document.createElement("p");
+    date.className = "timeline-date";
+    date.textContent = new Date(suggestion.createdAt).toLocaleString();
+
+    const idea = document.createElement("p");
+    idea.textContent = suggestion.idea;
+
+    const meta = document.createElement("small");
+    meta.textContent = `ID: ${suggestion.id}`;
+
+    item.append(date, idea, meta);
+    suggestionsList.append(item);
+  });
+};
+
+adminTokenForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!(adminTokenInput instanceof HTMLInputElement) || !adminStatus) return;
+
+  const token = adminTokenInput.value.trim();
+  if (!token) {
+    adminStatus.textContent = "Enter your admin token.";
+    return;
+  }
+
+  adminStatus.textContent = "Loading suggestions...";
+
+  fetch("/api/suggestions", {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+    .then(async (response) => {
+      const payload = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(payload.error || "Unable to load suggestions.");
+      }
+
+      adminStatus.textContent = `${payload.suggestions.length} suggestion${payload.suggestions.length === 1 ? "" : "s"} loaded.`;
+      renderSuggestions(payload.suggestions);
+    })
+    .catch((error) => {
+      adminStatus.textContent = error.message;
+    });
 });
 
 artFilterButtons.forEach((button) => {

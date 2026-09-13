@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Portfolio suggestion backend
+data/suggestions.jsonl
+.env
