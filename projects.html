@@ -184,9 +184,9 @@
             <div class="project-panel-body">
               <div class="project-read-more">
                 <h3>Description</h3>
-                <p>This repository brings together projects and labs from my Computer Science II: Data Structures & Abstraction coursework at Kent State University. These projects gave me hands-on experience implementing core data structures from the ground up and understanding the logic behind them. As the coursework progressed, I worked with abstract data types, dynamic memory, linked structures, stacks, queues, and trees to build increasingly complex C++ programs.</p>
-                <p>For example, the Bigint project implements a custom abstract data type capable of representing integers beyond the limits of C++'s built-in integer types. The implementation represents individual digits using an array and builds operations around that representation rather than relying on predefined container classes.</p>
-                <p>Testing and software development practices were also an important part of the work. I wrote test cases around expected behavior, boundary conditions, and potential failures; worked with multi-file C++ programs and Makefiles; and developed and tested the programs in a Unix environment.</p>
+                <p>CS 23001 takes a deliberate approach to data structures: everything is built from scratch in C++, with no reliance on the Standard Library, so that the mechanics of how these structures actually work are fully understood rather than abstracted away. The course covers abstract data types, dynamic memory management, operator overloading, generic programming with templates, and fundamental structures including arrays, linked lists, stacks, and trees — all implemented by hand and validated through thorough unit testing.</p>
+                <p>Four substantial projects form the core of the course, each building directly on the one before. Project 1 implements a Bigint ADT capable of arbitrary-precision integer arithmetic on numbers hundreds of digits long. Project 2 builds a fully dynamic custom string class with manual memory management and applies it to parse real Apache web server logs. Project 3 converts mathematical infix expressions into assembly code for a simple CPU — implementing the Shunting-Yard algorithm on a linked-list-backed generic stack, which uses the Project 2 string class throughout. Project 4, the most complex, reads C++ source code in XML format, constructs an Abstract Syntax Tree in memory, traverses it recursively, and rewrites the source to inject profiling counters — the kind of transformation that real static analysis tools perform.</p>
+                <p>Beyond the specific data structures, this course builds a practical understanding of how design decisions at the implementation level shape everything else. Choosing how to store data determines how hard every operation becomes — and getting that choice wrong has real consequences. Working through those tradeoffs in C++, from scratch, is what makes this course a strong foundation for systems programming, algorithms, and software engineering.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/CS-23001" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
             </div>
@@ -228,8 +228,12 @@
                 <div class="card-links"><a href="https://github.com/ishag615/Operating_Systems" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
               <div class="project-screenshots" aria-label="Operating Systems screenshots">
-                <figure class="project-shot terminal-shot"><span>Shell</span><code>processes, files, signals</code></figure>
-                <figure class="project-shot audit-shot"><span>Systems view</span><code>C + Makefile workflow</code></figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/OS.png" alt="Producer-Consumer Synchronization terminal output">
+                  </button>
+                  <figcaption>Producer-consumer synchronization tested through concurrent execution and shell-based validation.</figcaption>
+                </figure>
               </div>
             </div>
           </details>

@@ -780,6 +780,16 @@ h3 {
   margin: 0;
 }
 
+.project-screenshot-figure:only-child {
+  align-self: center;
+  grid-column: 1 / -1;
+}
+
+.project-screenshot-figure:only-child .project-screenshot-button {
+  aspect-ratio: 16 / 10;
+  min-height: 16rem;
+}
+
 .project-screenshot-figure:first-child:nth-last-child(3) {
   grid-column: 1 / -1;
 }
