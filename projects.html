@@ -215,15 +215,16 @@
             <summary>
               <span class="project-summary-main">
                 <span class="project-area">Operating systems</span>
-                <strong>Operating Systems</strong>
-                <span>C and shell project work focused on lower-level programming concepts.</span>
+                <strong>Producer-Consumer Synchronization</strong>
+                <span>A C implementation of the Producer-Consumer problem using shared memory and semaphores to safely coordinate concurrent access to a limited shared resource.</span>
               </span>
-              <span class="project-summary-meta"><span>C</span><span>Shell</span><span>Makefile</span></span>
+              <span class="project-summary-meta"><span>C</span><span>Shell Testing</span><span>Make</span></span>
             </summary>
             <div class="project-panel-body">
               <div class="project-read-more">
                 <h3>Read more</h3>
-                <p>Operating systems work that develops comfort with lower-level programming, process-oriented thinking, shell tooling, and compiled C workflows.</p>
+                <p>This project implements the classic Producer-Consumer synchronization problem, modeling a challenge that appears whenever multiple processes or threads share limited resources. A producer generates items and places them into a shared table with only two available slots, while a consumer retrieves them. Because both operate concurrently, access to the shared table must be carefully coordinated to prevent conflicts and maintain a valid state.</p>
+                <p>We solved this using shared memory and semaphores to coordinate access between the producer and consumer, ensuring that items are produced only when space is available and consumed only when data is ready. The implementation was tested through repeated execution, high-load stress testing, and multiple producer and consumer threads to verify synchronization under different levels of concurrency.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/Operating_Systems" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
               <div class="project-screenshots" aria-label="Operating Systems screenshots">
