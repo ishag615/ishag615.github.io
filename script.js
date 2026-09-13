@@ -102,6 +102,8 @@ filterButtons.forEach((button) => {
 });
 
 projectPanels.forEach((panel) => {
+  panel.open = false;
+
   panel.addEventListener("toggle", () => {
     if (!panel.open) return;
 
