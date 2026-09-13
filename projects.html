@@ -319,9 +319,31 @@
                 <p>Several workflows connect guest actions directly to planning needs. RSVP activity updates the administrative view, lodging reservations prevent the same listing from being double-booked, guest photos go through approval before publication, and gift records can be exported to CSV for use in creating thank-you cards. Together, these features turn WEDconnect into a practical event-management system rather than simply an informational wedding website.</p>
                 <div class="card-links"><a href="https://github.com/n-widmer/Capstone" target="_blank" rel="noreferrer">GitHub</a><a href="https://capstone-five-self.vercel.app" target="_blank" rel="noreferrer">Live site</a></div>
               </div>
-              <div class="project-screenshots" aria-label="Capstone screenshots">
-                <figure class="project-shot browser-shot"><span>Live site</span><code>Vercel deployment</code></figure>
-                <figure class="project-shot audit-shot"><span>Product flow</span><code>team-built web experience</code></figure>
+              <div class="project-screenshots" aria-label="WEDconnect screenshots">
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/wc1.png" alt="WEDconnect guest dashboard">
+                  </button>
+                  <figcaption>Guest-facing dashboard centralizing RSVP details, event information, and wedding resources.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/wc2.png" alt="WEDconnect RSVP workflow">
+                  </button>
+                  <figcaption>RSVP workflow captures guest responses, dietary details, and planning information.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/wc4.png" alt="WEDconnect admin tools">
+                  </button>
+                  <figcaption>Administrative tools support guest management, reservations, uploads, and event coordination.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/wc3.png" alt="WEDconnect planning dashboard">
+                  </button>
+                  <figcaption>Planning dashboard brings RSVP activity, expenses, gifts, and wedding logistics into one view.</figcaption>
+                </figure>
               </div>
             </div>
           </details>
@@ -340,7 +362,6 @@
             <input class="form-trap" id="project-website" name="website" data-idea-trap type="text" tabindex="-1" autocomplete="off">
             <label for="project-idea">Project idea</label>
             <textarea id="project-idea" name="project-idea" data-idea-input minlength="20" maxlength="700" rows="7" placeholder="Describe the problem, audience, and what a useful solution might do."></textarea>
-            <p class="form-note">20-700 characters. HTML and script-like input are blocked before submission.</p>
             <button class="button primary" type="submit">Send idea</button>
             <p class="form-status" data-idea-status role="status" aria-live="polite"></p>
           </form>
