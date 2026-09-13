@@ -44,6 +44,7 @@ const artFilterButtons = document.querySelectorAll("[data-art-filter]");
 const exploreGalleryGrid = document.querySelector(".explore-gallery-grid");
 const galleryWorks = document.querySelectorAll("[data-gallery-work]");
 const artworkCards = document.querySelectorAll("[data-artwork-card]");
+const heroCats = document.querySelectorAll("[data-hero-cat]");
 
 let activeArtworkSet = [];
 let activeArtworkIndex = 0;
@@ -61,6 +62,46 @@ const recipes = [
   "Tomato soup and grilled cheese night",
   "Weekend pancakes with berries"
 ];
+
+const catMoods = [
+  {
+    src: "assets/cat-happy.svg",
+    alt: "Happy doodle cat coding on a laptop"
+  },
+  {
+    src: "assets/cat-grumpy.svg",
+    alt: "Grumpy doodle cat glaring over a laptop"
+  },
+  {
+    src: "assets/cat-silly.svg",
+    alt: "Silly doodle cat causing laptop chaos"
+  }
+];
+
+const setCatMood = (cat, nextIndex) => {
+  const image = cat.querySelector("[data-cat-image]");
+  const mood = catMoods[nextIndex % catMoods.length];
+  if (!(image instanceof HTMLImageElement) || !mood) return;
+
+  cat.dataset.catIndex = String(nextIndex % catMoods.length);
+  image.src = mood.src;
+  image.alt = mood.alt;
+};
+
+heroCats.forEach((cat) => {
+  const cycleCatMood = () => {
+    const currentIndex = Number(cat.dataset.catIndex || 0);
+    setCatMood(cat, currentIndex + 1);
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    cat.classList.remove("is-pouncing");
+    window.requestAnimationFrame(() => cat.classList.add("is-pouncing"));
+  };
+
+  cat.addEventListener("pointerenter", cycleCatMood);
+  cat.addEventListener("click", cycleCatMood);
+  cat.addEventListener("animationend", () => cat.classList.remove("is-pouncing"));
+});
 
 artworkCards.forEach((card) => {
   const title = card.dataset.title || card.querySelector("strong")?.textContent || "";

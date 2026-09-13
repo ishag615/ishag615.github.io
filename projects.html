@@ -34,10 +34,18 @@
     </header>
 
     <main id="main">
-      <section class="page-hero section-band">
-        <p class="eyebrow">IDEAS IN ACTION</p>
-        <h1>Building for the real world</h1>
-        <p class="hero-text">I enjoy taking what I learn beyond the classroom and putting it into practice. Here are some of the projects through which I've explored new technologies, solved problems, and strengthened my skills.</p>
+      <section class="page-hero projects-hero section-band">
+        <button class="hero-cat hero-cat-left" type="button" data-hero-cat data-cat-index="0" aria-label="Change the left coding cat mood">
+          <img src="assets/cat-happy.svg" alt="Happy doodle cat coding on a laptop" data-cat-image>
+        </button>
+        <div class="projects-hero-copy">
+          <p class="eyebrow">IDEAS IN ACTION</p>
+          <h1>Building for the real world</h1>
+          <p class="hero-text">I enjoy taking what I learn beyond the classroom and putting it into practice. Here are some of the projects through which I've explored new technologies, solved problems, and strengthened my skills.</p>
+        </div>
+        <button class="hero-cat hero-cat-right" type="button" data-hero-cat data-cat-index="1" aria-label="Change the right coding cat mood">
+          <img src="assets/cat-grumpy.svg" alt="Grumpy doodle cat glaring over a laptop" data-cat-image>
+        </button>
       </section>
 
       <section class="section projects-accordion-section">
@@ -370,16 +378,22 @@
 
       <section class="section professional-assets">
         <div class="section-heading">
-          <p class="eyebrow">Professional assets</p>
-          <h2>Resume and project context</h2>
-          <p>Keep polished, career-facing materials near your technical work so recruiters and collaborators can move from projects to credentials naturally.</p>
+          <h2>Professional Assets</h2>
+          <p>Credentials and documents representing my technical foundation and professional readiness.</p>
         </div>
         <div class="asset-panel">
-          <div>
-            <h3>Isha Gupta Resume</h3>
-            <p>Replace the placeholder file with your current resume PDF. This button gives visitors a clean way to access it from the Projects page without cluttering the footer.</p>
+          <div class="asset-copy">
+            <h3>Resume</h3>
+            <p>A snapshot of my projects, research, professional experience, and skills, spanning GRC, cybersecurity, and software development.</p>
+            <p> Updated September 2026.</p>
+            <div class="asset-actions" aria-label="Resume actions">
+              <a class="button primary" href="assets/Isha-Gupta-Resume.pdf" download>Download resume</a>
+              <a class="button secondary" href="assets/Isha-Gupta-Resume.pdf" target="_blank" rel="noreferrer">Open in new tab</a>
+            </div>
           </div>
-          <a class="button primary" href="assets/Isha-Gupta-Resume.pdf">Open resume</a>
+          <div class="resume-viewer" aria-label="Embedded resume PDF">
+            <iframe src="assets/Isha-Gupta-Resume.pdf#toolbar=1&amp;navpanes=0" title="Isha Gupta Resume PDF"></iframe>
+          </div>
         </div>
       </section>
 

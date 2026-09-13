@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" role="img" aria-labelledby="title desc">
+  <title id="title">Happy coding cat doodle</title>
+  <desc id="desc">A happy doodle cat sitting behind a laptop.</desc>
+  <style>
+    .line{fill:none;stroke:#24171d;stroke-width:5.4;stroke-linecap:round;stroke-linejoin:round}
+    .thin{fill:none;stroke:#24171d;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+    .fur{fill:#fff9fb}
+    .patch{fill:#ffd3df}
+    .mint{fill:#d9f0d5}
+    .screen{fill:#fffdf4}
+    .key{fill:#6f5d65}
+    .shine{fill:#fffdf4}
+  </style>
+  <path class="fur line" d="M118 204c-41-10-67-42-54-72 8-18 32-19 39-2 6 15-8 25-20 20 17 12 35-7 27-24-9-22-42-20-54 3-17 35 12 75 62 88z"/>
+  <path class="thin" d="M69 132c9-5 20-5 31 1"/>
+  <path class="thin" d="M63 153c10 8 22 12 35 12"/>
+  <path class="fur line" d="M101 151c-11-34 7-66 39-80 15-7 31-9 47-6 17-3 35 1 51 11 30 19 40 54 25 86-8 17-22 31-42 39-15 6-21 21-37 21-17 0-23-15-38-21-22-9-39-25-45-50z"/>
+  <path class="fur line" d="M133 80c-9-15-15-32-17-48 18 4 36 16 50 31"/>
+  <path class="fur line" d="M218 76c14-14 29-24 45-30-1 18-6 36-14 53"/>
+  <path class="patch thin" d="M137 65l-8-18 19 11"/>
+  <path class="patch thin" d="M233 70l17-12-4 21"/>
+  <path class="thin" d="M151 115c8-7 19-7 27 0"/>
+  <path class="thin" d="M198 115c8-7 19-7 27 0"/>
+  <ellipse cx="164" cy="127" rx="9" ry="11" fill="#24171d"/>
+  <ellipse cx="211" cy="127" rx="9" ry="11" fill="#24171d"/>
+  <circle class="shine" cx="160" cy="122" r="2.7"/>
+  <circle class="shine" cx="207" cy="122" r="2.7"/>
+  <path class="patch line" d="M181 142l13 0-7 9z"/>
+  <path class="thin" d="M187 151v8"/>
+  <path class="thin" d="M187 159c-7 8-18 8-25 1"/>
+  <path class="thin" d="M187 159c7 8 19 8 26 0"/>
+  <path class="thin" d="M139 143c-24-10-45-10-65-2"/>
+  <path class="thin" d="M141 156c-23 2-43 10-58 24"/>
+  <path class="thin" d="M231 143c23-10 44-9 64 0"/>
+  <path class="thin" d="M229 156c22 3 41 12 56 27"/>
+  <path class="line" d="M132 195c2 28 24 41 51 42 27 0 50-13 54-40"/>
+  <path class="line" d="M132 196c-16-5-31 2-36 17"/>
+  <path class="line" d="M237 197c17-4 31 4 34 20"/>
+  <path class="screen line" d="M84 183h190l-20 62H103z"/>
+  <path class="mint thin" d="M171 205c5-8 18-8 24 0"/>
+  <path class="thin" d="M114 246h169"/>
+  <path class="key thin" d="M126 224h96"/>
+  <path class="thin" d="M88 186c11 10 23 16 38 19"/>
+  <path class="thin" d="M276 75c13 2 24 10 31 22"/>
+  <path class="thin" d="M61 101c12-17 27-28 45-33"/>
+</svg>
