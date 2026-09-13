@@ -103,24 +103,30 @@
                 <p>I brought these components together in a Streamlit dashboard, transforming the assessment data into KPI cards, compliance progress indicators, risk filtering, and downloadable reports. The workflow is designed to simulate, at a smaller scale, the compliance monitoring processes used by enterprise GRC platforms—connecting traditional GRC analysis with automation and data-driven reporting.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/GRC-Portfolio" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
-              <div class="project-screenshots" aria-label="Text Redactor screenshots">
+              <div class="project-screenshots" aria-label="Automated GRC Dashboard screenshots">
                 <figure class="project-screenshot-figure">
                   <button class="project-screenshot-button" type="button" data-project-screenshot>
-                    <img class="project-screenshot-image" src="assets/text redact1.png" alt="Text Redactor upload screen">
+                    <img class="project-screenshot-image" src="assets/Gap assessment.png" alt="GRC gap assessment workbook">
                   </button>
-                  <figcaption>Upload a document and choose the file type before scanning for sensitive information.</figcaption>
+                  <figcaption>Gap assessment workbook mapping framework requirements to implementation status.</figcaption>
                 </figure>
                 <figure class="project-screenshot-figure">
                   <button class="project-screenshot-button" type="button" data-project-screenshot>
-                    <img class="project-screenshot-image" src="assets/text redact2.png" alt="Text Redactor detection review screen">
+                    <img class="project-screenshot-image" src="assets/InfoSec Policy.png" alt="Information security policy document">
                   </button>
-                  <figcaption>Review detected PII categories and decide which findings should be redacted.</figcaption>
+                  <figcaption>Information security policy created to support HIPAA-aligned governance.</figcaption>
                 </figure>
                 <figure class="project-screenshot-figure">
                   <button class="project-screenshot-button" type="button" data-project-screenshot>
-                    <img class="project-screenshot-image" src="assets/text redact3.png" alt="Text Redactor redacted output screen">
+                    <img class="project-screenshot-image" src="assets/dashboard.png" alt="Streamlit GRC dashboard">
                   </button>
-                  <figcaption>Generate a protected copy while preserving the structure of the original document.</figcaption>
+                  <figcaption>Streamlit dashboard showing compliance KPIs, control progress, and risk insights.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/Report.png" alt="Generated GRC compliance report">
+                  </button>
+                  <figcaption>Generated report summarizing compliance posture, gaps, and priority remediation items.</figcaption>
                 </figure>
               </div>
             </div>
@@ -129,16 +135,18 @@
           <details class="project-panel" data-project-panel>
             <summary>
               <span class="project-summary-main">
-                <span class="project-area">Automated GRC Dashboard for MediSync Solutions</span>
-                <strong>Build It, Break It, Fix It</strong>
-                <span>C++ secure programming work focused on building, attacking, and hardening software.</span>
+                <span class="project-area">Defensive Design and Attack Testing</span>
+                <strong>Secure Art Gallery Logging System</strong>
+                <span>A collaborative C++ security project that uses event logging and state validation to securely track gallery occupancy while defending against invalid input, unauthorized access, and file-based attacks.</span>
               </span>
-              <span class="project-summary-meta"><span>C++</span><span>Makefile</span><span>Testing</span></span>
+              <span class="project-summary-meta"><span>C++</span><span>AES Encryption</span><span>Input Validation</span><span>State Machine Logic</span><span>File Locking</span></span>
             </summary>
             <div class="project-panel-body">
               <div class="project-read-more">
-                <h3>Read more</h3>
-                <p>This project follows the full secure development loop: implementation, adversarial testing, and remediation. It highlights how software behavior changes under stress and how fixes can be reasoned about from both correctness and security perspectives.</p>
+                <h3>Background and Development</h3>
+                <p>Developed collaboratively with a classmate, this project is a secure C++ logging system that tracks the movement of employees and guests through an art gallery. The gallery state is reconstructed from a sequence of logged events: each entry records who performed the action, whether they entered or left the gallery or a specific room, and when the event occurred. The system uses this history to determine each person’s current location and to generate information such as the gallery’s current occupancy and an individual’s room history.</p>
+                <p>We implemented state-based validation to make sure every new event is logically consistent with the existing log. For example, a person cannot enter a room before entering the gallery, enter a second room while already inside another, or leave a location they were never recorded as entering. This allows the application to reject invalid transitions instead of allowing them to corrupt the gallery’s state.</p>
+                <p>Security was also built into the file and input-handling mechanisms. We added token-based authentication to restrict access to log data, strict input validation and bounds checking to handle malformed or oversized input, filename validation to defend against path-traversal and resource-injection attempts, and file locking to protect the log during concurrent operations. We then tested these protections using intentionally invalid and adversarial inputs and strengthened the implementation based on the weaknesses we found.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/Build_It-Break_It-Fix_It" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
               <div class="project-screenshots" aria-label="Build It, Break It, Fix It screenshots">
