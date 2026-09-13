@@ -185,9 +185,17 @@
               <div class="project-read-more">
                 <h3>Description</h3>
                 <p>CS 23001 takes a deliberate approach to data structures: everything is built from scratch in C++, with no reliance on the Standard Library, so that the mechanics of how these structures actually work are fully understood rather than abstracted away. The course covers abstract data types, dynamic memory management, operator overloading, generic programming with templates, and fundamental structures including arrays, linked lists, stacks, and trees — all implemented by hand and validated through thorough unit testing.</p>
-                <p>Four substantial projects form the core of the course, each building directly on the one before. Project 1 implements a Bigint ADT capable of arbitrary-precision integer arithmetic on numbers hundreds of digits long. Project 2 builds a fully dynamic custom string class with manual memory management and applies it to parse real Apache web server logs. Project 3 converts mathematical infix expressions into assembly code for a simple CPU — implementing the Shunting-Yard algorithm on a linked-list-backed generic stack, which uses the Project 2 string class throughout. Project 4, the most complex, reads C++ source code in XML format, constructs an Abstract Syntax Tree in memory, traverses it recursively, and rewrites the source to inject profiling counters — the kind of transformation that real static analysis tools perform.</p>
+                <p>Four substantial projects form the core of the course. Project 1 implements a Bigint ADT capable of arbitrary-precision integer arithmetic on numbers hundreds of digits long. Project 2 builds a fully dynamic custom string class with manual memory management and applies it to parse real Apache web server logs. Project 3 converts mathematical infix expressions into assembly code for a simple CPU — implementing the Shunting-Yard algorithm on a linked-list-backed generic stack, which uses the Project 2 string class throughout. Project 4, the most complex, reads C++ source code in XML format, constructs an Abstract Syntax Tree in memory, traverses it recursively, and rewrites the source to inject profiling counters.</p>
                 <p>Beyond the specific data structures, this course builds a practical understanding of how design decisions at the implementation level shape everything else. Choosing how to store data determines how hard every operation becomes — and getting that choice wrong has real consequences. Working through those tradeoffs in C++, from scratch, is what makes this course a strong foundation for systems programming, algorithms, and software engineering.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/CS-23001" target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+              <div class="project-screenshots" aria-label="Data Structures & Abstraction in C++ graphic">
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/cs23001_graphic.svg" alt="Data Structures & Abstraction in C++ project graphic">
+                  </button>
+                  <figcaption>Coursework progression through custom data structures, parsing, expression translation, and source-code instrumentation.</figcaption>
+                </figure>
               </div>
             </div>
           </details>
@@ -204,8 +212,9 @@
             <div class="project-panel-body">
               <div class="project-read-more">
                 <h3>COMPUTER SCIENCE III - PROGRAMMING PATTERNS at Kent State</h3>
-                <p>These projects expanded on my foundational C++ experience by focusing on how larger programs are structured and designed. Rather than only implementing functionality, I explored how inheritance, polymorphism, templates, and object-oriented principles can be used to create software that is modular, extensible, and easier to maintain.</p>
-                <p>I implemented and worked with established design patterns (abstract factory, singleton, adaptor, bridge, decorator, etc.), learning how recurring software-design problems can be approached through reusable structures instead of tightly coupled solutions. The projects also strengthened my understanding of generic programming and the C++ Standard Template Library (STL), while giving me experience making architectural decisions about how different components of a program interact.</p>
+                <p>CS 44001 covers the design patterns and advanced C++ techniques that form the foundation of professional software engineering. The course works through the 23 patterns from the Gang of Four — the industry-standard catalogue every software engineer is expected to know — alongside the C++ Standard Template Library, generic programming with templates, move semantics, and the full inheritance and polymorphism model. These are not academic abstractions: design patterns are the shared vocabulary used in code reviews, architecture discussions, and system design interviews across the industry, and STL fluency is a baseline expectation for any C++ role.</p>
+                <p>The thirteen labs provide hands-on implementation of both. On the STL side, labs cover sequence containers (vector, deque, list), associative containers (map, set, unordered_map), STL algorithms including sort, find, transform, and accumulate, and move semantics through a custom move constructor. On the patterns side, labs implement all three pattern families directly in C++: creational patterns including Singleton, Abstract Factory, and Prototype; structural patterns including Adapter, Bridge, Decorator, Composite, Facade, and Flyweight; and behavioral patterns including Observer, State, Visitor, Command, Strategy, Memento, Chain of Responsibility, Mediator, and Template Method. Each lab requires writing the pattern from scratch — not applying a library — which means understanding the mechanism, not just the name.</p>
+                <p>Working through this course builds both a practical toolkit and a design instinct. Knowing when to reach for a Bridge versus an Adapter, or a State versus a Strategy, is what separates engineers who can implement features from those who can design systems. These labs demonstrate that capability concretely.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/CS-44001" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
             </div>
@@ -241,16 +250,19 @@
           <details class="project-panel" data-project-panel>
             <summary>
               <span class="project-summary-main">
-                <span class="project-area">Software engineering</span>
-                <strong>SoftwareEngGroupA</strong>
-                <span>Collaborative JavaScript, HTML, and CSS project with a deployed GitHub Pages site.</span>
+                <span class="project-area">Software Engineering & Educational Technology</span>
+                <strong>Gatekeeper — Interactive Digital Logic Learning Game</strong>
+                <span>A collaborative web-based educational game that teaches Boolean logic through interactive circuit-building challenges, real-time feedback, and sandbox experimentation.</span>
               </span>
-              <span class="project-summary-meta"><span>JavaScript</span><span>HTML</span><span>CSS</span></span>
+              <span class="project-summary-meta"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>SCRUM</span></span>
             </summary>
             <div class="project-panel-body">
               <div class="project-read-more">
-                <h3>Read more</h3>
-                <p>A team software engineering project that emphasizes collaboration, browser-based implementation, and the practical work of taking a web project from repository to deployed site.</p>
+                <h3>Description</h3>
+                <p>Developed collaboratively as a Software Engineering project, Gatekeeper was designed to make digital logic more interactive and approachable. Instead of learning Boolean logic only through static diagrams, users solve progressively harder circuit challenges by dragging and arranging logic gates, receiving immediate visual feedback as signals propagate through the circuit. A sandbox mode also allows users to freely build and experiment with their own circuits.</p>
+                <p>Behind the interface, we implemented the circuit simulation using JavaScript and p5.js. Logic gates maintain references to their input and output nodes and compute their output state from incoming Boolean values. To efficiently detect when nodes, gates, or components interact on the canvas, we used a spatial hash grid, allowing collision checks to be limited to nearby grid cells rather than comparing every object on screen.</p>
+                <p>We also built features including multilingual support, JSON export for user-created circuits, browser-based state storage, progressive levels, and visual feedback through the LUNA assistant. The project was developed using weekly Scrum sprints, a GitHub Kanban board, feature branches, pull requests, and peer code review.</p>
+                <p>To validate the application, we used unit and integration tests for core components such as draggable objects, collision detection, spatial hashing, and node-state transfer, alongside visual testing of circuit behavior.</p>
                 <div class="card-links"><a href="https://github.com/Jonathan-Lanham/SoftwareEngGroupA" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
               <div class="project-screenshots" aria-label="SoftwareEngGroupA screenshots">
