@@ -729,6 +729,10 @@ h3 {
   margin-bottom: 0.65rem;
 }
 
+.project-read-more:only-child {
+  grid-column: 1 / -1;
+}
+
 .project-read-more p {
   color: var(--muted);
 }

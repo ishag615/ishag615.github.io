@@ -149,9 +149,25 @@
                 <p>Security was also built into the file and input-handling mechanisms. We added token-based authentication to restrict access to log data, strict input validation and bounds checking to handle malformed or oversized input, filename validation to defend against path-traversal and resource-injection attempts, and file locking to protect the log during concurrent operations. We then tested these protections using intentionally invalid and adversarial inputs and strengthened the implementation based on the weaknesses we found.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/Build_It-Break_It-Fix_It" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
-              <div class="project-screenshots" aria-label="Build It, Break It, Fix It screenshots">
-                <figure class="project-shot terminal-shot"><span>make test</span><code>build -> break -> fix</code></figure>
-                <figure class="project-shot audit-shot"><span>Security notes</span><code>failure cases mapped to fixes</code></figure>
+              <div class="project-screenshots" aria-label="Secure Art Gallery Logging System screenshots">
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/bbf1.png" alt="Secure Art Gallery Logging System command output">
+                  </button>
+                  <figcaption>Command-line workflow for creating and validating secure gallery movement log events.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/bbf2.png" alt="Secure Art Gallery Logging System event validation">
+                  </button>
+                  <figcaption>State validation logic rejects impossible gallery and room transitions before they corrupt the log.</figcaption>
+                </figure>
+                <figure class="project-screenshot-figure">
+                  <button class="project-screenshot-button" type="button" data-project-screenshot>
+                    <img class="project-screenshot-image" src="assets/bbf3.png" alt="Secure Art Gallery Logging System security testing">
+                  </button>
+                  <figcaption>Security testing demonstrates protections for malformed input, access control, and log integrity.</figcaption>
+                </figure>
               </div>
             </div>
           </details>
@@ -159,43 +175,38 @@
           <details class="project-panel" data-project-panel>
             <summary>
               <span class="project-summary-main">
-                <span class="project-area">Systems coursework</span>
-                <strong>CS-23001</strong>
-                <span>C++ coursework covering programming fundamentals, data structures, and compiled workflows.</span>
+                <span class="project-area">Data Structures & Algorithms</span>
+                <strong>Data Structures & Abstraction in C++</strong>
+                <span>A collection of C++ projects implementing fundamental data structures and algorithms from the ground up, with an emphasis on abstraction, memory management, testing, and reusable software design.</span>
               </span>
-              <span class="project-summary-meta"><span>C++</span><span>Makefile</span><span>Data structures</span></span>
+              <span class="project-summary-meta"><span>C++</span><span>Abstract Data Types</span><span>Unit Testing</span></span>
             </summary>
             <div class="project-panel-body">
               <div class="project-read-more">
-                <h3>Read more</h3>
-                <p>A coursework repository showing steady practice with core computer science concepts, including structured C++ programs, Makefile-based builds, and data-oriented problem solving.</p>
+                <h3>Description</h3>
+                <p>This repository brings together projects and labs from my Computer Science II: Data Structures & Abstraction coursework at Kent State University. These projects gave me hands-on experience implementing core data structures from the ground up and understanding the logic behind them. As the coursework progressed, I worked with abstract data types, dynamic memory, linked structures, stacks, queues, and trees to build increasingly complex C++ programs.</p>
+                <p>For example, the Bigint project implements a custom abstract data type capable of representing integers beyond the limits of C++'s built-in integer types. The implementation represents individual digits using an array and builds operations around that representation rather than relying on predefined container classes.</p>
+                <p>Testing and software development practices were also an important part of the work. I wrote test cases around expected behavior, boundary conditions, and potential failures; worked with multi-file C++ programs and Makefiles; and developed and tested the programs in a Unix environment.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/CS-23001" target="_blank" rel="noreferrer">GitHub</a></div>
               </div>
-              <div class="project-screenshots" aria-label="CS-23001 screenshots">
-                <figure class="project-shot terminal-shot"><span>Coursework</span><code>compile -> run -> validate</code></figure>
-                <figure class="project-shot code-shot"><span>C++</span><code>classes, pointers, structures</code></figure>
-              </div>
             </div>
           </details>
 
           <details class="project-panel" data-project-panel>
             <summary>
               <span class="project-summary-main">
-                <span class="project-area">Advanced systems</span>
-                <strong>CS-44001</strong>
-                <span>Advanced C++ coursework organized around systems-level problem solving.</span>
+                <span class="project-area">Software Design & Programming Patterns</span>
+                <strong>STL & Design Patterns in C++</strong>
+                <span>A collection of C++ projects exploring object-oriented design, reusable software architectures, and common programming patterns through hands-on implementation.</span>
               </span>
-              <span class="project-summary-meta"><span>C++</span><span>Makefile</span><span>Systems</span></span>
+              <span class="project-summary-meta"><span>C++</span><span>Inheritance</span><span>STL</span><span>Design Patterns</span></span>
             </summary>
             <div class="project-panel-body">
               <div class="project-read-more">
-                <h3>Read more</h3>
-                <p>This repository captures more advanced compiled programming practice, with emphasis on clean project organization, implementation discipline, and deeper systems concepts.</p>
+                <h3>COMPUTER SCIENCE III - PROGRAMMING PATTERNS at Kent State</h3>
+                <p>These projects expanded on my foundational C++ experience by focusing on how larger programs are structured and designed. Rather than only implementing functionality, I explored how inheritance, polymorphism, templates, and object-oriented principles can be used to create software that is modular, extensible, and easier to maintain.</p>
+                <p>I implemented and worked with established design patterns (abstract factory, singleton, adaptor, bridge, decorator, etc.), learning how recurring software-design problems can be approached through reusable structures instead of tightly coupled solutions. The projects also strengthened my understanding of generic programming and the C++ Standard Template Library (STL), while giving me experience making architectural decisions about how different components of a program interact.</p>
                 <div class="card-links"><a href="https://github.com/ishag615/CS-44001" target="_blank" rel="noreferrer">GitHub</a></div>
-              </div>
-              <div class="project-screenshots" aria-label="CS-44001 screenshots">
-                <figure class="project-shot code-shot"><span>Architecture</span><code>modules, tests, Makefile</code></figure>
-                <figure class="project-shot terminal-shot"><span>Build</span><code>g++ pipeline</code></figure>
               </div>
             </div>
           </details>
