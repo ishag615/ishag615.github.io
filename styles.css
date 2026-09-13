@@ -1297,6 +1297,10 @@ h3 {
   padding: 1.1rem;
 }
 
+.asset-panel + .asset-panel {
+  margin-top: 1.1rem;
+}
+
 .asset-copy {
   display: grid;
   gap: 0.8rem;
@@ -1330,6 +1334,12 @@ h3 {
   display: block;
   height: 48rem;
   width: 100%;
+}
+
+.certificate-viewer,
+.certificate-viewer iframe {
+  min-height: 32rem;
+  height: 32rem;
 }
 
 .project-ideas-section {
@@ -2692,6 +2702,12 @@ h3 {
   .resume-viewer iframe {
     min-height: 34rem;
     height: 34rem;
+  }
+
+  .certificate-viewer,
+  .certificate-viewer iframe {
+    min-height: 24rem;
+    height: 24rem;
   }
 
   .project-panel summary {
