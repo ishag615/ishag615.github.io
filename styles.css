@@ -2446,12 +2446,92 @@ h3 {
   padding: 1.2rem;
 }
 
+.isc-album-hero {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.74fr);
+}
+
+.isc-album-hero-copy {
+  max-width: 44rem;
+}
+
 .isc-album-hero h1 {
   max-width: 12ch;
 }
 
+.isc-album-hero-photo {
+  justify-self: end;
+  max-width: 25rem;
+  width: 100%;
+}
+
+.isc-album-hero-photo img {
+  background: white;
+  border: 8px solid white;
+  border-bottom-width: 1.3rem;
+  border-radius: 7px;
+  box-shadow: 0 20px 42px rgba(70, 36, 49, 0.14), 0 5px 14px rgba(70, 36, 49, 0.08);
+  display: block;
+  height: auto;
+  max-height: 26rem;
+  object-fit: contain;
+  transform: rotate(2.4deg);
+  width: 100%;
+}
+
 .isc-album-section {
   padding-top: 3rem;
+}
+
+.isc-album-toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.isc-album-toolbar span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.isc-sort-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.isc-sort-button {
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--plum-brown);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 800;
+  padding: 0.58rem 0.9rem;
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.isc-sort-button:hover,
+.isc-sort-button:focus-visible,
+.isc-sort-button.active {
+  background: white;
+  box-shadow: 0 12px 26px rgba(70, 36, 49, 0.1);
+  outline: 0;
+  transform: translateY(-0.12rem);
+}
+
+.isc-sort-button.active {
+  border-color: rgba(174, 54, 96, 0.32);
+  color: var(--crimson);
 }
 
 .isc-album-grid {
@@ -2538,17 +2618,32 @@ h3 {
 .isc-carousel-caption {
   background: white;
   border-top: 1px solid var(--line);
-  padding: 1rem 1.2rem 1.15rem;
+  padding: 1rem 1.25rem 1.2rem;
+  text-align: center;
 }
 
 .isc-carousel-caption h2 {
   color: var(--plum-brown);
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
-  margin-bottom: 0.55rem;
+  font-family: "Quicksand", "Comic Sans MS", cursive;
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+  line-height: 1.25;
+  margin: 0.3rem auto 0.45rem;
+  max-width: 34ch;
 }
 
-.isc-carousel-caption p:last-child {
+.isc-carousel-caption .timeline-date {
+  color: var(--crimson);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.isc-carousel-semester {
   color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
   margin-bottom: 0;
 }
 
@@ -3165,6 +3260,15 @@ h3 {
       "cat-left cat-right";
     grid-template-columns: 1fr 1fr;
     min-height: auto;
+  }
+
+  .isc-album-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .isc-album-hero-photo {
+    justify-self: start;
+    max-width: 22rem;
   }
 
   .hero-cat {

@@ -35,11 +35,16 @@
 
     <main id="main">
       <section class="page-hero section-band isc-album-hero">
-        <p class="eyebrow">International Student Council</p>
-        <h1>Moments Collected</h1>
-        <p class="hero-text">A small album from my work with the International Student Council at Kent State, celebrating the people, programs, and everyday moments that make community feel real.</p>
-        <div class="hero-actions">
-          <a class="button secondary" href="leadership.html">Back to leadership</a>
+        <div class="isc-album-hero-copy">
+          <p class="eyebrow">International Student Council</p>
+          <h1>Moments Collected</h1>
+          <p class="hero-text">A small album from my work with the International Student Council at Kent State, celebrating the people, programs, and everyday moments that make community feel real.</p>
+          <div class="hero-actions">
+            <a class="button secondary" href="leadership.html">Back to leadership</a>
+          </div>
+        </div>
+        <div class="isc-album-hero-photo">
+          <img src="assets/ch3.jpg" alt="Students connecting at an International Student Council cultural event">
         </div>
       </section>
 
@@ -47,294 +52,289 @@
         <div class="section-heading">
           <p class="eyebrow">ISC album</p>
         </div>
-        <div class="isc-album-grid">
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc1.JPEG" data-title="Student Leadership Moment" data-date="Kent State University" data-description="Building connection through student leadership and campus community.">
+        <div class="isc-album-toolbar" aria-label="Album sorting controls">
+          <span>Arrange photos</span>
+          <div class="isc-sort-buttons">
+            <button class="isc-sort-button active" type="button" data-isc-sort="asc">Earliest - latest</button>
+            <button class="isc-sort-button" type="button" data-isc-sort="desc">Latest - earliest</button>
+          </div>
+        </div>
+        <div class="isc-album-grid" data-isc-grid>
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc1.JPEG" data-title="Homecoming 2025, with ISC executive board" data-date="2025-10-11" data-description="Building connection through student leadership and campus community.">
             <img src="assets/isc1.JPEG" alt="International Student Council group leadership moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc2.JPEG" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc2.JPEG" data-title="Homecoming 2025, ISC parade participants with their flags" data-date="2025-10-11" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/isc2.JPEG" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/lsisc.jpg" data-title="ISC Leadership Snapshot" data-date="Kent State University" data-description="A leadership moment from my time with the International Student Council.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025, Kent State" data-image="assets/lsisc.jpg" data-title="Leadership Social" data-date="2025-03-29" data-description="A leadership moment from my time with the International Student Council.">
             <img src="assets/lsisc.jpg" alt="ISC leadership group snapshot">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_delyash.jpg" data-title="ISC Friendship Moment" data-date="Kent State University" data-description="One of the people-centered moments that made ISC feel like a community.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/isc_delyash.jpg" data-title="Job and Internship Search Workshop in Collaboration with Career Exploration and Development" data-date="2026-04-10" data-description="One of the people-centered moments that made ISC feel like a community.">
             <img src="assets/isc_delyash.jpg" alt="International Student Council friendship moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/itfs.JPG" data-title="International Thanksgiving Dinner" data-date="Kent State University" data-description="A shared meal and celebration with students from across campus.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024, Kent State" data-image="assets/itfs.JPG" data-title="International Talent and Fashion Show, before the performance" data-date="2024-04-12" data-description="A shared meal and celebration with students from across campus.">
             <img src="assets/itfs.JPG" alt="International Thanksgiving Dinner gathering">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/itfs1.jpg" data-title="International Thanksgiving Dinner" data-date="Kent State University" data-description="Celebrating food, culture, and connection through ISC programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 24, Kent State" data-image="assets/itfs1.jpg" data-title="International Talent and Fashion Show" data-caption="Red carpet of Internatinoal Talent and Fashion Show" data-date="04/12/2024" data-description="Celebrating food, culture, and connection through ISC programming.">
             <img src="assets/itfs1.jpg" alt="Students at International Thanksgiving Dinner">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/itfs2.jpg" data-title="International Thanksgiving Dinner" data-date="Kent State University" data-description="A moment from the dinner table: the small details that make events memorable.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024" data-image="assets/itfs2.jpg" data-title="International Talent and Fashion Show" data-caption="Performing Bombay theme by A.R. Rahman on bansuri (Indian Flute) with Jordyn on Clarinet at ITFS" data-date="04/12/2024" data-description="A moment from the dinner table: the small details that make events memorable.">
             <img src="assets/itfs2.jpg" alt="International Thanksgiving Dinner event detail">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/Lang24.JPEG" data-title="Language and Culture Event" data-date="Kent State University" data-description="Creating space for students to share languages, stories, and cultural traditions.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024" data-image="assets/Lang24.JPEG" data-title="Language and Cultural Exchange 2024" data-caption="Group photo at Language and Cultural Exchange 2024" data-date="03/15/2024" data-description="Creating space for students to share languages, stories, and cultural traditions.">
             <img src="assets/Lang24.JPEG" alt="Language and culture event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/leader1.jpg" data-title="Leadership Team" data-date="Kent State University" data-description="Working with student leaders to plan meaningful campus programs.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/leader1.jpg" data-title="International Student Orientation" data-caption="Addressing newly admitted international students at International Student Orientation as president of ISC" data-date="08/13/2025" data-description="Working with student leaders to plan meaningful campus programs.">
             <img src="assets/leader1.jpg" alt="ISC leadership team moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/speaker.jpg" data-title="Speaking Moment" data-date="Kent State University" data-description="Representing ISC and helping welcome students into the conversation.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/speaker.jpg" data-title="International Women's Day Celebration" data-caption="Panelist for International Women's Day Celebration, speaking about employment and educational equity of women in South Asia" data-date="03/25/2025" data-description="Representing ISC and helping welcome students into the conversation.">
             <img src="assets/speaker.jpg" alt="Isha speaking at an event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/sla 25.jpg" data-title="Student Leadership Awards" data-date="Kent State University" data-description="Celebrating student leadership, service, and campus impact.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/sla 25.jpg" data-title="Student Leadership Awards" data-caption="Student Leadership Awards, ISC announced as recipient of Global Impact Program of the Year" data-date="04/08/2025" data-description="Celebrating student leadership, service, and campus impact.">
             <img src="assets/sla 25.jpg" alt="Student Leadership Awards event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/sla25.jpg" data-title="Student Leadership Awards" data-date="Kent State University" data-description="A recognition moment from student leadership programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/sla25.jpg" data-title="Student Leadership Awards" data-caption="With friends at Student Leadership Awards" data-date="04/08/2025" data-description="A recognition moment from student leadership programming.">
             <img src="assets/sla25.jpg" alt="Student Leadership Awards group moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/Awardshow.14.jpg" data-title="Award Show Moment" data-date="Kent State University" data-description="A celebration of student leadership, campus involvement, and the people who make the work meaningful.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/Awardshow.14.jpg" data-title="Outstanding Academic Achievement Award" data-caption="Student Leadership Awards, Receiving Outstanding Academic Achievement Award from Katie Syvanych (Director, CSI)" data-date="04/07/2026" data-description="A celebration of student leadership, campus involvement, and the people who make the work meaningful.">
             <img src="assets/Awardshow.14.jpg" alt="Award show moment with students">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/Awardshow.15.jpeg" data-title="Award Show Moment" data-date="Kent State University" data-description="An evening of recognition and community with student leaders across campus.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/Awardshow.15.jpeg" data-title="Outstanding Academic Achievement Award" data-caption="Student Leadership Awards, announced as recipient of Outstanding Academic Achievement Award" data-date="04/07/2026" data-description="An evening of recognition and community with student leaders across campus.">
             <img src="assets/Awardshow.15.jpeg" alt="Award show group moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/Awardshow.40.jpeg" data-title="Award Show Moment" data-date="Kent State University" data-description="A snapshot from a night celebrating leadership, service, and student impact.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/Awardshow.40.jpeg" data-title="Entertainment Program of the Year Award" data-caption="Student Leadership Awards, Accepting Entertainment Program of the Year Award from Katie Syvanych (Director, CSI) as president of ISC" data-date="04/07/2026" data-description="A snapshot from a night celebrating leadership, service, and student impact.">
             <img src="assets/Awardshow.40.jpeg" alt="Award show celebration moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/sls.jpg" data-title="Student Leadership Summit" data-date="Kent State University" data-description="Learning, leading, and connecting with students across campus.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/sls.jpg" data-title="Leadership Social with ISC Leaders" data-caption="Leadership Social with ISC Leaders" data-date="03/29/2025" data-description="Learning, leading, and connecting with students across campus.">
             <img src="assets/sls.jpg" alt="Student Leadership Summit moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/gsf251.JPG" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/gsf251.JPG" data-title="Global Safari Fest" data-caption="Hosting Global Safari Fest!" data-date="02/14/2025" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/gsf251.JPG" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/gsf252.JPG" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/gsf252.JPG" data-title="Global Safari Fest" data-caption="Host Isha at Global Safari Fest" data-date="02/14/2025" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/gsf252.JPG" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/gsf253.JPG" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/gsf253.JPG" data-title="Global Safari Fest" data-caption="On stage with my co-hosts!" data-date="02/14/2025" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/gsf253.JPG" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/gsf254.jpg" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/gsf254.jpg" data-title="Global Safari Fest" data-caption="Valentine's Day celebrating my love for world cultures at Global Safari Fest" data-date="02/14/2025" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/gsf254.jpg" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/hc.jpg" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/hc.jpg" data-title="Homecoming Parade" data-caption="After the homecoming parade with the full ISC squad" data-date="10/11/2025" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/hc.jpg" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/hc2.jpg" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/hc2.jpg" data-title="Homecoming Parade" data-caption="Promoting sign ups for homecoming parade" data-date="09/14/2025" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/hc2.jpg" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/hc24.jpg" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Fall 2024" data-image="assets/hc24.jpg" data-title="Homecoming Parade" data-caption="Walking in the homecoming parade, representing India" data-date="09/28/2024" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/hc24.jpg" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/hc241.jpg" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Fall 2024" data-image="assets/hc241.jpg" data-title="Homecoming Parade" data-caption="Homecoming parade with my friend from Japan" data-date="09/28/2024" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/hc241.jpg" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/hc242.jpg" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Fall 2024" data-image="assets/hc242.jpg" data-title="Homecoming Parade" data-caption="After the parade, posing with friends" data-date="09/28/2024" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/hc242.jpg" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/hc251.jpg" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/hc251.jpg" data-title="ISC Banner" data-caption="The new ISC Banner designed by yours truly:)" data-date="10/10/2025" data-description="Welcoming students into cultural, social, and leadership spaces.">
             <img src="assets/hc251.jpg" alt="International Student Council event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/Awardshow.73_1_50.jpg" data-title="Award Show Moment" data-date="Kent State University" data-description="A moment from an award show celebrating student leadership and campus involvement.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/Awardshow.73_1_50.jpg" data-title="Student Leadership Awards" data-caption="With the full ISC group at the Student Leadership Awards" data-date="04/07/2026" data-description="A moment from an award show celebrating student leadership and campus involvement.">
             <img src="assets/Awardshow.73_1_50.jpg" alt="Award show celebration moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/Awardshow.81.jpeg" data-title="Award Show Moment" data-date="Kent State University" data-description="Another snapshot from an evening of recognition, community, and student impact.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/Awardshow.81.jpeg" data-title="Outstanding Academic Achievement Award" data-caption="Recipient of Outstanding Academic Achievement Award, Student Leadership Awards" data-date="04/07/2026" data-description="Another snapshot from an evening of recognition, community, and student impact.">
             <img src="assets/Awardshow.81.jpeg" alt="Award show event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/ch.jpg" data-title="Cultural Hour" data-date="Kent State University" data-description="A campus culture moment through ISC programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/ch.jpg" data-title="Community Hangout" data-caption="Presenting at weekly Community Hangout" data-date="09/06/2025" data-description="A campus culture moment through ISC programming.">
             <img src="assets/ch.jpg" alt="Cultural Hour event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/ch1.jpg" data-title="Cultural Hour" data-date="Kent State University" data-description="Sharing traditions, stories, and community through student-led programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/ch1.jpg" data-title="Community Hangout" data-caption="Stating Rules for Scavenger Hunt at Community Hangout" data-date="08/29/2025" data-description="Sharing traditions, stories, and community through student-led programming.">
             <img src="assets/ch1.jpg" alt="Cultural Hour group moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/ch2.jpg" data-title="Cultural Hour" data-date="Kent State University" data-description="A candid moment from Cultural Hour.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/ch2.jpg" data-title="Community Hangout" data-caption="Searching for clues at Scavenger Hunt with friends" data-date="08/29/2025" data-description="A candid moment from Cultural Hour.">
             <img src="assets/ch2.jpg" alt="Cultural Hour candid moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/ch3.jpg" data-title="Cultural Hour" data-date="Kent State University" data-description="Students connecting through culture, conversation, and shared experiences.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/ch3.jpg" data-title="Community Hangout" data-caption="Group Photo from Community Hangout where we played two corners" data-date="09/26/2025" data-description="Students connecting through culture, conversation, and shared experiences.">
             <img src="assets/ch3.jpg" alt="Students at Cultural Hour">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/ch4.jpg" data-title="Cultural Hour" data-date="Kent State University" data-description="One more favorite moment from Cultural Hour.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/ch4.jpg" data-title="Community Hangout" data-caption="Post Scavenger Hunt with all participants" data-date="08/29/2025" data-description="One more favorite moment from Cultural Hour.">
             <img src="assets/ch4.jpg" alt="Cultural Hour event photo">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/ghb.JPG" data-title="Global Hangout" data-date="Kent State University" data-description="A relaxed ISC gathering for conversation, community, and connection.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025" data-image="assets/ghb.JPG" data-title="Golden Hour Bash" data-caption="At Golden Hour Bash with team" data-date="08/13/2025" data-description="A relaxed ISC gathering for conversation, community, and connection.">
             <img src="assets/ghb.JPG" alt="Global Hangout event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf_egypt.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="A Global Safari Fest moment celebrating culture and community.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/gsf_egypt.jpg" data-title="Global Safari Fest" data-caption="Post Global Safari Fest with friends from Egypt" data-date="02/13/2026" data-description="A Global Safari Fest moment celebrating culture and community.">
             <img src="assets/gsf_egypt.jpg" alt="Global Safari Fest Egypt table">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf_headshotsilly.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="A silly behind-the-scenes moment from Global Safari Fest.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/gsf_headshotsilly.jpg" data-title="Global Safari Fest" data-caption="Just a silly moment after the show" data-date="02/13/2026" data-description="A silly behind-the-scenes moment from Global Safari Fest.">
             <img src="assets/gsf_headshotsilly.jpg" alt="Silly Global Safari Fest portrait">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf_hosting.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="Helping host and welcome students into a culture-filled campus event.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025" data-image="assets/gsf_hosting.jpg" data-title="Global Safari Fest" data-caption="Hosting the show!" data-date="02/14/2025" data-description="Helping host and welcome students into a culture-filled campus event.">
             <img src="assets/gsf_hosting.jpg" alt="Hosting at Global Safari Fest">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf_me.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="A personal moment from Global Safari Fest.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/gsf_me.jpg" data-title="Global Safari Fest" data-caption="Me after someone cracks a really good joke haha" data-date="02/13/2026" data-description="A personal moment from Global Safari Fest.">
             <img src="assets/gsf_me.jpg" alt="Isha at Global Safari Fest">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf_me1.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="Another favorite photo from Global Safari Fest.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/gsf_me1.jpg" data-title="Global Safari Fest" data-caption="Smiling because Global Safari was a HIT" data-date="02/13/2026" data-description="Another favorite photo from Global Safari Fest.">
             <img src="assets/gsf_me1.jpg" alt="Isha at Global Safari Fest event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf_pauline abby.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="A Global Safari Fest moment with friends and fellow student leaders.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/gsf_pauline abby.jpg" data-title="Global Safari Fest" data-caption="Post show with friends" data-date="02/13/2026" data-description="A Global Safari Fest moment with friends and fellow student leaders.">
             <img src="assets/gsf_pauline abby.jpg" alt="Friends at Global Safari Fest">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf26.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="A newer Global Safari Fest memory from ISC programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/gsf26.jpg" data-title="Global Safari Fest" data-caption="Ballroom Entrance decorated for Global Safari Fest" data-date="02/13/2026" data-description="A newer Global Safari Fest memory from ISC programming.">
             <img src="assets/gsf26.jpg" alt="Global Safari Fest event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf26_friends.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="Friends, photos, and the joyful chaos of a big campus event.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026" data-image="assets/gsf26_friends.jpg" data-title="Global Safari Fest" data-caption="With friends at Global Safari Fest" data-date="02/13/2026" data-description="Friends, photos, and the joyful chaos of a big campus event.">
             <img src="assets/gsf26_friends.jpg" alt="Friends at Global Safari Fest">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/gsf26_kavya.jpg" data-title="Global Safari Fest" data-date="Kent State University" data-description="A friendship moment from Global Safari Fest.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/gsf26_kavya.jpg" data-title="Posing with friend druring the show" data-date="02/13/2026" data-description="Posing with friend druring the show">
             <img src="assets/gsf26_kavya.jpg" alt="Friendship moment at Global Safari Fest">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/hc25 parade.jpeg" data-title="Homecoming Parade" data-date="Kent State University" data-description="Representing ISC at homecoming and bringing international student community into the celebration.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/hc25 parade.jpeg" data-title="Homecoming parade: international student community coming together to celebrate Kent State" data-date="10/11/2025" data-description="Homecoming parade: international student community coming together to celebrate Kent State.">
             <img src="assets/hc25 parade.jpeg" alt="Homecoming parade moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/hc25.jpg" data-title="Homecoming" data-date="Kent State University" data-description="A homecoming memory with ISC.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/hc25.jpg" data-title="International Students represnting their home countries by walking in the parade, bearing their flags" data-date="10/11/2025" data-description="International Students represnting their home countries by walking in the parade, bearing their flags">
             <img src="assets/hc25.jpg" alt="Homecoming event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/hc25_police.jpeg" data-title="Homecoming Parade" data-date="Kent State University" data-description="A campus parade moment from homecoming festivities.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/hc25_police.jpeg" data-title="Another fun photo before the parade" data-date="10/11/2025" data-description="Another fun photo before the parade">
             <img src="assets/hc25_police.jpeg" alt="Homecoming parade with campus police">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/hc25flags.jpeg" data-title="Homecoming Parade" data-date="Kent State University" data-description="Flags, students, and ISC community during homecoming.">
-            <img src="assets/hc25flags.jpeg" alt="Flags at homecoming parade">
-          </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc.JPG" data-title="International Student Council" data-date="Kent State University" data-description="A favorite ISC moment from campus community work.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall, Kent State" data-image="assets/isc.JPG" data-title="ISC team at the Golden Hour Bash, our first time working together" data-date="08/13/2025" data-description="ISC team at the Golden Hour Bash, our first time working together">
             <img src="assets/isc.JPG" alt="International Student Council moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc1.JPG" data-title="International Student Council" data-date="Kent State University" data-description="Another moment from my International Student Council experience.">
-            <img src="assets/isc1.JPG" alt="International Student Council group moment">
-          </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc2.JPG" data-title="International Student Council" data-date="Kent State University" data-description="An ISC event moment from the album.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc2.JPG" data-title="With Flash" data-date="08/13/2025" data-description="An ISC event moment from the album.">
             <img src="assets/isc2.JPG" alt="International Student Council event photo">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc3.JPG" data-title="International Student Council" data-date="Kent State University" data-description="A candid ISC moment with students and friends.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc3.JPG" data-title="Go Flashes!" data-date="08/13/2025" data-description="A candid ISC moment with students and friends.">
             <img src="assets/isc3.JPG" alt="International Student Council candid moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_eboard.JPG" data-title="ISC Executive Board" data-date="Kent State University" data-description="A leadership snapshot with the ISC executive board.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_eboard.JPG" data-title="ISC Executive Board" data-date="08/13/2025" data-description="A leadership snapshot with the ISC executive board.">
             <img src="assets/isc_eboard.JPG" alt="ISC executive board photo">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_orientation.jpg" data-title="ISC Orientation" data-date="Kent State University" data-description="Welcoming students and helping create a warm start to campus life.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_orientation.jpg" data-title="At International Student Orientation" data-date="08/13/2025" data-description="Welcoming students and helping create a warm start to campus life.">
             <img src="assets/isc_orientation.jpg" alt="ISC orientation event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/Isha Gupta_Outstanding Academic Achievement.jpg" data-title="Outstanding Academic Achievement" data-date="Kent State University" data-description="A recognition moment connected to academic achievement and campus involvement.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/Isha Gupta_Outstanding Academic Achievement.jpg" data-title="Receiving Outstanding Academic Achievement Award" data-date="04/07/2026" data-description="A recognition moment connected to academic achievement and campus involvement.">
             <img src="assets/Isha Gupta_Outstanding Academic Achievement.jpg" alt="Outstanding Academic Achievement recognition">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/itfs4.JPG" data-title="International Thanksgiving Dinner" data-date="Kent State University" data-description="Another memory from the International Thanksgiving Dinner.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024, Kent State" data-image="assets/itfs4.JPG" data-title="At International Talent and Fashion Show with friends" data-date="04/12/2024" data-description="Another memory from the International Thanksgiving Dinner.">
             <img src="assets/itfs4.JPG" alt="International Thanksgiving Dinner moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/lang.JPG" data-title="Language and Culture Event" data-date="Kent State University" data-description="A language and culture moment from ISC programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024, Kent State" data-image="assets/lang.JPG" data-title="Interacting with Student at Language and Cultural Exchange" data-date="03/15/2024" data-description="A language and culture moment from ISC programming.">
             <img src="assets/lang.JPG" alt="Language and culture event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/lang1.JPG" data-title="Language and Culture Event" data-date="Kent State University" data-description="Students connecting through language, culture, and conversation.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024, Kent State" data-image="assets/lang1.JPG" data-title="Teaching Hindi at Language and Cultural Exchange" data-date="03/15/2024" data-description="Students connecting through language, culture, and conversation.">
             <img src="assets/lang1.JPG" alt="Students at language and culture event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/lang2.JPG" data-title="Language and Culture Event" data-date="Kent State University" data-description="Another photo from a language and culture program.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024, Kent State" data-image="assets/lang2.JPG" data-title="Translating Name at Language and Cultural Exchange" data-date="03/15/2024" data-description="Another photo from a language and culture program.">
             <img src="assets/lang2.JPG" alt="Language and culture program">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/lang3.JPG" data-title="Language and Culture Event" data-date="Kent State University" data-description="A candid moment from the language and culture event.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024, Kent State" data-image="assets/lang3.JPG" data-title="More fun moments at Language and Cultural Exchange" data-date="03/15/2024" data-description="A candid moment from the language and culture event.">
             <img src="assets/lang3.JPG" alt="Language and culture candid moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/sla_finalist.jpg" data-title="Student Leadership Awards" data-date="Kent State University" data-description="A finalist moment from the Student Leadership Awards.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/sla_finalist.jpg" data-title="Selected as Finalist for Student Leadership Awards" data-date="04/01/2026" data-description="A finalist moment from the Student Leadership Awards.">
             <img src="assets/sla_finalist.jpg" alt="Student Leadership Awards finalist moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/sla25_group.JPG" data-title="Student Leadership Awards" data-date="Kent State University" data-description="A group memory from the Student Leadership Awards.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025, Kent State" data-image="assets/sla_25_finalist.png" data-title="Selected as Finalist for Student Leadership Awards Finalist" data-date="03/29/2025" data-description="A finalist recognition moment from the Student Leadership Awards.">
+            <img src="assets/sla_25_finalist.png" alt="Student Leadership Awards finalist recognition">
+          </button>
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025, Kent State" data-image="assets/sla25_group.JPG" data-title="Winners at Student Leadership Awards" data-date="04/07/2025" data-description="A group memory from the Student Leadership Awards.">
             <img src="assets/sla25_group.JPG" alt="Student Leadership Awards group photo">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/sla26.jpg" data-title="Student Leadership Awards" data-date="Kent State University" data-description="A more recent student leadership recognition moment.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/sla26.jpg" data-title="With Friends at the Student Leadership Awards" data-date="04/07/2026" data-description="A more recent student leadership recognition moment.">
             <img src="assets/sla26.jpg" alt="Student Leadership Awards moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/sla261.jpg" data-title="Student Leadership Awards" data-date="Kent State University" data-description="Another Student Leadership Awards memory.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/sla261.jpg" data-title="Celebrating leaders from ISC at Student Leadership Awards" data-date="04/07/2026" data-description="Another Student Leadership Awards memory.">
             <img src="assets/sla261.jpg" alt="Student Leadership Awards event photo">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/wd25.jpg" data-title="World Day" data-date="Kent State University" data-description="A World Day moment celebrating culture and community.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025, Kent State" data-image="assets/wd25.jpg" data-title="Me at International Women's Day Celebrations" data-date="03/25/2025" data-description="A World Day moment celebrating culture and community.">
             <img src="assets/wd25.jpg" alt="World Day event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/wt24.jpg" data-title="Welcome Table" data-date="Kent State University" data-description="Welcoming students and sharing ISC with the campus community.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2024, Kent State" data-image="assets/wt24.jpg" data-title="Hosting World Trivia Night" data-date="10/11/2024" data-description="Welcoming students and sharing ISC with the campus community.">
             <img src="assets/wt24.jpg" alt="Welcome table event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/wtn.JPG" data-title="Welcome Night" data-date="Kent State University" data-description="A Welcome Night memory from ISC programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/wtn.JPG" data-title="Addressing the Community at World Trivia NIght as ISC President" data-date="10/24/2025" data-description="A Welcome Night memory from ISC programming.">
             <img src="assets/wtn.JPG" alt="Welcome Night event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/wtn1.JPG" data-title="Welcome Night" data-date="Kent State University" data-description="Students gathering, talking, and making new connections.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/wtn1.JPG" data-title="Participants enjoying jeopardy at World Trivia Night" data-date="10/24/2025" data-description="Students gathering, talking, and making new connections.">
             <img src="assets/wtn1.JPG" alt="Students at Welcome Night">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/wtn2.JPG" data-title="Welcome Night" data-date="Kent State University" data-description="Another moment from Welcome Night.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/wtn2.JPG" data-title="Another World Trivia Night Moment" data-date="10/24/2025" data-description="Another moment from Welcome Night.">
             <img src="assets/wtn2.JPG" alt="Welcome Night group moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/blastoff.jpg" data-title="Blastoff" data-date="Kent State University" data-description="An ISC moment from Blastoff, welcoming students into campus life.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/blastoff.jpg" data-title="Tabling at Blastoff" data-date="08/17/2025" data-description="An ISC moment from Blastoff, welcoming students into campus life.">
             <img src="assets/blastoff.jpg" alt="Blastoff event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/bsf.jpg" data-title="BSF Event" data-date="Kent State University" data-description="A campus community moment from BSF.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/bsf.jpg" data-title="Tabling at Black Squirrel Festival" data-date="09/12/2025" data-description="A campus community moment from BSF.">
             <img src="assets/bsf.jpg" alt="BSF event moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_blastoffwyomna.png" data-title="ISC Blastoff" data-date="Kent State University" data-description="A Blastoff memory with ISC and student leaders.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_blastoffwyomna.png" data-title="Another Blastoff Moment" data-date="08/17/2025" data-description="A Blastoff memory with ISC and student leaders.">
             <img src="assets/isc_blastoffwyomna.png" alt="ISC Blastoff moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_cards.jpg" data-title="ISC Card Activity" data-date="Kent State University" data-description="A small interactive moment from an ISC gathering.">
-            <img src="assets/isc_cards.jpg" alt="ISC card activity">
-          </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_cards.PNG" data-title="ISC Card Activity" data-date="Kent State University" data-description="Another snapshot from an ISC card activity.">
-            <img src="assets/isc_cards.PNG" alt="ISC card activity moment">
-          </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_cards2.jpg" data-title="ISC Card Activity" data-date="Kent State University" data-description="Students connecting through a simple ISC activity.">
-            <img src="assets/isc_cards2.jpg" alt="Students at ISC card activity">
-          </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_cards3.jpg" data-title="ISC Card Activity" data-date="Kent State University" data-description="A candid activity moment from an ISC event.">
-            <img src="assets/isc_cards3.jpg" alt="ISC card activity candid moment">
-          </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_ch.jpg" data-title="ISC Cultural Hour" data-date="Kent State University" data-description="A Cultural Hour memory from ISC programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_ch.jpg" data-title="Community Hangout" data-date="09/26/2025" data-description="A Cultural Hour memory from ISC programming.">
             <img src="assets/isc_ch.jpg" alt="ISC Cultural Hour moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_ch2.jpg" data-title="ISC Cultural Hour" data-date="Kent State University" data-description="Students sharing culture and community at an ISC event.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_ch2.jpg" data-title="At Community Hangout with former ISC Leaders" data-date="09/26/2025" data-description="Students sharing culture and community at an ISC event.">
             <img src="assets/isc_ch2.jpg" alt="Students at ISC Cultural Hour">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_ch3.jpg" data-title="ISC Cultural Hour" data-date="Kent State University" data-description="A candid ISC Cultural Hour moment.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_ch3.jpg" data-title="During the Scavenger Hunt" data-date="08/29/2025" data-description="A candid ISC Cultural Hour moment.">
             <img src="assets/isc_ch3.jpg" alt="ISC Cultural Hour candid moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_ch4.jpg" data-title="ISC Cultural Hour" data-date="Kent State University" data-description="Another memory from Cultural Hour.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2024, Kent State" data-image="assets/isc_ch4.jpg" data-title="Playing Mafia with Friends" data-date="03/17/2024" data-description="Another memory from Cultural Hour.">
             <img src="assets/isc_ch4.jpg" alt="ISC Cultural Hour event photo">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_ch6.jpg" data-title="ISC Cultural Hour" data-date="Kent State University" data-description="A favorite ISC Cultural Hour snapshot.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_ch6.jpg" data-title="Addressing attendees at Community Hangout" data-date="09/06/2025" data-description="A favorite ISC Cultural Hour snapshot.">
             <img src="assets/isc_ch6.jpg" alt="ISC Cultural Hour snapshot">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_eab.jpg" data-title="ISC Executive Board" data-date="Kent State University" data-description="An executive board memory from ISC leadership.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_eab.jpg" data-title="At Education Across Borders" data-date="11/21/2025" data-description="An executive board memory from ISC leadership.">
             <img src="assets/isc_eab.jpg" alt="ISC executive board moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_eab24.png" data-title="ISC Executive Board" data-date="Kent State University" data-description="A 2024 executive board snapshot.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2024, Kent State" data-image="assets/isc_eab24.png" data-title="After the panel discussion at Education Across Borders" data-date="11/23/2024" data-description="A 2024 executive board snapshot.">
             <img src="assets/isc_eab24.png" alt="ISC executive board 2024">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_eab240.png" data-title="ISC Executive Board" data-date="Kent State University" data-description="Another ISC executive board memory.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2024, Kent State" data-image="assets/isc_eab240.png" data-title="Panelists at Education Across Borders" data-date="11/23/2024" data-description="Another ISC executive board memory.">
             <img src="assets/isc_eab240.png" alt="ISC executive board group">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_eab241.png" data-title="ISC Executive Board" data-date="Kent State University" data-description="Working with the executive board to build student community.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2024, Kent State" data-image="assets/isc_eab241.png" data-title="With Friends at Education Across Borders" data-date="11/23/2024" data-description="Working with the executive board to build student community.">
             <img src="assets/isc_eab241.png" alt="ISC executive board photo">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_eab242.png" data-title="ISC Executive Board" data-date="Kent State University" data-description="A leadership-team moment from ISC.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2024, Kent State" data-image="assets/isc_eab242.png" data-title="During the Panel Discussion at Education Across Borders" data-date="11/23/2024" data-description="A leadership-team moment from ISC.">
             <img src="assets/isc_eab242.png" alt="ISC leadership team photo">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_flags.jpg" data-title="ISC Flags" data-date="Kent State University" data-description="Flags, culture, and international student pride through ISC.">
-            <img src="assets/isc_flags.jpg" alt="ISC flags event">
-          </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_ghb.JPG" data-title="ISC Global Hangout" data-date="Kent State University" data-description="A Global Hangout memory with ISC.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_ghb.JPG" data-title="Posing at the Golden Hour Bash with team" data-date="08/17/2025" data-description="A Global Hangout memory with ISC.">
             <img src="assets/isc_ghb.JPG" alt="ISC Global Hangout event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_gsf.jpg" data-title="ISC Global Safari Fest" data-date="Kent State University" data-description="A Global Safari Fest moment from ISC programming.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/isc_gsf.jpg" data-title="With participant at Global Safari Fest" data-date="02/14/2026" data-description="A Global Safari Fest moment from ISC programming.">
             <img src="assets/isc_gsf.jpg" alt="ISC Global Safari Fest">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_mafiahangout.jpg" data-title="ISC Hangout" data-date="Kent State University" data-description="A relaxed ISC hangout and game-night style memory.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2025, Kent State" data-image="assets/isc_mafiahangout.jpg" data-title="Community Hangout where we played Mafia game" data-date="09/06/2025" data-description="A relaxed ISC hangout and game-night style memory.">
             <img src="assets/isc_mafiahangout.jpg" alt="ISC hangout moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_potluck.jpg" data-title="ISC Potluck" data-date="Kent State University" data-description="Food, conversation, and community at an ISC potluck.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025, Kent State" data-image="assets/isc_potluck.jpg" data-title="ISC Potluck, an end of semester tradition" data-date="05/02/2025" data-description="Food, conversation, and community at an ISC potluck.">
             <img src="assets/isc_potluck.jpg" alt="ISC potluck event">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_promotions.png" data-title="ISC Promotions" data-date="Kent State University" data-description="Behind-the-scenes ISC promotions and outreach work.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025, Kent State" data-image="assets/isc_promotions.png" data-title="Filming content for marketing and promotions of Global Safari Fest" data-date="01/17/2025" data-description="Behind-the-scenes ISC promotions and outreach work.">
             <img src="assets/isc_promotions.png" alt="ISC promotions material">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_promotions2.png" data-title="ISC Promotions" data-date="Kent State University" data-description="Another ISC promotions memory.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025, Kent State" data-image="assets/isc_promotions2.png" data-title="Another snipped of BTS of filming" data-date="01/17/2025" data-description="Another ISC promotions memory.">
             <img src="assets/isc_promotions2.png" alt="ISC promotions moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_sof25.png" data-title="Student Organization Fair" data-date="Kent State University" data-description="Sharing ISC with students at the organization fair.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2025, Kent State" data-image="assets/isc_sof25.png" data-title="Student Organization Fair" data-date="01/17/2025" data-description="Sharing ISC with students at the organization fair.">
             <img src="assets/isc_sof25.png" alt="ISC table at student organization fair">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_sof26.png" data-title="Student Organization Fair" data-date="Kent State University" data-description="Welcoming students to learn about ISC at the organization fair.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/isc_sof26.png" data-title="Student Organization Fair" data-date="01/16/2026" data-description="Welcoming students to learn about ISC at the organization fair.">
             <img src="assets/isc_sof26.png" alt="ISC student organization fair moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_tot.png" data-title="ISC Tabling" data-date="Kent State University" data-description="An ISC tabling and outreach moment.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2024, Kent State" data-image="assets/isc_tot.png" data-title="Tabling at Trick or Treat" data-date="10/31/2024" data-description="An ISC tabling and outreach moment.">
             <img src="assets/isc_tot.png" alt="ISC tabling moment">
           </button>
-          <button class="isc-album-photo" type="button" data-isc-photo data-image="assets/isc_tot2.png" data-title="ISC Tabling" data-date="Kent State University" data-description="Another tabling moment from ISC outreach.">
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Fall 2024, Kent State" data-image="assets/isc_tot2.png" data-title="Distributing Sweet Treats!" data-date="10/31/2024" data-description="Another tabling moment from ISC outreach.">
             <img src="assets/isc_tot2.png" alt="ISC tabling event">
+          </button>
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/isc_thankyou.png" data-title="Signing off as President" data-date="05/01/2026" data-description="A thank-you moment from ISC, celebrating the people who helped make the community feel warm and welcoming.">
+            <img src="assets/isc_thankyou.png" alt="ISC thank-you moment">
+          </button>
+          <button class="isc-album-photo" type="button" data-isc-photo data-semester="Spring 2026, Kent State" data-image="assets/isc_thankyou2.png" data-title="Taking a moment to thank all the community members for their participation" data-date="05/01/2026" data-description="Another thank-you memory from ISC and the students who made the work meaningful.">
+            <img src="assets/isc_thankyou2.png" alt="Second ISC thank-you moment">
           </button>
           
         </div>
@@ -348,8 +348,8 @@
             <img src="assets/isc1.JPEG" alt="" data-isc-viewer>
             <figcaption class="isc-carousel-caption">
               <p class="timeline-date" data-isc-date></p>
-              <h2 data-isc-title></h2>
-              <p data-isc-description></p>
+              <h2 data-isc-caption></h2>
+              <p class="isc-carousel-semester" data-isc-semester></p>
             </figcaption>
           </figure>
           <button class="isc-carousel-nav" type="button" data-isc-next aria-label="Next ISC photo">&rarr;</button>

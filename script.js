@@ -46,12 +46,14 @@ const galleryWorks = document.querySelectorAll("[data-gallery-work]");
 const artworkCards = document.querySelectorAll("[data-artwork-card]");
 const heroCats = document.querySelectorAll("[data-hero-cat]");
 const scrapbookPhotos = document.querySelectorAll("[data-scrapbook-photo]");
-const iscPhotoCards = document.querySelectorAll("[data-isc-photo]");
+const iscAlbumGrid = document.querySelector("[data-isc-grid]");
+let iscPhotoCards = Array.from(document.querySelectorAll("[data-isc-photo]"));
+const iscSortButtons = document.querySelectorAll("[data-isc-sort]");
 const iscOverlay = document.querySelector("[data-isc-overlay]");
 const iscViewer = document.querySelector("[data-isc-viewer]");
 const iscDate = document.querySelector("[data-isc-date]");
-const iscTitle = document.querySelector("[data-isc-title]");
-const iscDescription = document.querySelector("[data-isc-description]");
+const iscCaption = document.querySelector("[data-isc-caption]");
+const iscSemester = document.querySelector("[data-isc-semester]");
 const iscClose = document.querySelector("[data-isc-close]");
 const iscPrev = document.querySelector("[data-isc-prev]");
 const iscNext = document.querySelector("[data-isc-next]");
@@ -124,11 +126,52 @@ scrapbookPhotos.forEach((photo) => {
   photo.addEventListener("animationend", () => photo.classList.remove("is-tapped"));
 });
 
+const parseIscDate = (date) => {
+  const normalizedDate = date.replace(/\s+/g, "");
+  const slashDate = normalizedDate.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  const dashDate = normalizedDate.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+
+  if (slashDate) {
+    const [, month, day, year] = slashDate;
+    return new Date(Number(year), Number(month) - 1, Number(day));
+  }
+
+  if (dashDate) {
+    const [, year, month, day] = dashDate;
+    return new Date(Number(year), Number(month) - 1, Number(day));
+  }
+
+  const fallbackDate = new Date(date);
+  return Number.isNaN(fallbackDate.getTime()) ? null : fallbackDate;
+};
+
+const getIscDateLabel = (card) => {
+  const date = card.dataset.date || "";
+  if (!date || date.toLowerCase() === "kent state university") return "Date TBD";
+
+  const parsedDate = parseIscDate(date);
+  if (parsedDate) {
+    return parsedDate.toLocaleDateString("en-US", {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric"
+    });
+  }
+
+  return date;
+};
+
+const getIscSortValue = (card) => {
+  const rawDate = card.dataset.sortDate || card.dataset.date || "";
+  const parsedDate = parseIscDate(rawDate);
+  return parsedDate ? parsedDate.getTime() : Number.POSITIVE_INFINITY;
+};
+
 const getIscPhotoDetails = (card) => ({
   image: card.dataset.image || "",
-  title: card.dataset.title || "International Student Council",
-  date: card.dataset.date || "",
-  description: card.dataset.description || "",
+  caption: card.dataset.caption || card.dataset.title || card.dataset.description || "International Student Council moment",
+  date: getIscDateLabel(card),
+  semester: card.dataset.semester || "Semester, Kent State",
   alt: card.querySelector("img")?.getAttribute("alt") || "International Student Council photo"
 });
 
@@ -143,8 +186,8 @@ const showIscPhoto = (index) => {
   }
 
   if (iscDate) iscDate.textContent = details.date;
-  if (iscTitle) iscTitle.textContent = details.title;
-  if (iscDescription) iscDescription.textContent = details.description;
+  if (iscCaption) iscCaption.textContent = details.caption;
+  if (iscSemester) iscSemester.textContent = details.semester;
 };
 
 const moveIscPhoto = (direction) => {
@@ -159,14 +202,44 @@ const closeIscCarousel = () => {
 };
 
 iscPhotoCards.forEach((card, index) => {
+  card.dataset.originalIndex = String(index);
   card.addEventListener("click", () => {
     if (!(iscOverlay instanceof HTMLElement)) return;
-    showIscPhoto(index);
+    showIscPhoto(iscPhotoCards.indexOf(card));
     iscOverlay.hidden = false;
     document.body.classList.add("has-isc-carousel");
     iscClose?.focus({ preventScroll: true });
   });
 });
+
+const sortIscPhotos = (direction = "asc") => {
+  if (!(iscAlbumGrid instanceof HTMLElement)) return;
+  const multiplier = direction === "desc" ? -1 : 1;
+  iscPhotoCards = [...iscPhotoCards].sort((first, second) => {
+    const firstDate = getIscSortValue(first);
+    const secondDate = getIscSortValue(second);
+
+    if (firstDate !== secondDate) {
+      if (!Number.isFinite(firstDate)) return 1;
+      if (!Number.isFinite(secondDate)) return -1;
+      return (firstDate - secondDate) * multiplier;
+    }
+
+    return Number(first.dataset.originalIndex || 0) - Number(second.dataset.originalIndex || 0);
+  });
+
+  iscPhotoCards.forEach((card) => iscAlbumGrid.append(card));
+};
+
+iscSortButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    iscSortButtons.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    sortIscPhotos(button.dataset.iscSort || "asc");
+  });
+});
+
+sortIscPhotos("asc");
 
 iscPrev?.addEventListener("click", () => moveIscPhoto(-1));
 iscNext?.addEventListener("click", () => moveIscPhoto(1));
