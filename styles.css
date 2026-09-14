@@ -507,6 +507,32 @@ button {
   max-width: 58ch;
 }
 
+.life-hero {
+  align-items: center;
+  display: grid;
+  min-height: min(28rem, calc(100vh - 72px));
+  overflow: hidden;
+  position: relative;
+}
+
+.life-hero-watermark {
+  height: min(22rem, 58vw);
+  opacity: 1;
+  object-fit: cover;
+  position: absolute;
+  right: clamp(-3.8rem, 1vw, 1.25rem);
+  top: clamp(1.1rem, 4vw, 2.6rem);
+  transform: rotate(4deg);
+  width: min(22rem, 58vw);
+  z-index: 0;
+}
+
+.life-hero-copy {
+  max-width: 45rem;
+  position: relative;
+  z-index: 1;
+}
+
 .eyebrow {
   color: var(--crimson);
   font-size: 0.78rem;
@@ -2592,6 +2618,13 @@ h3 {
   line-height: 1.75;
 }
 
+.hobby-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.15rem;
+}
+
 .hobby-scrapbook {
   align-items: center;
   display: flex;
@@ -2659,6 +2692,102 @@ h3 {
   padding: 0.35rem 0.7rem;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.life-gallery-section,
+.event-blog-section {
+  padding-top: 4rem;
+}
+
+.life-gallery-grid {
+  align-items: start;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.life-gallery-photo {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 8px;
+  box-shadow: 0 18px 38px rgba(70, 36, 49, 0.1), 0 4px 12px rgba(70, 36, 49, 0.06);
+  margin: 0;
+  padding: 0.85rem;
+}
+
+.life-gallery-photo.wide {
+  grid-column: span 2;
+}
+
+.life-gallery-photo.tall {
+  grid-row: span 2;
+}
+
+.life-gallery-photo img {
+  background: white;
+  border-radius: 6px;
+  display: block;
+  height: auto;
+  max-height: 34rem;
+  object-fit: contain;
+  width: 100%;
+}
+
+.life-gallery-photo figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-top: 0.65rem;
+}
+
+.event-blog-section {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.event-blog-entry {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 8px;
+  box-shadow: 0 18px 38px rgba(70, 36, 49, 0.1), 0 4px 12px rgba(70, 36, 49, 0.06);
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1fr);
+  padding: clamp(1rem, 2vw, 1.45rem);
+}
+
+.event-blog-entry:nth-child(even) {
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.72fr);
+}
+
+.event-blog-entry:nth-child(even) img {
+  order: 2;
+}
+
+.event-blog-entry:nth-child(even) div {
+  order: 1;
+}
+
+.event-blog-entry img {
+  border: 8px solid white;
+  border-bottom-width: 1.25rem;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba(70, 36, 49, 0.12);
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+}
+
+.event-blog-entry h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 0.7rem;
+}
+
+.event-blog-entry p:not(.panel-kicker) {
+  color: var(--muted);
+  line-height: 1.75;
 }
 
 .about-section {
@@ -3085,6 +3214,18 @@ h3 {
     width: 21rem;
   }
 
+  .life-hero {
+    min-height: 24rem;
+  }
+
+  .life-hero-watermark {
+    height: 17rem;
+    opacity: 0.9;
+    right: -5rem;
+    top: 1.2rem;
+    width: 17rem;
+  }
+
   .art-hero h1 {
     font-size: clamp(3.1rem, 16vw, 4.8rem);
   }
@@ -3098,8 +3239,22 @@ h3 {
   .leadership-role-grid,
   .explore-gallery-grid,
   .art-category-grid,
-  .award-grid {
+  .award-grid,
+  .life-gallery-grid,
+  .event-blog-entry,
+  .event-blog-entry:nth-child(even) {
     grid-template-columns: 1fr;
+  }
+
+  .life-gallery-photo.wide,
+  .life-gallery-photo.tall {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .event-blog-entry:nth-child(even) img,
+  .event-blog-entry:nth-child(even) div {
+    order: initial;
   }
 
   .hobby-list {
