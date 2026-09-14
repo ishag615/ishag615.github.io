@@ -242,6 +242,41 @@ button {
   max-width: 12ch;
 }
 
+.leadership-hero {
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.34fr);
+  position: relative;
+}
+
+.leadership-hero-copy {
+  max-width: 48rem;
+}
+
+.leadership-headshot {
+  align-self: start;
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 18px 38px rgba(70, 36, 49, 0.14), 0 4px 12px rgba(70, 36, 49, 0.08);
+  justify-self: end;
+  margin: 0;
+  overflow: hidden;
+  padding: 0.45rem;
+  transform: rotate(1.5deg);
+  width: min(16rem, 100%);
+}
+
+.leadership-headshot img {
+  aspect-ratio: 4 / 5;
+  border-radius: 6px;
+  height: auto;
+  object-fit: cover;
+  object-position: center 22%;
+  width: 100%;
+}
+
 .projects-hero {
   align-items: center;
   display: grid;
