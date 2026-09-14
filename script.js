@@ -46,6 +46,12 @@ const galleryWorks = document.querySelectorAll("[data-gallery-work]");
 const artworkCards = document.querySelectorAll("[data-artwork-card]");
 const heroCats = document.querySelectorAll("[data-hero-cat]");
 const scrapbookPhotos = document.querySelectorAll("[data-scrapbook-photo]");
+const lifeAlbumPhotos = Array.from(document.querySelectorAll("[data-life-album-photo]"));
+const lifeAlbumOverlay = document.querySelector("[data-life-album-overlay]");
+const lifeAlbumViewer = document.querySelector("[data-life-album-viewer]");
+const lifeAlbumClose = document.querySelector("[data-life-album-close]");
+const lifeAlbumPrev = document.querySelector("[data-life-album-prev]");
+const lifeAlbumNext = document.querySelector("[data-life-album-next]");
 const iscAlbumGrid = document.querySelector("[data-isc-grid]");
 let iscPhotoCards = Array.from(document.querySelectorAll("[data-isc-photo]"));
 const iscSortButtons = document.querySelectorAll("[data-isc-sort]");
@@ -67,6 +73,7 @@ const artworkWheelThreshold = 46;
 let activeProjectScreenshots = [];
 let activeProjectScreenshotIndex = 0;
 let activeIscPhotoIndex = 0;
+let activeLifeAlbumIndex = 0;
 
 const recipes = [
   "Chili crisp noodles with cucumber ribbons",
@@ -271,6 +278,69 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") {
     event.preventDefault();
     moveIscPhoto(1);
+  }
+});
+
+const showLifeAlbumPhoto = (index) => {
+  if (!lifeAlbumPhotos.length) return;
+  activeLifeAlbumIndex = (index + lifeAlbumPhotos.length) % lifeAlbumPhotos.length;
+  const button = lifeAlbumPhotos[activeLifeAlbumIndex];
+  const image = button.querySelector("img");
+
+  if (lifeAlbumViewer instanceof HTMLImageElement && image instanceof HTMLImageElement) {
+    lifeAlbumViewer.src = image.getAttribute("src") || "";
+    lifeAlbumViewer.alt = image.getAttribute("alt") || "Album photo";
+  }
+};
+
+const moveLifeAlbumPhoto = (direction) => {
+  showLifeAlbumPhoto(activeLifeAlbumIndex + direction);
+};
+
+const closeLifeAlbum = () => {
+  if (!(lifeAlbumOverlay instanceof HTMLElement)) return;
+  lifeAlbumOverlay.hidden = true;
+  document.body.classList.remove("has-life-album-carousel");
+  lifeAlbumPhotos[activeLifeAlbumIndex]?.focus();
+};
+
+lifeAlbumPhotos.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    if (!(lifeAlbumOverlay instanceof HTMLElement)) return;
+    showLifeAlbumPhoto(index);
+    lifeAlbumOverlay.hidden = false;
+    document.body.classList.add("has-life-album-carousel");
+    lifeAlbumClose?.focus({ preventScroll: true });
+  });
+});
+
+lifeAlbumPrev?.addEventListener("click", () => moveLifeAlbumPhoto(-1));
+lifeAlbumNext?.addEventListener("click", () => moveLifeAlbumPhoto(1));
+lifeAlbumClose?.addEventListener("click", closeLifeAlbum);
+
+lifeAlbumOverlay?.addEventListener("click", (event) => {
+  if (event.target === lifeAlbumOverlay) {
+    closeLifeAlbum();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!(lifeAlbumOverlay instanceof HTMLElement) || lifeAlbumOverlay.hidden) return;
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeLifeAlbum();
+    return;
+  }
+
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    moveLifeAlbumPhoto(-1);
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    moveLifeAlbumPhoto(1);
   }
 });
 

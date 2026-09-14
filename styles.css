@@ -2794,6 +2794,109 @@ h3 {
   padding-top: 4rem;
 }
 
+.simple-album-main {
+  padding: 6rem max(1.25rem, calc((100vw - 1180px) / 2)) 4rem;
+}
+
+.simple-album-title {
+  font-size: clamp(2.7rem, 8vw, 6rem);
+  margin-bottom: clamp(1.8rem, 5vw, 3.5rem);
+}
+
+.simple-album-grid {
+  align-items: start;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.simple-album-photo {
+  aspect-ratio: 1;
+  background: white;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 16px 34px rgba(70, 36, 49, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.simple-album-photo:hover,
+.simple-album-photo:focus-visible {
+  box-shadow: 0 22px 42px rgba(70, 36, 49, 0.16);
+  outline: 0;
+  transform: translateY(-0.25rem);
+}
+
+.simple-album-photo img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.life-album-overlay {
+  align-items: center;
+  background: rgba(24, 18, 22, 0.86);
+  bottom: 0;
+  display: grid;
+  gap: clamp(0.6rem, 2vw, 1.4rem);
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  left: 0;
+  padding: calc(var(--nav-height, 5rem) + 1rem) clamp(0.8rem, 3vw, 2rem) 1.2rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 30;
+}
+
+.life-album-overlay[hidden] {
+  display: none;
+}
+
+.life-album-viewer {
+  align-self: center;
+  display: block;
+  justify-self: center;
+  max-height: calc(100vh - var(--nav-height, 5rem) - 3rem);
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.life-album-control {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.88);
+  border: 0;
+  border-radius: 50%;
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 2rem;
+  font-weight: 800;
+  height: 3rem;
+  justify-content: center;
+  transition: background 180ms ease, transform 180ms ease;
+  width: 3rem;
+}
+
+.life-album-control:hover,
+.life-album-control:focus-visible {
+  background: white;
+  outline: 0;
+  transform: scale(1.05);
+}
+
+.life-album-close {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem);
+  top: calc(var(--nav-height, 5rem) + 0.8rem);
+}
+
+body.has-life-album-carousel {
+  overflow: hidden;
+}
+
 .life-gallery-grid {
   align-items: start;
   display: grid;
@@ -3354,6 +3457,30 @@ h3 {
   .life-gallery-photo.tall {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .simple-album-main {
+    padding-top: 4.8rem;
+  }
+
+  .life-album-overlay {
+    grid-template-columns: 1fr 1fr;
+    padding-top: calc(var(--nav-height, 5rem) + 4rem);
+  }
+
+  .life-album-viewer {
+    grid-column: 1 / -1;
+    max-height: calc(100vh - var(--nav-height, 5rem) - 8rem);
+    order: 1;
+  }
+
+  .life-album-control {
+    justify-self: center;
+    order: 2;
+  }
+
+  .life-album-close {
+    top: calc(var(--nav-height, 5rem) + 0.7rem);
   }
 
   .event-blog-entry:nth-child(even) img,

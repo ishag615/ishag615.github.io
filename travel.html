@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Travel photos and memories by Isha Gupta.">
+    <meta name="description" content="Travel album by Isha Gupta.">
     <title>Isha Gupta | Travel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,47 +33,33 @@
       </nav>
     </header>
 
-    <main id="main">
-      <section class="page-hero section-band">
-        <p class="eyebrow">Traveling</p>
-        <h1>Places That Made Me Curious</h1>
-        <p class="hero-text">A growing travel album for the places, colors, meals, walks, and views I want to remember.</p>
-        <div class="hero-actions">
-          <a class="button secondary" href="life.html">Back to life</a>
-        </div>
-      </section>
-
-      <section class="section life-gallery-section">
-        <div class="life-gallery-grid travel-gallery-grid">
-          <figure class="life-gallery-photo wide">
-            <img src="assets/rajasthan.jpeg" alt="Traveling in Rajasthan">
-            <figcaption>Rajasthan</figcaption>
-          </figure>
-          <figure class="life-gallery-photo tall">
-            <img src="assets/safari.jpg" alt="Safari trip moment">
-            <figcaption>Safari day</figcaption>
-          </figure>
-          <figure class="life-gallery-photo">
-            <img src="assets/trail.jpg" alt="Trail during a walk">
-            <figcaption>Long walks, new views</figcaption>
-          </figure>
-          <figure class="life-gallery-photo">
-            <img src="assets/IMG_1252.jpg" alt="People carrying flags outdoors">
-            <figcaption>Campus moments that felt like little trips</figcaption>
-          </figure>
-        </div>
-      </section>
+    <main id="main" class="simple-album-main">
+      <h1 class="simple-album-title">Travel</h1>
+      <div class="simple-album-grid">
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_6908.jpg" alt="Travel album image 1"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_0629.JPG" alt="Travel album image 2"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_6837.jpg" alt="Travel album image 3"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_0101.JPG" alt="Travel album image 4"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_6615.jpg" alt="Travel album image 5"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_0693.JPG" alt="Travel album image 6"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_6988.jpg" alt="Travel album image 7"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_0332.JPG" alt="Travel album image 8"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_6597.jpg" alt="Travel album image 9"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_0535.JPG" alt="Travel album image 10"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_6967.jpg" alt="Travel album image 11"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_0147.JPG" alt="Travel album image 12"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_0422.JPG" alt="Travel album image 13"></button>
+        <button class="simple-album-photo" type="button" data-life-album-photo><img src="assets/travels/IMG_9389.jpg" alt="Travel album image 14"></button>
+      </div>
     </main>
 
-    <footer class="footer contact-footer" id="site-footer">
-      <div class="footer-copy"><p class="eyebrow">Contact</p><h2>Send a note.</h2></div>
-      <div class="footer-links">
-        <a href="mailto:isha060105@gmail.com" data-tip="Email Isha here"><span class="link-icon email-icon" aria-hidden="true"></span><span>Email</span></a>
-        <a href="https://www.linkedin.com/in/ishagupta7/" target="_blank" rel="noreferrer" data-tip="Access Isha's LinkedIn here"><span class="link-icon linkedin-icon" aria-hidden="true"></span><span>LinkedIn</span></a>
-        <a href="https://www.instagram.com/isha_0106/" target="_blank" rel="noreferrer" data-tip="See Isha's Instagram here"><span class="link-icon instagram-icon" aria-hidden="true"></span><span>Instagram</span></a>
-        <a href="https://github.com/ishag615" target="_blank" rel="noreferrer" data-tip="Explore Isha's GitHub here"><span class="link-icon github-icon" aria-hidden="true"></span><span>GitHub</span></a>
-      </div>
-    </footer>
+    <div class="life-album-overlay" data-life-album-overlay hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="life-album-control life-album-close" type="button" data-life-album-close aria-label="Close photo viewer">x</button>
+      <button class="life-album-control" type="button" data-life-album-prev aria-label="Previous photo">&lsaquo;</button>
+      <img class="life-album-viewer" data-life-album-viewer src="" alt="">
+      <button class="life-album-control" type="button" data-life-album-next aria-label="Next photo">&rsaquo;</button>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
