@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="International Student Council album by Isha Gupta at Kent State.">
+    <title>Isha Gupta | ISC Album</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="index.html" aria-label="Isha Gupta home"><span class="brand-mark" aria-hidden="true"><span class="mark-i">i</span><span class="mark-g">g</span></span><span class="brand-name">Isha Gupta</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links" data-nav-links>
+          <a href="index.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="art.html">Art</a>
+          <a class="active-page" href="leadership.html">Leadership</a>
+          <a href="life.html">Life</a>
+          <a href="awards.html">Awards</a>
+          <div class="nav-contact-links" aria-label="Contact links">
+            <a class="nav-icon-link" href="mailto:isha060105@gmail.com" aria-label="Email Isha" title="Email"><span class="link-icon email-icon" aria-hidden="true"></span></a>
+            <a class="nav-icon-link" href="https://www.linkedin.com/in/ishagupta7/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><span class="link-icon linkedin-icon" aria-hidden="true"></span></a>
+            <a class="nav-icon-link" href="https://www.instagram.com/isha_0106/" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram"><span class="link-icon instagram-icon" aria-hidden="true"></span></a>
+            <a class="nav-icon-link" href="https://github.com/ishag615" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><span class="link-icon github-icon" aria-hidden="true"></span></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="page-hero section-band isc-album-hero">
+        <p class="eyebrow">International Student Council</p>
+        <h1>Campus moments, collected</h1>
+        <p class="hero-text">A small album from my work with the International Student Council at Kent State, celebrating the people, programs, and everyday moments that make community feel real.</p>
+        <div class="hero-actions">
+          <a class="button secondary" href="leadership.html">Back to leadership</a>
+        </div>
+      </section>
+
+      <section class="section isc-album-section">
+        <div class="section-heading">
+          <p class="eyebrow">ISC album</p>
+          <h2>International students, shared stories</h2>
+        </div>
+        <div class="isc-album-grid">
+          <button class="isc-album-photo wide" type="button" data-isc-photo data-image="assets/leader1.jpg" data-title="Student Leadership Moment" data-date="Kent State University" data-description="Building connection through student leadership and campus community.">
+            <img src="assets/leader1.jpg" alt="International Student Council group leadership moment">
+          </button>
+          <button class="isc-album-photo tall" type="button" data-isc-photo data-image="assets/leader2.JPEG" data-title="ISC Event Moment" data-date="Kent State University" data-description="Welcoming students into cultural, social, and leadership spaces.">
+            <img src="assets/leader2.JPEG" alt="International Student Council event moment">
+          </button>
+        </div>
+      </section>
+
+      <div class="isc-carousel-overlay" data-isc-overlay hidden role="dialog" aria-modal="true" aria-label="International Student Council album viewer">
+        <button class="dialog-close" type="button" data-isc-close aria-label="Close ISC album viewer">x</button>
+        <div class="isc-carousel">
+          <button class="isc-carousel-nav" type="button" data-isc-prev aria-label="Previous ISC photo">&larr;</button>
+          <figure class="isc-carousel-frame">
+            <img src="assets/leader1.jpg" alt="" data-isc-viewer>
+            <figcaption class="isc-carousel-caption">
+              <p class="timeline-date" data-isc-date></p>
+              <h2 data-isc-title></h2>
+              <p data-isc-description></p>
+            </figcaption>
+          </figure>
+          <button class="isc-carousel-nav" type="button" data-isc-next aria-label="Next ISC photo">&rarr;</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer contact-footer" id="site-footer">
+      <div class="footer-copy"><p class="eyebrow">Contact</p><h2>Let’s organize something thoughtful.</h2></div>
+      <div class="footer-links">
+        <a href="mailto:isha060105@gmail.com" data-tip="Email Isha here"><span class="link-icon email-icon" aria-hidden="true"></span><span>Email</span></a>
+        <a href="https://www.linkedin.com/in/ishagupta7/" target="_blank" rel="noreferrer" data-tip="Access Isha's LinkedIn here"><span class="link-icon linkedin-icon" aria-hidden="true"></span><span>LinkedIn</span></a>
+        <a href="https://www.instagram.com/isha_0106/" target="_blank" rel="noreferrer" data-tip="See Isha's Instagram here"><span class="link-icon instagram-icon" aria-hidden="true"></span><span>Instagram</span></a>
+        <a href="https://github.com/ishag615" target="_blank" rel="noreferrer" data-tip="Explore Isha's GitHub here"><span class="link-icon github-icon" aria-hidden="true"></span><span>GitHub</span></a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

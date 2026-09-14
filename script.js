@@ -45,6 +45,16 @@ const exploreGalleryGrid = document.querySelector(".explore-gallery-grid");
 const galleryWorks = document.querySelectorAll("[data-gallery-work]");
 const artworkCards = document.querySelectorAll("[data-artwork-card]");
 const heroCats = document.querySelectorAll("[data-hero-cat]");
+const scrapbookPhotos = document.querySelectorAll("[data-scrapbook-photo]");
+const iscPhotoCards = document.querySelectorAll("[data-isc-photo]");
+const iscOverlay = document.querySelector("[data-isc-overlay]");
+const iscViewer = document.querySelector("[data-isc-viewer]");
+const iscDate = document.querySelector("[data-isc-date]");
+const iscTitle = document.querySelector("[data-isc-title]");
+const iscDescription = document.querySelector("[data-isc-description]");
+const iscClose = document.querySelector("[data-isc-close]");
+const iscPrev = document.querySelector("[data-isc-prev]");
+const iscNext = document.querySelector("[data-isc-next]");
 
 let activeArtworkSet = [];
 let activeArtworkIndex = 0;
@@ -54,6 +64,7 @@ let artworkWheelResetTimer;
 const artworkWheelThreshold = 46;
 let activeProjectScreenshots = [];
 let activeProjectScreenshotIndex = 0;
+let activeIscPhotoIndex = 0;
 
 const recipes = [
   "Chili crisp noodles with cucumber ribbons",
@@ -101,6 +112,93 @@ heroCats.forEach((cat) => {
   cat.addEventListener("pointerenter", cycleCatMood);
   cat.addEventListener("click", cycleCatMood);
   cat.addEventListener("animationend", () => cat.classList.remove("is-pouncing"));
+});
+
+scrapbookPhotos.forEach((photo) => {
+  photo.addEventListener("click", () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    photo.classList.remove("is-tapped");
+    window.requestAnimationFrame(() => photo.classList.add("is-tapped"));
+  });
+
+  photo.addEventListener("animationend", () => photo.classList.remove("is-tapped"));
+});
+
+const getIscPhotoDetails = (card) => ({
+  image: card.dataset.image || "",
+  title: card.dataset.title || "International Student Council",
+  date: card.dataset.date || "",
+  description: card.dataset.description || "",
+  alt: card.querySelector("img")?.getAttribute("alt") || "International Student Council photo"
+});
+
+const showIscPhoto = (index) => {
+  if (!iscPhotoCards.length) return;
+  activeIscPhotoIndex = (index + iscPhotoCards.length) % iscPhotoCards.length;
+  const details = getIscPhotoDetails(iscPhotoCards[activeIscPhotoIndex]);
+
+  if (iscViewer instanceof HTMLImageElement) {
+    iscViewer.src = details.image;
+    iscViewer.alt = details.alt;
+  }
+
+  if (iscDate) iscDate.textContent = details.date;
+  if (iscTitle) iscTitle.textContent = details.title;
+  if (iscDescription) iscDescription.textContent = details.description;
+};
+
+const moveIscPhoto = (direction) => {
+  showIscPhoto(activeIscPhotoIndex + direction);
+};
+
+const closeIscCarousel = () => {
+  if (!(iscOverlay instanceof HTMLElement)) return;
+  iscOverlay.hidden = true;
+  document.body.classList.remove("has-isc-carousel");
+  iscPhotoCards[activeIscPhotoIndex]?.focus();
+};
+
+iscPhotoCards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    if (!(iscOverlay instanceof HTMLElement)) return;
+    showIscPhoto(index);
+    iscOverlay.hidden = false;
+    document.body.classList.add("has-isc-carousel");
+    iscClose?.focus({ preventScroll: true });
+  });
+});
+
+iscPrev?.addEventListener("click", () => moveIscPhoto(-1));
+iscNext?.addEventListener("click", () => moveIscPhoto(1));
+
+iscClose?.addEventListener("click", () => {
+  closeIscCarousel();
+});
+
+iscOverlay?.addEventListener("click", (event) => {
+  if (event.target === iscOverlay) {
+    closeIscCarousel();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!(iscOverlay instanceof HTMLElement) || iscOverlay.hidden) return;
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeIscCarousel();
+    return;
+  }
+
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    moveIscPhoto(-1);
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    moveIscPhoto(1);
+  }
 });
 
 artworkCards.forEach((card) => {
