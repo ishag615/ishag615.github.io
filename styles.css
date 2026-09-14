@@ -2548,46 +2548,88 @@ h3 {
   transform: scale(1.06);
 }
 
-.hobby-grid {
+.hobby-list {
   display: grid;
-  gap: 1.25rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
   margin-bottom: 1.5rem;
 }
 
-.hobby-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  padding: 1.15rem;
+.hobby-feature {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3.6rem);
+  grid-template-columns: minmax(17rem, 0.92fr) minmax(0, 1fr);
 }
 
-.hobby-card p:not(.panel-kicker) {
+.hobby-feature-reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.92fr);
+}
+
+.hobby-feature-reverse .hobby-scrapbook {
+  order: 2;
+}
+
+.hobby-feature-reverse .hobby-copy-panel {
+  order: 1;
+}
+
+.hobby-copy-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+  padding: clamp(1.3rem, 3vw, 2.2rem);
+}
+
+.hobby-copy-panel h3 {
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  margin-bottom: 0.65rem;
+}
+
+.hobby-copy-panel p:not(.panel-kicker) {
   color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
 }
 
-.hobby-photos {
+.hobby-scrapbook {
+  align-items: center;
   display: flex;
-  gap: 0.6rem;
-  margin-bottom: 0.2rem;
+  justify-content: center;
+  min-height: clamp(16rem, 31vw, 24rem);
+  padding: 1rem 0;
 }
 
-.hobby-photos img {
+.hobby-photo {
   background: white;
-  border: 6px solid white;
+  border: 8px solid white;
+  border-bottom-width: 1.35rem;
   border-radius: 6px;
-  box-shadow: 0 14px 30px rgba(70, 36, 49, 0.14), 0 4px 10px rgba(70, 36, 49, 0.08);
-  height: 8rem;
-  object-fit: cover;
-  width: 50%;
+  box-shadow: 0 18px 36px rgba(70, 36, 49, 0.15), 0 6px 16px rgba(70, 36, 49, 0.1);
+  height: auto;
+  max-height: clamp(14rem, 28vw, 22rem);
+  max-width: 52%;
+  object-fit: contain;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  width: auto;
 }
 
-.hobby-photos img:nth-child(1) {
+.hobby-photo-primary {
+  margin-right: -0.35rem;
   transform: rotate(-3deg);
+  z-index: 1;
 }
 
-.hobby-photos img:nth-child(2) {
-  transform: rotate(2deg);
+.hobby-photo-secondary {
+  margin-left: -0.35rem;
+  margin-top: 1.6rem;
+  transform: rotate(3deg);
+  z-index: 2;
+}
+
+.hobby-photo:hover {
+  box-shadow: 0 22px 42px rgba(70, 36, 49, 0.18), 0 8px 18px rgba(70, 36, 49, 0.12);
+  transform: translateY(-0.35rem) rotate(0deg) scale(1.02);
 }
 
 .hobby-card-recipes {
@@ -2871,14 +2913,23 @@ h3 {
   .intro-strip,
   .explore-gallery-grid,
   .art-category-grid,
-  .award-grid,
-  .hobby-grid {
+  .award-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .project-panel-body,
   .idea-box {
     grid-template-columns: 1fr;
+  }
+
+  .hobby-feature,
+  .hobby-feature-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-feature-reverse .hobby-scrapbook,
+  .hobby-feature-reverse .hobby-copy-panel {
+    order: initial;
   }
 
   .projects-hero {
@@ -3047,9 +3098,21 @@ h3 {
   .leadership-role-grid,
   .explore-gallery-grid,
   .art-category-grid,
-  .award-grid,
-  .hobby-grid {
+  .award-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hobby-list {
+    gap: 2.4rem;
+  }
+
+  .hobby-scrapbook {
+    min-height: 0;
+  }
+
+  .hobby-photo {
+    max-height: 15.5rem;
+    max-width: 54%;
   }
 
   .hobby-card-recipes {
