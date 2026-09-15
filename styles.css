@@ -2256,11 +2256,15 @@ h3 {
 }
 
 .awards-simple-section {
+  align-items: start;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1.12fr) minmax(11rem, 16rem);
   padding-top: 6rem;
 }
 
-.awards-simple-section > h1 {
-  font-size: clamp(3.2rem, 7.4vw, 6.9rem);
+.awards-simple-copy > h1 {
+  font-size: clamp(3.2rem, 5.9vw, 5.65rem);
   line-height: 0.95;
   margin-bottom: clamp(2rem, 5vw, 3.2rem);
   max-width: none;
@@ -2322,6 +2326,66 @@ h3 {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   margin: clamp(2.6rem, 6vw, 4rem) 0 1rem;
   text-transform: uppercase;
+}
+
+.award-photo-reel {
+  align-self: stretch;
+  border-radius: 8px;
+  max-height: calc(100vh - var(--nav-height, 5rem) - 3rem);
+  min-height: 44rem;
+  overflow: hidden;
+  position: sticky;
+  top: calc(var(--nav-height, 5rem) + 1.2rem);
+}
+
+.award-photo-reel::before,
+.award-photo-reel::after {
+  content: "";
+  height: 5rem;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.award-photo-reel::before {
+  background: linear-gradient(to bottom, var(--cream), rgba(255, 249, 251, 0));
+  top: 0;
+}
+
+.award-photo-reel::after {
+  background: linear-gradient(to top, var(--cream), rgba(255, 249, 251, 0));
+  bottom: 0;
+}
+
+.award-photo-track {
+  animation: award-reel-scroll 42s linear infinite;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.award-photo-track img {
+  background: white;
+  border: 7px solid white;
+  border-bottom-width: 1.15rem;
+  border-radius: 7px;
+  box-shadow: 0 16px 32px rgba(70, 36, 49, 0.13), 0 4px 12px rgba(70, 36, 49, 0.08);
+  display: block;
+  height: auto;
+  max-height: 18rem;
+  object-fit: contain;
+  width: 100%;
+}
+
+@keyframes award-reel-scroll {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
 }
 
 .gallery-grid {
@@ -3654,7 +3718,11 @@ body.has-life-album-carousel {
     grid-template-columns: 1fr;
   }
 
-  .awards-simple-section > h1 {
+  .awards-simple-section {
+    grid-template-columns: 1fr;
+  }
+
+  .awards-simple-copy > h1 {
     font-size: clamp(3rem, 15vw, 4.8rem);
     white-space: normal;
   }
@@ -3663,6 +3731,51 @@ body.has-life-album-carousel {
     height: auto;
     max-height: 22rem;
     object-fit: contain;
+  }
+
+  .award-photo-reel {
+    max-height: 22rem;
+    min-height: 22rem;
+    position: relative;
+    top: auto;
+  }
+
+  .award-photo-track {
+    animation: award-reel-scroll-mobile 42s linear infinite;
+    grid-template-columns: repeat(18, minmax(10rem, 13rem));
+    width: max-content;
+  }
+
+  .award-photo-track img {
+    height: 18rem;
+    max-height: none;
+  }
+
+  .award-photo-reel::before,
+  .award-photo-reel::after {
+    bottom: 0;
+    height: auto;
+    top: 0;
+    width: 3.5rem;
+  }
+
+  .award-photo-reel::before {
+    background: linear-gradient(to right, var(--cream), rgba(255, 249, 251, 0));
+  }
+
+  .award-photo-reel::after {
+    background: linear-gradient(to left, var(--cream), rgba(255, 249, 251, 0));
+    left: auto;
+  }
+
+  @keyframes award-reel-scroll-mobile {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   .life-gallery-photo.wide,
@@ -3954,6 +4067,10 @@ body.has-life-album-carousel {
     animation-duration: 0.01ms !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .award-photo-track {
+    animation: none;
   }
 }
 .nowrap {
