@@ -3100,7 +3100,12 @@ body.has-life-album-carousel {
   display: grid;
   gap: 1rem;
   overflow: hidden;
+  padding-top: 1.25rem;
   position: relative;
+}
+
+.fun-events-hero {
+  padding-bottom: 1.35rem;
 }
 
 .event-carousel-controls {
@@ -3143,6 +3148,7 @@ body.has-life-album-carousel {
 }
 
 .event-carousel-track {
+  align-items: stretch;
   display: flex;
   gap: clamp(1rem, 3vw, 1.5rem);
   margin-inline: calc(clamp(1.25rem, 7vw, 5rem) * -1);
@@ -3156,12 +3162,12 @@ body.has-life-album-carousel {
 }
 
 .event-carousel-track .event-blog-entry {
-  flex: 0 0 min(78vw, 58rem);
+  flex: 0 0 min(78vw, 56rem);
   scroll-snap-align: center;
 }
 
 .event-carousel-track .event-blog-entry:nth-child(even) {
-  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
 }
 
 .event-carousel-track .event-blog-entry:nth-child(even) .event-photo-grid,
@@ -3170,19 +3176,21 @@ body.has-life-album-carousel {
 }
 
 .event-blog-entry {
-  align-items: center;
+  align-items: stretch;
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.86);
   border-radius: 8px;
   box-shadow: 0 18px 38px rgba(70, 36, 49, 0.1), 0 4px 12px rgba(70, 36, 49, 0.06);
   display: grid;
   gap: clamp(1rem, 3vw, 2rem);
-  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  height: clamp(27rem, 68vh, 34rem);
+  overflow: hidden;
   padding: clamp(1rem, 2vw, 1.45rem);
 }
 
 .event-blog-entry:nth-child(even) {
-  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.72fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
 }
 
 .event-blog-entry:nth-child(even) img {
@@ -3199,15 +3207,25 @@ body.has-life-album-carousel {
   border-radius: 6px;
   box-shadow: 0 14px 30px rgba(70, 36, 49, 0.12);
   display: block;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   width: 100%;
 }
 
+.event-blog-entry > div:not(.event-photo-grid) {
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
 .event-photo-grid {
+  align-self: stretch;
   display: grid;
   gap: 0.65rem;
+  grid-auto-rows: minmax(0, 1fr);
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: 100%;
+  min-height: 0;
 }
 
 .event-photo-button {
@@ -3215,6 +3233,9 @@ body.has-life-album-carousel {
   background: transparent;
   border: 0;
   cursor: pointer;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
   padding: 0;
 }
 
@@ -3225,12 +3246,28 @@ body.has-life-album-carousel {
 
 .event-photo-grid-pair {
   grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .event-photo-grid-pair .event-photo-button,
 .event-photo-grid-pair .event-photo-button:first-child {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: auto;
   grid-column: auto;
+}
+
+.event-photo-grid-trio {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.event-photo-grid-trio .event-photo-button,
+.event-photo-grid-trio .event-photo-button:first-child {
+  aspect-ratio: auto;
+  grid-column: auto;
+}
+
+.event-photo-grid-trio .event-photo-button:first-child {
+  grid-row: 1 / -1;
 }
 
 .event-photo-button img {
@@ -3837,10 +3874,15 @@ body.has-life-album-carousel {
 
   .event-carousel-track .event-blog-entry {
     flex-basis: min(86vw, 34rem);
+    height: clamp(34rem, 78vh, 42rem);
   }
 
   .event-carousel-track .event-blog-entry:nth-child(even) {
     grid-template-columns: 1fr;
+  }
+
+  .event-photo-grid {
+    max-height: 16rem;
   }
 
   .life-album-overlay {
