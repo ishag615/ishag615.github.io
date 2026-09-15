@@ -3030,7 +3030,75 @@ body.has-life-album-carousel {
 
 .event-blog-section {
   display: grid;
-  gap: 1.4rem;
+  gap: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.event-carousel-controls {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  left: 0.15rem;
+  pointer-events: none;
+  position: absolute;
+  right: 0.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.event-carousel-button {
+  align-items: center;
+  background: var(--ink);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 16px 30px rgba(70, 36, 49, 0.18);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 2.2rem;
+  font-weight: 800;
+  height: 3.15rem;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: auto;
+  transition: background 180ms ease, transform 180ms ease;
+  width: 3.15rem;
+}
+
+.event-carousel-button:hover,
+.event-carousel-button:focus-visible {
+  background: var(--plum-brown);
+  outline: 0;
+  transform: translateY(-0.12rem) scale(1.04);
+}
+
+.event-carousel-track {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-inline: calc(clamp(1.25rem, 7vw, 5rem) * -1);
+  overflow-x: auto;
+  padding: 0.45rem clamp(1.25rem, 7vw, 5rem) 1.25rem;
+  scroll-behavior: smooth;
+  scroll-padding-inline: clamp(1.25rem, 7vw, 5rem);
+  scroll-snap-type: x mandatory;
+  scrollbar-color: rgba(70, 36, 49, 0.35) transparent;
+  scrollbar-width: thin;
+}
+
+.event-carousel-track .event-blog-entry {
+  flex: 0 0 min(78vw, 58rem);
+  scroll-snap-align: center;
+}
+
+.event-carousel-track .event-blog-entry:nth-child(even) {
+  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1fr);
+}
+
+.event-carousel-track .event-blog-entry:nth-child(even) .event-photo-grid,
+.event-carousel-track .event-blog-entry:nth-child(even) > div {
+  order: initial;
 }
 
 .event-blog-entry {
@@ -3066,6 +3134,41 @@ body.has-life-album-carousel {
   height: auto;
   object-fit: contain;
   width: 100%;
+}
+
+.event-photo-grid {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.event-photo-button {
+  aspect-ratio: 1;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+.event-photo-button:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 4 / 3;
+}
+
+.event-photo-button img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.event-photo-button:hover img,
+.event-photo-button:focus-visible img {
+  box-shadow: 0 18px 34px rgba(70, 36, 49, 0.18);
+  transform: translateY(-0.16rem);
+}
+
+.event-photo-button:focus-visible {
+  outline: 0;
 }
 
 .event-blog-entry h2 {
@@ -3566,6 +3669,30 @@ body.has-life-album-carousel {
 
   .simple-album-main {
     padding-top: 4.8rem;
+  }
+
+  .event-carousel-controls {
+    left: 0.25rem;
+    right: 0.25rem;
+  }
+
+  .event-carousel-button {
+    height: 2.65rem;
+    width: 2.65rem;
+  }
+
+  .event-carousel-track {
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    scroll-padding-inline: 1rem;
+  }
+
+  .event-carousel-track .event-blog-entry {
+    flex-basis: min(86vw, 34rem);
+  }
+
+  .event-carousel-track .event-blog-entry:nth-child(even) {
+    grid-template-columns: 1fr;
   }
 
   .life-album-overlay {

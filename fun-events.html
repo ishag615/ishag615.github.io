@@ -36,13 +36,93 @@
     <main id="main">
       <section class="page-hero section-band">
         <p class="eyebrow">Fun events</p>
-        <h1>Little Event Notes</h1>
-        <p class="hero-text">blogs coming soon</p>
+        <h1>Event Notes</h1>
         <div class="hero-actions">
           <a class="button secondary" href="life.html">Back to life</a>
         </div>
       </section>
-      </main>
+
+      <section class="section event-blog-section">
+        <div class="event-carousel-controls" aria-label="Event carousel controls">
+          <button class="event-carousel-button" type="button" data-event-scroll="prev" aria-label="Previous event">‹</button>
+          <button class="event-carousel-button" type="button" data-event-scroll="next" aria-label="Next event">›</button>
+        </div>
+        <div class="event-carousel-track" data-event-carousel>
+          <article class="event-blog-entry">
+            <div class="event-photo-grid">
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/defcon.jpg" alt="DEF CON event photo 1"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/defcon2.jpg" alt="DEF CON event photo 2"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/defcon4.jpg" alt="DEF CON event photo 3"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/defcon5.jpg" alt="DEF CON event photo 4"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/defcon6.jpg" alt="DEF CON event photo 5"></button>
+            </div>
+            <div>
+              <p class="panel-kicker">DEF CON</p>
+              <h2>Attending My First DEF CON</h2>
+              <p>A placeholder note for my first DEF CON experience: the talks, the energy, the security community, and the tiny moments I want to remember.</p>
+            </div>
+          </article>
+
+          <article class="event-blog-entry">
+            <div class="event-photo-grid">
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/IBC.jpg" alt="Integration Bee Challenge photo 1"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/IBC1.jpg" alt="Integration Bee Challenge photo 2"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/IBC2.jpg" alt="Integration Bee Challenge photo 3"></button>
+            </div>
+            <div>
+              <p class="panel-kicker">Competition</p>
+              <h2>Integration Bee Challenge</h2>
+              <p>A placeholder note for the Integration Bee Challenge: the math, the nerves, the problem-solving, and the fun of showing up for something outside the usual routine.</p>
+            </div>
+          </article>
+
+          <article class="event-blog-entry">
+            <div class="event-photo-grid">
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/sketch_kent.jpg" alt="Sketch Kent event photo 1"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/sketch_kent1.jpg" alt="Sketch Kent event photo 2"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/sketch_kent2.jpg" alt="Sketch Kent event photo 3"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/sketch_kent3.jpg" alt="Sketch Kent event photo 4"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/sketch_kent4.jpg" alt="Sketch Kent event photo 5"></button>
+            </div>
+            <div>
+              <p class="panel-kicker">Art</p>
+              <h2>Sketch Kent</h2>
+              <p>A placeholder note for Sketch Kent: a creative outing, a chance to observe more closely, and a reminder that art feels best when it becomes part of regular life.</p>
+            </div>
+          </article>
+
+          <article class="event-blog-entry">
+            <div class="event-photo-grid">
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/symposium.jpg" alt="Research Symposium event photo"></button>
+            </div>
+            <div>
+              <p class="panel-kicker">Research</p>
+              <h2>Research Symposium</h2>
+              <p>A placeholder note for the Research Symposium: sharing work, learning from other students, and seeing how many different questions people are trying to answer.</p>
+            </div>
+          </article>
+
+          <article class="event-blog-entry">
+            <div class="event-photo-grid">
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/A2RU.jpg" alt="A2RU Emerging Creatives Summit photo 1"></button>
+              <button class="event-photo-button" type="button" data-life-album-photo><img src="assets/fun/A2RU1.jpg" alt="A2RU Emerging Creatives Summit photo 2"></button>
+            </div>
+            <div>
+              <p class="panel-kicker">Creative summit</p>
+              <h2>A2RU Emerging Creatives Summit</h2>
+              <p>A placeholder note for the A2RU Emerging Creatives Summit: conversations across disciplines, creative experiments, and the kind of ideas that make art and technology feel connected.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="life-album-overlay" data-life-album-overlay hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="life-album-control life-album-close" type="button" data-life-album-close aria-label="Close photo viewer">x</button>
+      <button class="life-album-control" type="button" data-life-album-prev aria-label="Previous photo">&lsaquo;</button>
+      <img class="life-album-viewer" data-life-album-viewer src="" alt="">
+      <button class="life-album-control" type="button" data-life-album-next aria-label="Next photo">&rsaquo;</button>
+    </div>
       
 
     <footer class="footer contact-footer" id="site-footer">

@@ -46,6 +46,8 @@ const galleryWorks = document.querySelectorAll("[data-gallery-work]");
 const artworkCards = document.querySelectorAll("[data-artwork-card]");
 const heroCats = document.querySelectorAll("[data-hero-cat]");
 const scrapbookPhotos = document.querySelectorAll("[data-scrapbook-photo]");
+const eventCarousel = document.querySelector("[data-event-carousel]");
+const eventScrollButtons = document.querySelectorAll("[data-event-scroll]");
 const lifeAlbumPhotos = Array.from(document.querySelectorAll("[data-life-album-photo]"));
 const lifeAlbumOverlay = document.querySelector("[data-life-album-overlay]");
 const lifeAlbumViewer = document.querySelector("[data-life-album-viewer]");
@@ -131,6 +133,22 @@ scrapbookPhotos.forEach((photo) => {
   });
 
   photo.addEventListener("animationend", () => photo.classList.remove("is-tapped"));
+});
+
+eventScrollButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!(eventCarousel instanceof HTMLElement)) return;
+    const direction = button.dataset.eventScroll === "prev" ? -1 : 1;
+    const firstCard = eventCarousel.querySelector(".event-blog-entry");
+    const cardWidth = firstCard instanceof HTMLElement ? firstCard.offsetWidth : eventCarousel.clientWidth * 0.8;
+    const parsedGap = parseFloat(window.getComputedStyle(eventCarousel).columnGap || "0");
+    const gap = Number.isNaN(parsedGap) ? 0 : parsedGap;
+
+    eventCarousel.scrollBy({
+      left: direction * (cardWidth + gap),
+      behavior: "smooth"
+    });
+  });
 });
 
 const parseIscDate = (date) => {
