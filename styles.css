@@ -2881,6 +2881,15 @@ h3 {
 
 .simple-album-title {
   font-size: clamp(2.7rem, 8vw, 6rem);
+  margin-bottom: 0;
+}
+
+.simple-album-header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
   margin-bottom: clamp(1.8rem, 5vw, 3.5rem);
 }
 
