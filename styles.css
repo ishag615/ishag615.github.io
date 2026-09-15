@@ -3223,6 +3223,16 @@ body.has-life-album-carousel {
   aspect-ratio: 4 / 3;
 }
 
+.event-photo-grid-pair {
+  grid-template-columns: 1fr;
+}
+
+.event-photo-grid-pair .event-photo-button,
+.event-photo-grid-pair .event-photo-button:first-child {
+  aspect-ratio: 16 / 10;
+  grid-column: auto;
+}
+
 .event-photo-button img {
   height: 100%;
   object-fit: cover;
@@ -3247,6 +3257,27 @@ body.has-life-album-carousel {
 .event-blog-entry p:not(.panel-kicker) {
   color: var(--muted);
   line-height: 1.75;
+}
+
+.event-link-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.7rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.event-link-list a {
+  color: var(--crimson);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.18em;
+}
+
+.event-link-list a:hover,
+.event-link-list a:focus-visible {
+  color: var(--plum-brown);
+  outline: 0;
 }
 
 .about-section {
